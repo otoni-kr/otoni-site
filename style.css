@@ -364,7 +364,7 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 .vlb video:fullscreen{max-height:none;height:100%}
 @media (max-width:560px){.vlb{padding:8px}.vlb-box{width:100%;border-radius:8px}.vlb-bar{padding:6px 6px 6px 12px}.vlb-t{font-size:13px}}html.vlb-on{overflow:hidden}
 
-/* 11-18 영상 칸 꾸미기 B안(고니 선택): 살짝 기울여 겹침 + 그림자 + 제품 배지. 마우스 올린 영상이 맨 앞으로 오며 반듯해짐 */
+/* 11-18 영상 칸 꾸미기 B안(고니 선택): 살짝 기울여 겹침 + 그림자 + 제목 앞 작은 제품 아이콘. 마우스 올린 영상이 맨 앞으로 오며 반듯해짐 */
 .vds{gap:0;padding:22px 18px 46px 14px}
 .vds .vd{overflow:visible;box-shadow:0 30px 60px rgba(16,30,60,.26),0 8px 18px rgba(16,30,60,.14);transition:transform .3s ease,box-shadow .3s ease}
 .vds .vd-bar{border-radius:11px 11px 0 0}.vds .vd video{border-radius:0 0 11px 11px}
@@ -372,9 +372,9 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 .vds .vd:nth-child(2){transform:rotate(2deg) translateY(28px);z-index:2}
 .vds .vd:hover,.vds .vd:focus-within{transform:none;z-index:3;box-shadow:0 36px 72px rgba(16,30,60,.32),0 10px 22px rgba(16,30,60,.16)}
 .vds .vd:nth-child(2):hover,.vds .vd:nth-child(2):focus-within{transform:translateY(28px)}
-.vds .vd::before{content:"";position:absolute;z-index:4;top:-16px;width:46px;height:46px;border-radius:12px;background:#fff center/34px no-repeat;box-shadow:0 6px 16px rgba(16,30,60,.25);pointer-events:none}
-.vds .vd:nth-child(1)::before{left:-16px;background-image:url(pi_cad.png)}.vds .vd:nth-child(1) .vd-bar b{padding-left:30px}
-.vds .vd:nth-child(2)::before{right:-16px;background-image:url(pi_excel.png)}.vds .vd:nth-child(2) .vd-live{margin-right:30px}
+.vds .vd-bar b{display:flex;align-items:center;gap:7px}.vds .vd-bar b::before{content:"";flex:none;width:20px;height:20px;background:center/contain no-repeat}
+.vds .vd:nth-child(1) .vd-bar b::before{background-image:url(pi_cad.png)}
+.vds .vd:nth-child(2) .vd-bar b::before{background-image:url(pi_excel.png)}
 .vds .vd:nth-child(1) .vd-zoom{right:auto;left:10px}
-@media (max-width:560px){.vds{display:flex;flex-direction:column;gap:30px;padding:18px 12px 20px}.vds .vd:nth-child(1){transform:rotate(-1.2deg);margin-right:0}.vds .vd:nth-child(2),.vds .vd:nth-child(2):hover,.vds .vd:nth-child(2):focus-within{transform:rotate(1.2deg)}.vds .vd:nth-child(1):hover,.vds .vd:nth-child(1):focus-within{transform:rotate(-1.2deg)}.vds .vd::before{width:40px;height:40px;top:-14px;background-size:28px}.vds .vd:nth-child(1)::before{left:-8px}.vds .vd:nth-child(2)::before{right:-8px}.vds .vd:nth-child(1) .vd-bar b{padding-left:26px}.vds .vd:nth-child(2) .vd-live{margin-right:26px}.vds .vd:nth-child(1) .vd-zoom{left:auto;right:10px}}
+@media (max-width:560px){.vds{display:flex;flex-direction:column;gap:30px;padding:18px 12px 20px}.vds .vd:nth-child(1){transform:rotate(-1.2deg);margin-right:0}.vds .vd:nth-child(2),.vds .vd:nth-child(2):hover,.vds .vd:nth-child(2):focus-within{transform:rotate(1.2deg)}.vds .vd:nth-child(1):hover,.vds .vd:nth-child(1):focus-within{transform:rotate(-1.2deg)}.vds .vd-bar b::before{width:18px;height:18px}.vds .vd:nth-child(1) .vd-zoom{left:auto;right:10px}}
 /* Draft A — 흰 바탕 · 먹색 글 · 맑은 파랑 포인트 · 도면 모눈 (11-18 고니) */
