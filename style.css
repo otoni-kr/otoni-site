@@ -80,10 +80,10 @@ h1,h2,h3,p,li{text-wrap:pretty}
 .flow:after{content:"";position:absolute;right:0;top:4px;width:12px;height:12px;border-radius:50%;background:var(--blue)}
 .step h3{font-size:22px;margin-bottom:4px}
 .step .box{position:relative;height:100%;margin-right:20px;padding:18px 20px 34px;background:#fff;border:1px solid var(--line);border-radius:6px;transition:background .2s,box-shadow .2s,transform .2s}
-.step-link:after{content:"";position:absolute;inset:0;z-index:1}
-.step:hover .box,.step:focus-within .box{background:#EAF3FF;box-shadow:0 10px 24px rgba(20,40,80,.10);transform:translateY(-3px)}
+.step-link:after{content:"";position:absolute;inset:0;z-index:1}.step-link:focus{outline:none}.step:has(.step-link:focus-visible) .box{outline:2px solid var(--blue);outline-offset:2px}
+.step:hover .box,.step:has(:focus-visible) .box{background:#EAF3FF;box-shadow:0 10px 24px rgba(20,40,80,.10);transform:translateY(-3px)}
 .step .more{position:absolute;right:16px;bottom:10px;font-size:12.5px;font-weight:600;color:var(--blue);opacity:0;transition:opacity .2s}
-.step:hover .more,.step:focus-within .more{opacity:1}
+.step:hover .more,.step:has(:focus-visible) .more{opacity:1}
 .crumb{font-size:13px;color:var(--sub);margin-bottom:6px}.crumb a:hover{color:var(--blue)}
 .detail-list li{position:relative;padding-left:16px;margin:6px 0;font-size:16px}
 .detail-list li:before{content:"";position:absolute;left:0;top:.72em;width:6px;height:6px;background:var(--blue)}
@@ -104,7 +104,7 @@ h1,h2,h3,p,li{text-wrap:pretty}
 .business{background:var(--sky);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:22px 24px;transition:background .2s}
-.card:hover,.card:focus-within{background:#EEF5FF}
+.card:hover,.card:has(:focus-visible){background:#EEF5FF}
 .card h3{margin-bottom:4px}
 .card p{color:var(--sub);font-size:15px}
 .card ul{margin-top:10px}
@@ -179,13 +179,13 @@ a.cbox:hover{border-color:var(--blue)}
 /* footer: 표 없는 작은 글 3단 */
 .ft{padding:20px 0 14px;font-size:12.5px;color:var(--sub);border-top:1px solid var(--line);background:#FBFCFE}
 .ft-in{display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1fr) minmax(0,1.6fr);gap:12px 40px;align-items:start}
-.ft-brand{display:flex;flex-direction:column;gap:6px}
+.ft-brand{display:flex;flex-direction:column;gap:6px;align-self:stretch}
 .ft .brand .logo{height:22px}
 .ft-brand p{font-size:12px}
 .ft-info li{display:grid;grid-template-columns:96px 1fr;line-height:1.75;white-space:nowrap}.ft-info+.ft-info li{grid-template-columns:72px 1fr}
 .ft-info li>b{color:var(--ink);font-weight:600}.ft-info a.pp{color:var(--blue)}.ft-info a.pp:hover{text-decoration:underline}
 .ft a:hover{color:var(--blue)}
-.copy{margin-top:10px;font-size:11.5px;opacity:.7}
+.copy{margin-top:auto;font-size:11.5px;line-height:1.75;opacity:.7}
 /* responsive */
 
 @media (max-width:1100px){
