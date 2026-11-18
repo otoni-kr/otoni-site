@@ -221,8 +221,8 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
   :root{--hd:48px}
   .wrap{padding:0 20px}
   .sec{padding:32px 0}
-  .nav{gap:14px;font-size:14px}
-  .nav a:not([data-page]){display:none}
+  .nav{gap:9px;font-size:13px;letter-spacing:-.02em}
+  .hd .brand .logo{height:22px}
   .contact-grid{grid-template-columns:1fr}
   .cbox{padding:24px}
   .cbox strong{font-size:19px}.ft-info li,.ft-info+.ft-info li{white-space:normal;grid-template-columns:84px 1fr}
