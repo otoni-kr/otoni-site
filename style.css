@@ -138,7 +138,7 @@ h1,h2,h3,p,li{text-wrap:pretty}
 .sw-list li{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
 .sw-list li>div{display:flex;flex-direction:column}
 .pi-nes{height:30px;width:auto;flex:none}
-.syms{display:flex;align-items:center;gap:36px;margin-top:28px}
+.syms{display:flex;align-items:center;gap:36px;margin-top:28px}.sw-side .syms{margin:0 0 22px;gap:24px;flex-wrap:wrap}.sw-side .syms img{height:36px}.sw-side .syms .sym-pjt{height:46px}.sw-side .sym-bar{height:34px}
 .syms img{height:44px;width:auto}
 .syms .sym-pjt{height:56px}
 
