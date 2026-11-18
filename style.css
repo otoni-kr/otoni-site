@@ -177,7 +177,7 @@ a.cbox:hover{border-color:var(--blue)}
 .note{margin-top:14px;padding:16px 18px;border-left:3px solid var(--blue);background:var(--sky);border-radius:0 6px 6px 0}
 
 /* footer: 표 없는 작은 글 3단 */
-.ft{padding:20px 0 14px;font-size:12.5px;color:var(--sub);border-top:1px solid var(--line);background:#FBFCFE}
+body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{flex-shrink:0;padding:20px 0 14px;font-size:12.5px;color:var(--sub);border-top:1px solid var(--line);background:#FBFCFE}
 .ft-in{display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1fr) minmax(0,1.6fr);gap:12px 40px;align-items:start}
 .ft-brand{display:flex;flex-direction:column;gap:6px;align-self:stretch}
 .ft .brand .logo{height:22px}
