@@ -427,5 +427,9 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 /* 11-19 1119c: 마우스 판정은 돌지 않는 바깥 상자(심볼보다 10px 크게) */
 .mk-hit{display:inline-flex;flex:none;padding:10px;margin:-10px}.draw-mark.ready{cursor:default}.mk-hit:has(.draw-mark.ready){cursor:pointer}
 @media (max-width:900px){.mk-hit{display:none}}
+/* 11-19 1119d: 기울어 가는 동안(0→-20°)만 ±5° 바르르, 돌아올 땐 부드럽게. 안쪽 층(.in)이 구멍 중심으로 떨림 */
+.draw-mark .in{transform-box:view-box;transform-origin:496px 500px}.draw-mark.shk .in{animation:mkjit .8s linear}
+@keyframes mkjit{0%{transform:none}4.44%{transform:rotate(-5deg)}8.89%{transform:rotate(4.62deg)}13.33%{transform:rotate(-4.25deg)}17.78%{transform:rotate(3.88deg)}22.22%{transform:rotate(-3.5deg)}26.67%{transform:rotate(3.12deg)}31.11%{transform:rotate(-2.75deg)}35.56%{transform:rotate(2.38deg)}40%{transform:none}100%{transform:none}}
+@media (prefers-reduced-motion:reduce){.draw-mark.shk .in{animation:none}}
 
 /* Draft A — 흰 바탕 · 먹색 글 · 맑은 파랑 포인트 · 도면 모눈 (11-18 고니) */
