@@ -418,5 +418,10 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 .draw-mark.ready:hover,.draw-mark.tap{animation:mktilt .9s cubic-bezier(.3,.6,.4,1)}
 @keyframes mktilt{0%{transform:none}40%{transform:rotate(-20deg)}100%{transform:none}}
 @media (prefers-reduced-motion:reduce){.draw-mark .wv,.draw-mark.ready:hover,.draw-mark.tap{animation:none}}
+/* 11-19 1118x: 사업 분야 카드에 마우스 → 위 메뉴 같은 이름 파랗게 + 밑에 겹꺾쇠가 올라오며 흐려졌다 다시(PC만) */
+@media (min-width:561px) and (hover:hover){.nav a{transition:color .25s}.nav a.hl{color:var(--blue)}
+.nav a.hl:before{content:"";position:absolute;left:50%;bottom:-8px;margin-left:-6px;width:12px;height:12px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2012%2012%27%3E%3Cpath%20d%3D%27M2%206%20L6%202%20L10%206%20M2%2010.5%20L6%206.5%20L10%2010.5%27%20fill%3D%27none%27%20stroke%3D%27%231877F2%27%20stroke-width%3D%271.6%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;pointer-events:none;animation:navrise 1.3s ease-in-out infinite}
+@keyframes navrise{0%{opacity:0;transform:translateY(5px)}35%{opacity:1;transform:translateY(0)}75%{opacity:1;transform:translateY(-3px)}100%{opacity:0;transform:translateY(-7px)}}}
+@media (prefers-reduced-motion:reduce){.nav a.hl:before{animation:none}}
 
 /* Draft A — 흰 바탕 · 먹색 글 · 맑은 파랑 포인트 · 도면 모눈 (11-18 고니) */
