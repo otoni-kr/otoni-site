@@ -377,4 +377,8 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 .vds .vd:nth-child(2) .vd-bar b::before{background-image:url(pi_excel.png)}
 .vds .vd:nth-child(1) .vd-zoom{right:auto;left:10px}
 @media (max-width:560px){.vds{display:flex;flex-direction:column;gap:30px;padding:18px 12px 20px}.vds .vd:nth-child(1){transform:rotate(-1.2deg);margin-right:0}.vds .vd:nth-child(2),.vds .vd:nth-child(2):hover,.vds .vd:nth-child(2):focus-within{transform:rotate(1.2deg)}.vds .vd:nth-child(1):hover,.vds .vd:nth-child(1):focus-within{transform:rotate(-1.2deg)}.vds .vd-bar b::before{width:18px;height:18px}.vds .vd:nth-child(1) .vd-zoom{left:auto;right:10px}}
+
+/* 11-18 로고 줄: 심볼 | OTONI | nes 세 덩어리, 폰에서도 한 줄 */
+@media (max-width:560px){.sw-side .syms{flex-wrap:nowrap;gap:14px}.sw-side .syms img{height:28px}.sw-side .syms .sym-pjt{height:36px}.sw-side .sym-bar{height:26px}}
+
 /* Draft A — 흰 바탕 · 먹색 글 · 맑은 파랑 포인트 · 도면 모눈 (11-18 고니) */
