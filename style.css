@@ -1,4 +1,5 @@
-@font-face{font-family:"Pretendard";font-style:normal;font-weight:400;font-display:swap;src:url("Pretendard-Regular.subset.woff2") format("woff2")}@font-face{font-family:"Pretendard";font-style:normal;font-weight:500;font-display:swap;src:url("Pretendard-Medium.subset.woff2") format("woff2")}@font-face{font-family:"Pretendard";font-style:normal;font-weight:600;font-display:swap;src:url("Pretendard-SemiBold.subset.woff2") format("woff2")}@font-face{font-family:"Pretendard";font-style:normal;font-weight:700 900;font-display:swap;src:url("Pretendard-Bold.subset.woff2") format("woff2")}/* OTONI site — 흰 바탕 · 먹색 글 · 맑은 파랑(오토니 팝업 파랑 #1877F2) · 핑크는 로고·'오토니' 낱말만 */
+@font-face{font-family:"Pretendard";font-style:normal;font-weight:400;font-display:swap;src:url("Pretendard-Regular.subset.woff2") format("woff2")}@font-face{font-family:"Pretendard";font-style:normal;font-weight:500;font-display:swap;src:url("Pretendard-Medium.subset.woff2") format("woff2")}@font-face{font-family:"Pretendard";font-style:normal;font-weight:600;font-display:swap;src:url("Pretendard-SemiBold.subset.woff2") format("woff2")}@font-face{font-family:"Pretendard";font-style:normal;font-weight:700 900;font-display:swap;src:url("Pretendard-Bold.subset.woff2") format("woff2")}
+/* OTONI site — 흰 바탕 · 먹색 글 · 맑은 파랑(오토니 팝업 파랑 #1877F2) · 핑크는 로고·'오토니' 낱말만 */
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 :root{--ink:#1A1D21;--sub:#5A616C;--line:#E3E7EC;--line2:#D3D9E0;--bg:#fff;--sky:#F4F8FE;--grid:#E9F1FC;--blue:#1877F2;--blue-d:#0F5FCC;--blue-l:#D6E6FD;--pink:#F13D62;--wrap:1800px;--hd:38px}
@@ -53,7 +54,9 @@ h1,h2,h3,p,li{text-wrap:pretty}
 .hero-stats b small{font-size:.6em;color:var(--blue)}
 .hero-stats span{font-size:13px;color:var(--sub)}
 .sym-bar{width:1px;height:40px;background:var(--line2)}
-.draw-mark .ol{fill:none;stroke:var(--ink);stroke-width:15;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.5s linear forwards}.draw-mark .ht{fill:none;stroke:var(--ink);stroke-width:11;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw .16s ease-out forwards}.draw-mark .fl{fill:var(--ink);opacity:0;animation:fade .5s ease-in 4.1s forwards}
+.draw-mark .ol{fill:none;stroke:var(--ink);stroke-width:15;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.5s linear forwards}
+.draw-mark .ht{fill:none;stroke:var(--ink);stroke-width:11;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw .16s ease-out forwards}
+.draw-mark .fl{fill:var(--ink);opacity:0;animation:fade .5s ease-in 4.1s forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes fade{to{opacity:1}}
 @media (prefers-reduced-motion:reduce){.draw-mark .ol,.draw-mark .ht,.draw-mark .fl{animation:none!important;stroke-dashoffset:0;opacity:1}}
@@ -293,7 +296,7 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 
 .shot p{font-size:13.5px;color:var(--sub);line-height:1.45}
 .shot p b{color:var(--ink);font-weight:700;margin-right:6px}
-.shot-col{display:flex;flex-direction:column;gap:16px}.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:6px 0 34px}.sg-c{margin:0;display:flex;flex-direction:column}.sg-c .sg-im{flex:1}.sg-c.big{grid-column:span 2;grid-row:span 2}.sg-c.big .sg-im{aspect-ratio:auto}.sg-im{aspect-ratio:16/10;background:var(--sky);border:1px solid var(--line);border-radius:6px;display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden}.sg-im img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:3px;box-shadow:0 4px 14px rgba(20,40,80,.12)}.sg-c figcaption{margin-top:8px;font-size:14px;font-weight:600;color:var(--ink)}@media (max-width:900px){.sg{grid-template-columns:1fr 1fr}}@media (max-width:560px){.sg{grid-template-columns:1fr}.sg-c.big{grid-column:auto;grid-row:auto}.sg-c.big .sg-im{aspect-ratio:16/10}}
+.shot-col{display:flex;flex-direction:column;gap:16px}
 
 @media (max-width:1100px){
   .eqs{grid-template-columns:repeat(2,1fr)}
@@ -315,5 +318,26 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
   .wk .cap span{display:none}
   .shots{grid-template-columns:1fr}
 }
+
+/* 11-18 software 화면 격자: 칸마다 1장, 같은 크기·비율, 이름 한 줄 */
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:6px 0 34px}
+.sg-c{margin:0;display:flex;flex-direction:column}.sg-c .sg-im{flex:1}.sg-c.big{grid-column:span 2;grid-row:span 2}.sg-c.big .sg-im{aspect-ratio:auto}
+.sg-im{aspect-ratio:16/10;background:var(--sky);border:1px solid var(--line);border-radius:6px;display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden}
+.sg-im img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:3px;box-shadow:0 4px 14px rgba(20,40,80,.12)}
+.sg-c figcaption{margin-top:8px;font-size:14px;font-weight:600;color:var(--ink)}
+@media (max-width:900px){.sg{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.sg{grid-template-columns:1fr}.sg-c.big{grid-column:auto;grid-row:auto}.sg-c.big .sg-im{aspect-ratio:16/10}}
+
+/* 11-18 시연 영상: 창 틀 + 제목 띠 */
+.vd{margin:6px 0 26px;max-width:1080px;border-radius:12px;overflow:hidden;background:#151A21;border:1px solid #2A313B;box-shadow:0 22px 48px rgba(16,30,60,.22),0 4px 12px rgba(16,30,60,.10)}
+.vd-bar{display:flex;align-items:center;gap:12px;padding:11px 16px;background:linear-gradient(#262D37,#1E242D);border-bottom:1px solid #2F3743;color:#E8ECF2;font-size:14px;line-height:1.3}
+.vd-dots{display:flex;gap:6px;flex:none}.vd-dots i{width:10px;height:10px;border-radius:50%;background:#4A5360}
+.vd-bar b{font-weight:700;letter-spacing:.01em;white-space:nowrap}.vd-sub{color:#9AA5B4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.vd-live{margin-left:auto;flex:none;font-size:11px;font-weight:700;letter-spacing:.08em;color:#fff;background:var(--blue);border-radius:4px;padding:2px 7px}
+.vd video{display:block;width:100%;height:auto;background:#000}
+@media (max-width:560px){.vd{border-radius:8px;margin-bottom:18px}.vd-bar{padding:9px 12px;gap:8px;font-size:13px}.vd-sub{display:none}}
+
+.vds{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}.vds .vd{margin:0;max-width:none}.vds .vd-bar{padding:9px 12px;gap:9px;font-size:13px}.vds .vd-dots i{width:8px;height:8px}
+@media (max-width:560px){.vds{grid-template-columns:1fr;gap:14px}}
 
 /* Draft A — 흰 바탕 · 먹색 글 · 맑은 파랑 포인트 · 도면 모눈 (11-18 고니) */
