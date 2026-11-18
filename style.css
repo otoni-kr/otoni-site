@@ -182,8 +182,8 @@ a.cbox:hover{border-color:var(--blue)}
 .ft-brand{display:flex;flex-direction:column;gap:6px}
 .ft .brand .logo{height:22px}
 .ft-brand p{font-size:12px}
-.ft-info li{line-height:1.75}
-.ft-info b{color:var(--ink);font-weight:600;margin-right:6px}
+.ft-info li{display:grid;grid-template-columns:96px 1fr;line-height:1.75;white-space:nowrap}.ft-info+.ft-info li{grid-template-columns:72px 1fr}
+.ft-info li>b{color:var(--ink);font-weight:600}.ft-info a.pp{color:var(--blue)}.ft-info a.pp:hover{text-decoration:underline}
 .ft a:hover{color:var(--blue)}
 .copy{margin-top:10px;font-size:11.5px;opacity:.7}
 /* responsive */
@@ -225,7 +225,7 @@ a.cbox:hover{border-color:var(--blue)}
   .nav a:not([data-page]){display:none}
   .contact-grid{grid-template-columns:1fr}
   .cbox{padding:24px}
-  .cbox strong{font-size:19px}
+  .cbox strong{font-size:19px}.ft-info li,.ft-info+.ft-info li{white-space:normal;grid-template-columns:84px 1fr}
 
   .stat b{font-size:24px}
   .tb-rev{display:none!important}
