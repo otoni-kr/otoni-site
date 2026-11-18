@@ -392,8 +392,6 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 @keyframes nudge{0%,62%,100%{transform:none}74%{transform:translateX(5px)}86%{transform:none}}
 @media (prefers-reduced-motion:reduce){.step .more .arr{animation:none}}
 @media (hover:hover){.step:hover .box,.step:has(:focus-visible) .box{transform:translateY(-2px);border-color:var(--blue);box-shadow:0 20px 40px rgba(20,60,130,.20),0 4px 10px rgba(20,60,130,.08)}.step:hover .more .arr,.step:has(:focus-visible) .more .arr{animation:none;transform:translateX(5px);transition:transform .25s}}
-/* 11-18 카드와 위 동그라미 줄 간격 넓힘(떠올라도 안 붙게) */
-@media (min-width:561px){.step{padding-top:42px}}
 /* 11-18 카드 마우스 올림: 맑은 그라데이션 + 연한 파랑 그림자, 설명 글자 한 단계 진하게 */
 .step:hover .box,.step:has(:focus-visible) .box{background:linear-gradient(135deg,#FFFFFF 0%,#D6EBFF 100%);box-shadow:0 18px 38px rgba(26,115,232,.18),0 3px 8px rgba(26,115,232,.08)}
 .step:hover .box p,.step:has(:focus-visible) .box p{color:#3F4752}
@@ -404,9 +402,21 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 .step:hover:before,.step:has(:focus-visible):before{width:calc(100% - 39px)}.step:last-child:hover:before,.step:last-child:has(:focus-visible):before{width:calc(100% - 53px)}}
 /* 11-18 1118r: 떠오름 뺌, 카드 위 테두리 파란 3px 선이 왼→오, 타임라인 화살표 머리가 날아가며 2px 선이 따라감(PC만) */
 .step:hover .box,.step:has(:focus-visible) .box{transform:none}
-.step .box:before{content:"";position:absolute;left:-1px;top:-1px;height:3px;width:0;background:var(--blue);border-radius:6px 6px 0 0;transition:width .5s ease-out;pointer-events:none;z-index:2}
+.step .box:before{content:"";position:absolute;left:-1px;top:-1px;height:3px;width:0;background:var(--blue);border-radius:6px 6px 0 0;transition:width .5s cubic-bezier(.2,.7,.2,1);pointer-events:none;z-index:2}
 .step:hover .box:before,.step:has(:focus-visible) .box:before{width:calc(100% + 2px)}
-@media (min-width:561px) and (hover:hover){.step:before{top:4px;height:12px;background:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 12 12%27%3E%3Cpath d=%27M3 2 L10 6 L3 10%27 fill=%27none%27 stroke=%27%231877F2%27 stroke-width=%272.2%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E") right center/12px 12px no-repeat,linear-gradient(var(--blue),var(--blue)) left center/calc(100% - 3px) 2px no-repeat;border-radius:0;transition:width .45s cubic-bezier(.2,.7,.2,1)}
+@media (min-width:561px) and (hover:hover){.step:before{top:4px;height:12px;background:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 12 12%27%3E%3Cpath d=%27M3 2 L10 6 L3 10%27 fill=%27none%27 stroke=%27%231877F2%27 stroke-width=%272.2%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E") right center/12px 12px no-repeat,linear-gradient(var(--blue),var(--blue)) left center/calc(100% - 3px) 2px no-repeat;border-radius:0;transition:width .5s cubic-bezier(.2,.7,.2,1)}
 .step:hover:before,.step:has(:focus-visible):before{width:calc(100% - 36px)}.step:last-child:hover:before,.step:last-child:has(:focus-visible):before{width:calc(100% - 50px)}}
+/* 11-19 1118v: 키보드 포커스 테두리 겹침 없앰(파란 테두리로 충분) */
+.step:has(.step-link:focus-visible) .box{outline:none}
+/* 11-19 1118w 첫 화면 심볼 마우스 효과(A+B): 연필 애니 끝난 뒤(.ready) 살짝 기울었다 제자리 + 아래→위 핑크 차오름(1.2초, 윗면 물결). 떼면 천천히 검정 */
+.draw-mark .pk{pointer-events:none}.draw-mark .wv{fill:var(--pink);animation:mkwave 1.3s linear infinite}
+.draw-mark .lvl{transform:translateY(1150px);transition:transform 1.6s ease-in-out}
+@keyframes mkwave{from{transform:translateX(0)}to{transform:translateX(-300px)}}
+.draw-mark.ready{cursor:pointer;transform-origin:50% 50%}.draw-mark.ready .ol{transition:stroke 1.4s ease}
+.draw-mark.ready:hover .lvl,.draw-mark.tap .lvl{transform:translateY(-70px);transition:transform 1.2s cubic-bezier(.3,.6,.4,1)}
+.draw-mark.ready:hover .ol,.draw-mark.tap .ol{stroke:var(--pink);transition:stroke .5s ease .8s}
+.draw-mark.ready:hover,.draw-mark.tap{animation:mktilt .9s cubic-bezier(.3,.6,.4,1)}
+@keyframes mktilt{0%{transform:none}40%{transform:rotate(-20deg)}100%{transform:none}}
+@media (prefers-reduced-motion:reduce){.draw-mark .wv,.draw-mark.ready:hover,.draw-mark.tap{animation:none}}
 
 /* Draft A — 흰 바탕 · 먹색 글 · 맑은 파랑 포인트 · 도면 모눈 (11-18 고니) */
