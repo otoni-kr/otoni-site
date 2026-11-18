@@ -381,4 +381,16 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 /* 11-18 로고 줄: 심볼 | OTONI | nes 세 덩어리, 폰에서도 한 줄 */
 @media (max-width:560px){.sw-side .syms{flex-wrap:nowrap;gap:14px}.sw-side .syms img{height:28px}.sw-side .syms .sym-pjt{height:36px}.sw-side .sym-bar{height:26px}}
 
+/* 11-18 사업 분야 카드 클릭 유도: 늘 보이는 알약 버튼, 마우스 올리면 떠오름+그림자+버튼 채움 (카드 전체 링크는 .step-link:after) */
+.step{cursor:pointer}.step .box{padding-bottom:62px;transition:background .25s,box-shadow .25s,transform .25s,border-color .25s}
+.step .more{opacity:1;right:18px;bottom:16px;padding:6px 14px;border:1.5px solid var(--blue);border-radius:999px;background:#fff;font-size:13px;line-height:1.2;transition:background .25s,color .25s}
+.step:hover .box,.step:has(:focus-visible) .box{background:#fff;border-color:#BFD6F6;box-shadow:0 16px 34px rgba(20,40,80,.14);transform:translateY(-5px)}
+.step:hover .more,.step:has(:focus-visible) .more{background:var(--blue);color:#fff}
+@media (max-width:560px){.step .box{padding-bottom:58px}.step .more{bottom:14px;right:14px}}
+/* 11-18 카드 더 눈에 띄게: 화살표가 가끔 오른쪽으로 살짝, 마우스 올리면 6px 떠오름·파란 테두리·진한 그림자 */
+.step .more .arr{display:inline-block;font-style:normal;animation:nudge 2.6s ease-in-out infinite}
+@keyframes nudge{0%,62%,100%{transform:none}74%{transform:translateX(5px)}86%{transform:none}}
+@media (prefers-reduced-motion:reduce){.step .more .arr{animation:none}}
+@media (hover:hover){.step:hover .box,.step:has(:focus-visible) .box{transform:translateY(-6px);border-color:var(--blue);box-shadow:0 20px 40px rgba(20,60,130,.20),0 4px 10px rgba(20,60,130,.08)}.step:hover .more .arr,.step:has(:focus-visible) .more .arr{animation:none;transform:translateX(5px);transition:transform .25s}}
+
 /* Draft A — 흰 바탕 · 먹색 글 · 맑은 파랑 포인트 · 도면 모눈 (11-18 고니) */
