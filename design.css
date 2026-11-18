@@ -1,16 +1,17 @@
-/* 설계 페이지 도면 격자 (11-18 새판): 칸마다 1장, 4:3 같은 크기, 흰/검은 바탕 따로 */
-.dws{padding:8px 0 44px}
-.dws.dark{background:#1B2028;padding:30px 0 52px}
-.dw-cat{display:flex;align-items:baseline;gap:8px;margin:26px 0 12px;font-size:16px;font-weight:700}
-.dw-cat em{font-style:normal;font-size:13px;font-weight:500;color:var(--sub)}
-.dws.dark .dw-cat{color:#E9EDF3}
-.dws.dark .dw-cat em{color:#8C97A8}
+/* 설계 페이지 도면 (11-18 2판): 종류 단추 → 그 종류 격자만, 칸마다 1장 4:3 같은 크기 */
+.dws{padding:10px 0 56px}
+.dw-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 26px}
+.dw-tab{display:inline-flex;align-items:baseline;gap:6px;padding:9px 16px;border:1px solid var(--line);border-radius:999px;background:#fff;color:inherit;font-size:15px;font-weight:600;text-decoration:none;transition:border-color .2s,background .2s,color .2s}
+.dw-tab em{font-style:normal;font-size:12.5px;font-weight:500;color:var(--sub)}
+.dw-tab:hover{border-color:var(--blue)}
+.dw-tab.on{background:#1B2028;border-color:#1B2028;color:#fff}
+.dw-tab.on em{color:#AEB7C4}
 .dw{display:grid;grid-template-columns:repeat(4,1fr);gap:18px 16px}
+.dw[hidden]{display:none}
 .dw button{all:unset;display:block;cursor:zoom-in;min-width:0}
 .dw img{display:block;width:100%;height:auto;aspect-ratio:4/3;background:#fff;border:1px solid var(--line);border-radius:6px;transition:border-color .2s,box-shadow .2s}
-.dws.dark .dw img{background:#222831;border-color:#343C48}
+.dw .dk img{background:#222831;border-color:#343C48}
 .dw button:hover img,.dw button:focus-visible img{border-color:var(--blue);box-shadow:0 8px 24px rgba(20,60,130,.12)}
 .dw span{display:block;margin-top:8px;font-size:14px;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.dws.dark .dw span{color:#D5DBE4}
 @media (max-width:1100px){.dw{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:700px){.dw{grid-template-columns:repeat(2,1fr);gap:14px 10px}.dw span{font-size:13px}}
+@media (max-width:700px){.dw{grid-template-columns:repeat(2,1fr);gap:14px 10px}.dw span{font-size:13px}.dw-tabs{gap:6px}.dw-tab{padding:7px 12px;font-size:14px}}
