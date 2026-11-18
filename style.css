@@ -338,6 +338,43 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 @media (max-width:560px){.vd{border-radius:8px;margin-bottom:18px}.vd-bar{padding:9px 12px;gap:8px;font-size:13px}.vd-sub{display:none}}
 
 .vds{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}.vds .vd{margin:0;max-width:none}.vds .vd-bar{padding:9px 12px;gap:9px;font-size:13px}.vds .vd-dots i{width:8px;height:8px}
-@media (max-width:560px){.vds{grid-template-columns:1fr;gap:14px}}
+/* 영상 비율대로 칸 너비(CAD 1170x720, EXCEL 954x712) → 두 영상 높이 같음, 검은 띠 없음. 제목 띠는 같은 높이 줄(subgrid) */
+.vds{grid-template-columns:1.625fr 1.34fr;grid-template-rows:auto auto;align-items:stretch}
+.vds .vd{display:grid;grid-row:span 2;grid-template-rows:subgrid;row-gap:0}
+.vds .vd-bar{display:grid;grid-template-columns:1fr auto;column-gap:10px;row-gap:2px;align-items:center;align-content:center;padding:9px 12px}.vds .vd-dots{display:none}.vds .vd-bar b{grid-column:1;grid-row:1}.vds .vd-live{grid-column:2;grid-row:1;margin:0}
+.vds .vd-sub{grid-column:1/-1;grid-row:2;white-space:normal;overflow:visible;text-overflow:clip;font-size:12px;line-height:1.4;word-break:keep-all}
+.vds .vd video{height:100%;object-fit:cover}
+@media (max-width:560px){.vds{grid-template-columns:1fr;grid-template-rows:none;gap:14px}.vds .vd{display:block}.vds .vd-sub{display:block}}
 
+/* 11-18 시연 영상 크게 보기 */
+.vd{position:relative}.vd video{cursor:zoom-in}
+.vd-zoom{position:absolute;right:10px;bottom:10px;display:flex;align-items:center;gap:5px;padding:5px 9px;border-radius:6px;background:rgba(15,20,27,.72);color:#fff;font-size:12px;font-weight:600;line-height:1;pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity .15s,transform .15s}
+.vd-zoom svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.vd:hover .vd-zoom,.vd video:focus-visible~.vd-zoom{opacity:1;transform:none}
+@media (hover:none){.vd-zoom{opacity:.9;transform:none;padding:4px 7px;font-size:11px}}
+.vlb{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(8,11,16,.82)}
+.vlb[hidden]{display:none}
+.vlb-box{width:min(70vw,1000px);border-radius:12px;overflow:hidden;background:#151A21;border:1px solid #2A313B;box-shadow:0 28px 72px rgba(0,0,0,.5);outline:0}
+.vlb-bar{display:flex;align-items:center;gap:10px;padding:8px 8px 8px 16px;background:linear-gradient(#262D37,#1E242D);border-bottom:1px solid #2F3743;color:#E8ECF2}
+.vlb-t{flex:1;min-width:0;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vlb-b{flex:none;width:34px;height:34px;padding:8px;border:0;border-radius:6px;background:transparent;color:#C9D1DC;cursor:pointer;line-height:0}
+.vlb-b:hover{background:rgba(255,255,255,.12);color:#fff}.vlb-b:focus-visible{outline:2px solid var(--blue);outline-offset:1px}
+.vlb-b svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.vlb video{display:block;width:100%;height:auto;max-height:calc(100vh - 120px);background:#000;object-fit:contain}
+.vlb video:fullscreen{max-height:none;height:100%}
+@media (max-width:560px){.vlb{padding:8px}.vlb-box{width:100%;border-radius:8px}.vlb-bar{padding:6px 6px 6px 12px}.vlb-t{font-size:13px}}html.vlb-on{overflow:hidden}
+
+/* 11-18 영상 칸 꾸미기 B안(고니 선택): 살짝 기울여 겹침 + 그림자 + 제품 배지. 마우스 올린 영상이 맨 앞으로 오며 반듯해짐 */
+.vds{gap:0;padding:22px 18px 46px 14px}
+.vds .vd{overflow:visible;box-shadow:0 30px 60px rgba(16,30,60,.26),0 8px 18px rgba(16,30,60,.14);transition:transform .3s ease,box-shadow .3s ease}
+.vds .vd-bar{border-radius:11px 11px 0 0}.vds .vd video{border-radius:0 0 11px 11px}
+.vds .vd:nth-child(1){transform:rotate(-2deg) translateY(2px);z-index:1;margin-right:-14px}
+.vds .vd:nth-child(2){transform:rotate(2deg) translateY(28px);z-index:2}
+.vds .vd:hover,.vds .vd:focus-within{transform:none;z-index:3;box-shadow:0 36px 72px rgba(16,30,60,.32),0 10px 22px rgba(16,30,60,.16)}
+.vds .vd:nth-child(2):hover,.vds .vd:nth-child(2):focus-within{transform:translateY(28px)}
+.vds .vd::before{content:"";position:absolute;z-index:4;top:-16px;width:46px;height:46px;border-radius:12px;background:#fff center/34px no-repeat;box-shadow:0 6px 16px rgba(16,30,60,.25);pointer-events:none}
+.vds .vd:nth-child(1)::before{left:-16px;background-image:url(pi_cad.png)}.vds .vd:nth-child(1) .vd-bar b{padding-left:30px}
+.vds .vd:nth-child(2)::before{right:-16px;background-image:url(pi_excel.png)}.vds .vd:nth-child(2) .vd-live{margin-right:30px}
+.vds .vd:nth-child(1) .vd-zoom{right:auto;left:10px}
+@media (max-width:560px){.vds{display:flex;flex-direction:column;gap:30px;padding:18px 12px 20px}.vds .vd:nth-child(1){transform:rotate(-1.2deg);margin-right:0}.vds .vd:nth-child(2),.vds .vd:nth-child(2):hover,.vds .vd:nth-child(2):focus-within{transform:rotate(1.2deg)}.vds .vd:nth-child(1):hover,.vds .vd:nth-child(1):focus-within{transform:rotate(-1.2deg)}.vds .vd::before{width:40px;height:40px;top:-14px;background-size:28px}.vds .vd:nth-child(1)::before{left:-8px}.vds .vd:nth-child(2)::before{right:-8px}.vds .vd:nth-child(1) .vd-bar b{padding-left:26px}.vds .vd:nth-child(2) .vd-live{margin-right:26px}.vds .vd:nth-child(1) .vd-zoom{left:auto;right:10px}}
 /* Draft A — 흰 바탕 · 먹색 글 · 맑은 파랑 포인트 · 도면 모눈 (11-18 고니) */
