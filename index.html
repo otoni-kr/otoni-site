@@ -3,8 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OTONI 오토니 | 전기 설계 · 자동화 설비 · 소프트웨어</title>
-<meta name="description" content="OTONI(오토니) — 전기·전장 설계, 자동화 설비 제작, 설계 자동화 소프트웨어.">
+<title>OTONI 오토니 | 전장 설계 · 제작 · 소프트웨어</title>
+<meta name="description" content="오토니(OTONI) — 디스플레이·반도체·2차전지 설비의 전장 설계 및 제작, 설계 자동화 도구 개발.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OTONI 오토니">
+<meta property="og:title" content="OTONI 오토니 | 전장 설계 · 제작 · 소프트웨어">
+<meta property="og:description" content="전장 설계 및 제작, 자동화 설계 소프트웨어까지. 도면을 그리는 사람이 직접 만든 회사, 오토니.">
+<meta property="og:url" content="https://otoni.co.kr/">
+<meta property="og:image" content="https://otoni.co.kr/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" href="mark.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -13,128 +23,145 @@
   <div class="wrap hd-in">
     <a class="brand" href="index.html" aria-label="OTONI 홈"><img class="logo" src="logo.svg" alt="OTONI" width="138" height="40"></a>
     <nav class="nav">
-      <a href="index.html#about">회사 소개</a>
-      <a href="index.html#business">전장 설계 및 제작</a>
-      <a href="index.html#software">소프트웨어</a>
-      <a href="contact.html" class="nav-cta">연락처</a>
+      <a href="index.html#about" data-sec="about">회사 소개</a>
+      <a href="index.html#business" data-sec="business">전장 설계 및 제작</a>
+      <a href="index.html#software" data-sec="software">소프트웨어</a>
+      <a href="contact.html" data-page="p-contact">연락처</a>
     </nav>
   </div>
 </header>
 <main>
 <section class="hero">
+  <svg class="sld" viewBox="0 0 640 430" aria-hidden="true">
+    <g class="ln">
+      <path pathLength="1" d="M320 20 V70"/>
+      <path pathLength="1" d="M308 70 H332 V100 H308 Z M308 100 L332 70"/>
+      <path pathLength="1" d="M320 100 V140"/>
+      <path pathLength="1" d="M70 140 H570"/>
+      <path pathLength="1" d="M110 140 V180 M200 140 V180 M290 140 V180 M380 140 V180 M470 140 V180 M540 140 V180"/>
+      <path pathLength="1" d="M100 180 H120 V204 H100 Z M100 204 L120 180 M190 180 H210 V204 H190 Z M190 204 L210 180 M280 180 H300 V204 H280 Z M280 204 L300 180 M370 180 H390 V204 H370 Z M370 204 L390 180 M460 180 H480 V204 H460 Z M460 204 L480 180 M530 180 H550 V204 H530 Z M530 204 L550 180"/>
+      <path pathLength="1" d="M110 204 V250 M200 204 V250 M290 204 V250 M380 204 V250 M470 204 V300 M540 204 V300"/>
+      <path pathLength="1" d="M100 250 H120 M100 262 H120 M110 262 V290 M190 250 H210 M190 262 H210 M200 262 V290 M280 250 H300 M280 262 H300 M290 262 V290 M370 250 H390 M370 262 H390 M380 262 V290"/>
+      <path pathLength="1" d="M128 310 A18 18 0 1 0 92 310 A18 18 0 1 0 128 310 M218 310 A18 18 0 1 0 182 310 A18 18 0 1 0 218 310 M308 310 A18 18 0 1 0 272 310 A18 18 0 1 0 308 310 M398 310 A18 18 0 1 0 362 310 A18 18 0 1 0 398 310"/>
+      <path pathLength="1" d="M452 300 H488 V330 H452 Z M522 300 H558 V330 H522 Z"/>
+    </g>
+    <g class="tx">
+      <text x="340" y="90">MCCB</text>
+      <text x="576" y="144">BUS</text>
+      <text x="104" y="315">M</text><text x="194" y="315">M</text><text x="284" y="315">M</text><text x="374" y="315">M</text>
+      <text x="460" y="319">PLC</text><text x="530" y="319">SMPS</text>
+    </g>
+    <g class="dim">
+      <path pathLength="1" d="M92 372 H558 M92 364 V380 M558 364 V380 M92 372 L100 368 M92 372 L100 376 M558 372 L550 368 M558 372 L550 376"/>
+      <text x="300" y="366">PANEL W</text>
+    </g>
+  </svg>
   <div class="wrap hero-in">
-    <div class="hero-text">
-      <p class="kicker">Electrical Design · Automation · Software</p>
-      <h1>전장 설계부터<br>제작, <span>소프트웨어</span>까지.</h1>
-      <p class="lead">OTONI는 디스플레이·반도체·2차전지 설비의 전장 설계 및 제작을 하며, 설계를 더 효율적으로 만드는 자동화 설계 도구를 끊임없이 개발하고 있습니다.</p>    </div>
+    <svg class="draw-mark" viewBox="0.1 0.2 907.9 999.8" aria-hidden="true"><path pathLength="1" fill-rule="evenodd" d="M771.8,501.1 L770.5,475.3 L766.9,449.6 L760.8,424.4 L752.3,399.9 L741.6,376.3 L733.3,361.1 L723.9,346.6 L708.3,325.9 L690.8,306.8 L671.5,289.4 L650.7,273.9 L628.6,260.5 L605.2,249.2 L580.9,240.2 L555.9,233.5 L538.9,230.4 L521.7,228.4 L495.8,227.4 L469.9,228.8 L444.3,232.7 L419.1,238.9 L394.7,247.6 L371.2,258.5 L348.8,271.6 L327.7,286.7 L308.2,303.8 L290.4,322.6 L274.4,343 L260.5,364.9 L248.6,387.9 L239.1,412 L231.8,436.9 L228.3,453.8 L225.8,471 L224.2,496.8 L225,522.7 L228.3,548.5 L234,573.8 L242,598.4 L252.3,622.2 L264.9,644.9 L274.4,659.3 L284.9,673.1 L302.1,692.4 L321,710.1 L334.6,720.9 L348.8,730.7 L371.2,743.8 L394.7,754.7 L419.1,763.4 L444.3,769.6 L469.9,773.5 L495.8,774.9 L521.7,773.9 L538.9,771.9 L555.9,768.8 L580.9,762.1 L605.2,753.1 L628.6,741.8 L650.7,728.4 L671.5,712.9 L690.8,695.5 L708.3,676.4 L723.9,655.7 L733.3,641.2 L741.6,626 L752.3,602.4 L760.8,577.9 L766.9,552.7 L770.5,527 Z M790.4,908.5 L801.2,906.4 L811.7,903.3 L821.9,899.2 L832.6,893.8 L841.9,888 L851.6,880.8 L859.9,873.4 L868.4,864.6 L876.2,855 L883.2,844.9 L894.5,823.7 L899.1,812 L902.5,800.9 L905.4,788.5 L907.1,776.8 L907.9,760.7 L906.6,738.2 L904.2,721.8 L900.6,708.7 L896.3,699 L890,689.1 L866,660.8 L853.8,644.4 L844.1,628.6 L835.6,612 L826.5,589.6 L819.6,566.2 L814.8,542.3 L812,516 L811.9,485.9 L814.8,457.7 L820.5,430.1 L829.2,403.4 L839.8,379.6 L852.9,357.2 L865,340.7 L887.1,314.7 L895.5,302.6 L901.7,289 L905.7,272.3 L907.4,255.3 L908,234 L906.5,216.9 L903,200.2 L897.5,183.1 L890.2,166.9 L881.2,151.8 L870.6,137.9 L859.4,126.1 L847,115.8 L833.6,107 L819.3,100 L805.2,95.1 L790.5,92 L761.9,93.1 L743.6,96.5 L727.8,103 L710.3,113.7 L683.1,134.6 L667.4,145 L647.3,155.5 L626.2,163.8 L602.2,170.3 L575.2,174.4 L547.4,175.5 L518.9,173.6 L488,168.2 L459,160 L430.1,148.7 L401.5,134.3 L373.6,116.9 L346.5,96.4 L320.5,72.8 L299.5,49.7 L282.3,35.5 L269.7,27.2 L256.3,20.1 L242.3,14 L227,8.9 L204.7,3.9 L176.6,0.5 L153.2,0.2 L130,2.8 L107.2,8.3 L86.6,16.2 L67.2,26.8 L50.4,39.1 L35.5,53.7 L23.6,69.2 L14,86.2 L6.7,104.4 L2.2,123.3 L0.1,144 L0.7,164.2 L4.2,184.8 L8.2,199.3 L13.9,214.1 L21,228.4 L29.3,242.1 L45.4,263 L76.2,294.4 L95.2,316.8 L114.5,344.6 L130.4,373.5 L137.5,389.5 L143.6,405.7 L148.8,422.2 L152.9,438.8 L156,455.5 L158.1,472.3 L159.3,489.2 L159.4,506.1 L158.6,523 L156.7,539.8 L150.6,570.8 L145.9,587.3 L140.3,603.7 L127,633.3 L111.8,659.9 L93.6,685.4 L74.4,707.7 L46.4,735.9 L31.3,755 L23.1,767.9 L16.3,780.7 L10.7,794 L6.1,807.6 L2.1,825.9 L0.1,844.5 L0.5,863.3 L3,880.9 L7.6,898.1 L14.3,914.6 L23.1,930 L33.7,944.2 L41.1,952.2 L50.1,960.6 L68.9,974.3 L79.6,980.4 L90.7,985.7 L114,993.7 L138.6,998.5 L163,1000 L186.8,998.5 L204,996.2 L217.8,993.5 L234.8,988.7 L251.2,982.4 L266.8,974.7 L281.1,965.9 L291.6,958.2 L301,950.2 L329.2,920.8 L355.2,897.9 L382.3,878.2 L412.3,860.5 L442.8,846.4 L459.3,840.3 L475.8,835.2 L506.7,828.3 L523.1,826.1 L539.4,824.9 L561.4,824.8 L585,826.9 L605.9,830.7 L626.2,836.4 L650.8,846.3 L672.2,858.2 L690.6,871.5 L718,895.3 L726.6,901.1 L734.7,905.3 L745.1,908.8 L757.2,910.4 L770.9,910.3 Z"/></svg>
+    <h1><span class="nb">전장 설계 및 제작,</span> <span class="nb"><span class="bl">자동화 설계 소프트웨어</span>까지.</span></h1>
+    <p class="lead"><b class="o">오토니</b>는 디스플레이·반도체·2차전지 설비의 전장 설계 및 제작을 하며, 설계를 더 효율적으로 만드는 자동화 설계 도구를 끊임없이 개발하고 있습니다.</p>
   </div>
 </section>
 
 
 <section class="stats">
   <div class="wrap stats-in">
-    <div class="stat"><b>Since 2024</b><span>2024.06.04 개업</span></div>
-    <div class="stat"><b>3</b><span>설계 · 설비 · 소프트웨어</span></div>
+    <div class="stat"><b>2024</b><span>2024.06.04 개업</span></div>
+    <div class="stat"><b>3</b><span>설계 · 제작 · 소프트웨어</span></div>
     <div class="stat"><b>25<small>+</small></b><span>주요 프로젝트 수행</span></div>
     <div class="stat"><b>국내·해외</b><span>현장 Setup 지원</span></div>
   </div>
 </section>
 
 <section class="sec about" id="about">
-  <div class="wrap">
-    <p class="kicker"><i>01</i> Company Overview</p>
-    <h2>현장을 아는 기술로,<br>믿을 수 있는 설비를 만듭니다.</h2>
-    <p class="lead">오토니는 수년간 쌓아 온 기술과 노하우를 바탕으로 다양한 자동화 장비를 설계·제작하는 제조 기업입니다. 고품질의 서비스를 위한 노력과 효율적인 관리 시스템을 갖추고, 고객의 신뢰를 최우선으로 성장하고 있습니다.</p>
-    <div class="vision">
-      <div class="v"><em>VISION 1</em><strong>고객과 함께 성장하자</strong></div>
-      <div class="v"><em>VISION 2</em><strong>최고의 품질을 추구하자</strong></div>
-      <div class="v"><em>VISION 3</em><strong>정직함으로 진심을 다하자</strong></div>
-    </div>
+  <div class="wrap about-in">
+    <h2>설계한 사람이 현장까지 책임집니다.</h2>
+    <p class="lead"><b class="o">오토니</b>는 디스플레이·반도체·2차전지 설비의 전장을 맡는 회사입니다. 회로도와 레이아웃 설계부터 전장 패널 제작, 국내·해외 현장 Setup까지 직접 하고, 설계에 쓰는 자동화 도구도 직접 만듭니다.</p>
   </div>
 </section>
 
 <section class="sec business" id="business">
   <div class="wrap">
-    <p class="kicker"><i>02</i> About Business</p>
     <h2>전장 설계 및 제작</h2>
-    <div class="cards">
-      <article class="card">
-        <span class="no">01</span>
-        <h3>전기·전장 설계</h3>
+    <ol class="flow">
+      <li class="step">
+        <i class="node" aria-hidden="true"></i>
+        <h3>설계</h3>
         <p>설비의 전기 설계를 처음부터 끝까지 맡습니다.</p>
-        <ul>
-          <li>회로도 · 레이아웃 도면</li>
-          <li>하네스 · 단자 작업도 · 센서 맵</li>
-          <li>전기 용량 계산 · 작업 매뉴얼 · 시험 성적서</li>
-        </ul>
-      </article>
-      <article class="card">
-        <span class="no">02</span>
-        <h3>자동화 설비 제작</h3>
+        <ul><li>회로도 · 레이아웃 도면</li><li>하네스 · 단자 작업도 · 센서 맵</li><li>전기 용량 계산 · 시험 성적서</li></ul>
+      </li>
+      <li class="step">
+        <i class="node" aria-hidden="true"></i>
+        <h3>제작</h3>
         <p>전장 패널 제작부터 현장 Setup까지 책임집니다.</p>
-        <ul>
-          <li>전장 패널 제작 · 개조</li>
-          <li>국내·해외 현장 Setup 지원</li>
-          <li>장비 브래킷 · 배선 설계</li>
-        </ul>
-      </article>
-      <article class="card">
-        <span class="no">03</span>
-        <h3>OTONI 소프트웨어</h3>
-        <p>설계 현장에서 쓰려고 직접 만든 자동화 도구입니다.</p>
-        <ul>
-          <li>OTONI CAD · OTONI EXCEL</li>
-          <li>OTONI SEND · NES</li>
-          <li>제품 준비 중</li>
-        </ul>
-      </article>
-    </div>
-    <div class="fields">
-      <span>디스플레이 장비</span><span>반도체 장비</span><span>2차전지 설비</span><span>산업용 장비</span>
-    </div>
+        <ul><li>전장 패널 제작 · 개조</li><li>장비 브래킷 · 배선 설계</li><li>국내·해외 현장 Setup</li></ul>
+      </li>
+      <li class="step">
+        <i class="node" aria-hidden="true"></i>
+        <h3>소프트웨어</h3>
+        <p>설계 현장에서 쓰려고 직접 만든 도구입니다.</p>
+        <ul><li>캐드 도면 작성·정리 자동화</li><li>엑셀 설계 자료·견적 표 자동화</li><li>대용량 파일 메일 보내기</li></ul>
+      </li>
+    </ol>
+    <p class="fields-line"><b>대상 설비</b> 디스플레이 장비 · 반도체 장비 · 2차전지 설비 · 산업용 장비</p>
   </div>
 </section>
 
 <section class="sec software" id="software">
-  <div class="wrap sw-in">
-    <div class="sw-text">
-      <p class="kicker"><i>03</i> OTONI Software</p>
-      <h2>설계하는 사람이 만든<br>설계 자동화.</h2>
-      <p class="lead">반복되는 도면·표 작업을 자동으로. 오토니가 매일 쓰는 도구를 제품으로 다듬고 있습니다.</p>
-      <div class="sw-syms" aria-hidden="true">
-        <figure><img src="mark.svg" alt=""><figcaption>OTONI</figcaption></figure>
-        <figure><img class="nes" src="data:image/jpeg;base64,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" alt=""><figcaption>NES</figcaption></figure>
+  <div class="wrap">
+    <div class="sw-in">
+      <div class="sw-text">
+        <h2>설계·제작 전문가가 만든<br><span>설계 자동화 통합 시스템</span>.</h2>
+        <p class="lead">반복되는 도면·표 작업을 자동으로. <b class="o">오토니</b>가 매일 쓰는 도구를 제품으로 다듬고 있습니다.</p>
+        <div class="syms" aria-label="PJT = OTONI + NES">
+          <img class="sym-pjt" src="combo.png" alt="PJT">
+          <span class="sym-eq" aria-hidden="true">=</span>
+          <img class="sym-otoni" src="logo.svg" alt="OTONI">
+          <img class="sym-nes" src="nes_h.png" alt="NES">
+        </div>
+      </div>
+      <div class="sw-side">
+        <p class="sw-note">모두 준비 중</p>
+        <ul class="sw-list">
+          <li><svg class="pi" viewBox="0 0 40 40" aria-hidden="true"><rect x="2.5" y="4.5" width="35" height="31" rx="4" fill="#fff" stroke="#5A616C" stroke-width="2"/><path d="M3.5 12 V8.5 a3 3 0 0 1 3-3 h27 a3 3 0 0 1 3 3 V12 Z" fill="#1877F2"/><text x="20" y="29" text-anchor="middle" font-size="11" font-weight="800" fill="#1A1D21" font-family="Segoe UI,Arial,sans-serif">CAD</text></svg><div><b>OTONI CAD</b><span>AutoCAD 전기 도면 자동화</span></div></li>
+          <li><svg class="pi" viewBox="0 0 40 40" aria-hidden="true"><rect x="2.5" y="4.5" width="35" height="31" rx="4" fill="#fff" stroke="#5A616C" stroke-width="2"/><path d="M3.5 12 V8.5 a3 3 0 0 1 3-3 h27 a3 3 0 0 1 3 3 V12 Z" fill="#1E9E5A"/><text x="20" y="29" text-anchor="middle" font-size="11" font-weight="800" fill="#1A1D21" font-family="Segoe UI,Arial,sans-serif">XLS</text></svg><div><b>OTONI EXCEL</b><span>Excel 설계 자료 자동화</span></div></li>
+          <li><svg class="pi" viewBox="0 0 40 40" aria-hidden="true"><rect x="2.5" y="4.5" width="35" height="31" rx="4" fill="#fff" stroke="#5A616C" stroke-width="2"/><path d="M3.5 12 V8.5 a3 3 0 0 1 3-3 h27 a3 3 0 0 1 3 3 V12 Z" fill="#5A616C"/><path d="M10 18 H30 V30 H10 Z M10 18 L20 25 L30 18" fill="none" stroke="#1A1D21" stroke-width="2" stroke-linejoin="round"/></svg><div><b>OTONI SEND</b><span>대용량 파일 메일 도구</span></div></li>
+          <li><img class="pi-nes" src="nes_h.png" alt="NES"><div><span>OTONI 도구를 한곳에서 부르는 작업 비서</span></div></li>
+        </ul>
       </div>
     </div>
-    <ul class="sw-list">
-      <li><b>OTONI CAD <em class="soon">준비 중</em></b><span>AutoCAD 전기 도면 자동화</span></li>
-      <li><b>OTONI EXCEL <em class="soon">준비 중</em></b><span>Excel 설계 자료 자동화</span></li>
-      <li><b>OTONI SEND <em class="soon">준비 중</em></b><span>대용량 파일 메일 도구</span></li>
-      <li><b>NES <em class="soon">준비 중</em></b><span>OTONI 도구를 한곳에서 부르는 작업 비서</span></li>
-    </ul>
   </div>
 </section>
 
 </main>
 <footer class="ft">
-  <div class="wrap">
-    <div class="ft-top">
+  <div class="wrap"><div class="ft-in">
+    <div class="ft-brand">
       <a class="brand" href="index.html" aria-label="OTONI 홈"><img class="logo" src="logo.svg" alt="OTONI" width="138" height="40"></a>
-      <nav class="ft-nav">
-        <a href="privacy.html"><b>개인정보처리방침</b></a>
-      </nav>
+      <p>전장 설계 및 제작, 자동화 설계 소프트웨어까지.</p>
     </div>
-    <dl class="biz">
+    <dl class="ft-col">
       <div><dt>상호</dt><dd>OTONI(오토니)</dd></div>
       <div><dt>대표</dt><dd>위용곤</dd></div>
       <div><dt>사업자등록번호</dt><dd>759-74-00520</dd></div>
       <div><dt>개업연월일</dt><dd>2024년 6월 4일</dd></div>
-      <div class="wide"><dt>주소</dt><dd>충청남도 천안시 서북구 2공단4로 40-11, 천안G1비즈캠퍼스 10층 1024호(성성동)</dd></div>
-      <div class="wide"><dt>업태·종목</dt><dd>제조업, 도매 및 소매업 · 자동화설비제작, 전기용 기계·장비 및 관련 기자재 도매업</dd></div>
-      <div><dt>이메일</dt><dd><a href="mailto:otoni@naver.com">otoni@naver.com</a></dd></div>
     </dl>
-    <p class="copy">OTONI · Since 2024 &nbsp;|&nbsp; © 2026 OTONI. All rights reserved.</p>
+    <dl class="ft-col">
+      <div><dt>주소</dt><dd>충청남도 천안시 서북구 2공단4로 40-11, 천안G1비즈캠퍼스 10층 1024호(성성동)</dd></div>
+      <div><dt>업태·종목</dt><dd>제조업, 도매 및 소매업 · 자동화설비제작, 전기용 기계·장비 및 관련 기자재 도매업</dd></div>
+      <div><dt>이메일</dt><dd><a href="mailto:otoni@naver.com">otoni@naver.com</a></dd></div>
+      <div><dt>안내</dt><dd><a href="privacy.html"><b>개인정보처리방침</b></a></dd></div>
+    </dl>
   </div>
+  <p class="copy">© 2026 OTONI. All rights reserved.</p></div>
 </footer>
+<script>
+(function(){var nav=document.querySelectorAll('.nav a');var pg=document.body.className;
+nav.forEach(function(a){if(a.dataset.page&&a.dataset.page===pg)a.classList.add('on');});
+if(pg!=='p-home'||!('IntersectionObserver' in window))return;
+var map={};nav.forEach(function(a){if(a.dataset.sec)map[a.dataset.sec]=a;});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){nav.forEach(function(a){a.classList.remove('on');});var a=map[e.target.id];if(a)a.classList.add('on');}});},{rootMargin:'-45% 0px -50% 0px'});
+Object.keys(map).forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s);});})();
+</script>
 </body>
 </html>
