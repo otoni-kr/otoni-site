@@ -53,7 +53,7 @@ h1,h2,h3,p,li{text-wrap:pretty}
 .hero-stats b small{font-size:.6em;color:var(--blue)}
 .hero-stats span{font-size:13px;color:var(--sub)}
 .sym-bar{width:1px;height:40px;background:var(--line2)}
-.draw-mark .ol{fill:none;stroke:var(--ink);stroke-width:15;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 4s linear forwards}.draw-mark .ht{fill:none;stroke:var(--ink);stroke-width:11;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw .16s ease-out forwards}.draw-mark .fl{fill:var(--ink);opacity:0;animation:fade .7s ease-in 6.6s forwards}
+.draw-mark .ol{fill:none;stroke:var(--ink);stroke-width:15;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 3s linear forwards}.draw-mark .ht{fill:none;stroke:var(--ink);stroke-width:11;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw .16s ease-out forwards}.draw-mark .fl{fill:var(--ink);opacity:0;animation:fade .7s ease-in 5.6s forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes fade{to{opacity:1}}
 @media (prefers-reduced-motion:reduce){.draw-mark .ol,.draw-mark .ht,.draw-mark .fl{animation:none!important;stroke-dashoffset:0;opacity:1}}
