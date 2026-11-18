@@ -21,11 +21,11 @@
 <body class="p-contact">
 <header class="hd">
   <div class="wrap hd-in">
-    <a class="brand" href="index.html" aria-label="OTONI 홈"><img class="logo" src="logo.svg" alt="OTONI" width="138" height="40"></a>
+    <a class="brand" href="index.html" aria-label="OTONI 홈"><img class="logo" src="logo_small.svg" alt="OTONI" width="127" height="40"></a>
     <nav class="nav">
       <a href="index.html#about" data-sec="about">회사 소개</a>
-      <a href="index.html#business" data-sec="business">전장 설계 및 제작</a>
-      <a href="index.html#software" data-sec="software">소프트웨어</a>
+      <a href="index.html#business" data-sec="business" data-pages="p-design p-build">전장 설계 및 제작</a>
+      <a href="index.html#software" data-sec="software" data-pages="p-software">소프트웨어</a>
       <a href="contact.html" data-page="p-contact">연락처</a>
     </nav>
   </div>
@@ -54,29 +54,28 @@
 
 </main>
 <footer class="ft">
-  <div class="wrap"><div class="ft-in">
+  <div class="wrap ft-in">
     <div class="ft-brand">
-      <a class="brand" href="index.html" aria-label="OTONI 홈"><img class="logo" src="logo.svg" alt="OTONI" width="138" height="40"></a>
+      <a class="brand" href="index.html" aria-label="OTONI 홈"><img class="logo" src="logo.svg" alt="OTONI" width="124" height="40"></a>
       <p>전장 설계 및 제작, 자동화 설계 소프트웨어까지.</p>
     </div>
-    <dl class="ft-col">
-      <div><dt>상호</dt><dd>OTONI(오토니)</dd></div>
-      <div><dt>대표</dt><dd>위용곤</dd></div>
-      <div><dt>사업자등록번호</dt><dd>759-74-00520</dd></div>
-      <div><dt>개업연월일</dt><dd>2024년 6월 4일</dd></div>
-    </dl>
-    <dl class="ft-col">
-      <div><dt>주소</dt><dd>충청남도 천안시 서북구 2공단4로 40-11, 천안G1비즈캠퍼스 10층 1024호(성성동)</dd></div>
-      <div><dt>업태·종목</dt><dd>제조업, 도매 및 소매업 · 자동화설비제작, 전기용 기계·장비 및 관련 기자재 도매업</dd></div>
-      <div><dt>이메일</dt><dd><a href="mailto:otoni@naver.com">otoni@naver.com</a></dd></div>
-      <div><dt>안내</dt><dd><a href="privacy.html"><b>개인정보처리방침</b></a></dd></div>
-    </dl>
+    <ul class="ft-info">
+      <li><b>상호</b> 오토니(OTONI)</li>
+      <li><b>대표</b> 위용곤</li>
+      <li><b>사업자등록번호</b> 759-74-00520</li>
+      <li><b>개업연월일</b> 2024년 6월 4일</li>
+    </ul>
+    <ul class="ft-info">
+      <li><b>주소</b> 충청남도 천안시 서북구 2공단4로 40-11, 천안G1비즈캠퍼스 10층 1024호(성성동)</li>
+      <li><b>업태·종목</b> 제조업, 도매 및 소매업 · 자동화설비제작, 전기용 기계·장비 및 관련 기자재 도매업</li>
+      <li><b>이메일</b> <a href="mailto:otoni@naver.com">otoni@naver.com</a> · <a href="privacy.html"><b>개인정보처리방침</b></a></li>
+    </ul>
   </div>
-  <p class="copy">© 2026 OTONI. All rights reserved.</p></div>
+  <div class="wrap"><p class="copy">© 2026 OTONI. All rights reserved.</p></div>
 </footer>
 <script>
 (function(){var nav=document.querySelectorAll('.nav a');var pg=document.body.className;
-nav.forEach(function(a){if(a.dataset.page&&a.dataset.page===pg)a.classList.add('on');});
+nav.forEach(function(a){if((a.dataset.page&&a.dataset.page===pg)||(a.dataset.pages&&a.dataset.pages.split(' ').indexOf(pg)>=0))a.classList.add('on');});
 if(pg!=='p-home'||!('IntersectionObserver' in window))return;
 var map={};nav.forEach(function(a){if(a.dataset.sec)map[a.dataset.sec]=a;});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){nav.forEach(function(a){a.classList.remove('on');});var a=map[e.target.id];if(a)a.classList.add('on');}});},{rootMargin:'-45% 0px -50% 0px'});

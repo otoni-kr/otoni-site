@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 130" fill="none" stroke-linecap="round" stroke-linejoin="round"><style>.f{stroke:#8A97A8;stroke-width:1.2}.m{stroke:#1A1D21;stroke-width:1.4}.b{stroke:#1877F2;stroke-width:1.6}.d{stroke:#B7C3D2;stroke-width:1}.h{stroke:#C9D6E6;stroke-width:1}</style><g class="d"><path d="M60 10 H180 M60 6 V14 M180 6 V14"/></g><path class="f" d="M8 118 H192"/><rect class="m" x="60" y="28" width="120" height="90" rx="1"/><path class="f" d="M120 28 V118 M60 92 H180"/>
+<rect class="m" x="66" y="44" width="48" height="34" rx="1"/><ellipse class="b" cx="90" cy="66" rx="16" ry="5"/><path class="f" d="M78 56 L90 50 L102 56"/><circle class="f" cx="90" cy="50" r="1.6"/>
+<rect class="m" x="128" y="40" width="44" height="40" rx="5"/><circle class="b" cx="150" cy="60" r="9"/><circle class="h" cx="150" cy="60" r="5"/>
+<rect class="m" x="22" y="60" width="32" height="22" rx="4"/><path class="m" d="M32 60 v-4 h12 v4"/><path class="h" d="M26 68 H50 M26 74 H50"/>
+<rect class="m" x="18" y="82" width="40" height="6"/><path class="f" d="M38 88 V118 M30 118 h16"/>
+<path class="f" d="M66 100 H114 M66 106 H114 M66 112 H114 M128 100 h44 M128 106 h44 M128 112 h44"/>
+<path class="f" d="M168 28 V14"/><rect class="m" x="164" y="6" width="8" height="5"/><rect class="b" x="164" y="11" width="8" height="5"/>
+</svg>
