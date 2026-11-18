@@ -84,9 +84,9 @@ h1,h2,h3,p,li{text-wrap:pretty}
 .step h3{font-size:22px;margin-bottom:4px}
 .step .box{position:relative;height:100%;margin-right:20px;padding:18px 20px 34px;background:#fff;border:1px solid var(--line);border-radius:6px;transition:background .2s,box-shadow .2s,transform .2s}
 .step-link:after{content:"";position:absolute;inset:0;z-index:1}.step-link:focus{outline:none}.step:has(.step-link:focus-visible) .box{outline:2px solid var(--blue);outline-offset:2px}
-.step:hover .box,.step:has(:focus-visible) .box{background:#EAF3FF;box-shadow:0 10px 24px rgba(20,40,80,.10);transform:translateY(-3px)}
+.step.hv .box,.step:has(:focus-visible) .box{background:#EAF3FF;box-shadow:0 10px 24px rgba(20,40,80,.10);transform:translateY(-3px)}
 .step .more{position:absolute;right:16px;bottom:10px;font-size:12.5px;font-weight:600;color:var(--blue);opacity:0;transition:opacity .2s}
-.step:hover .more,.step:has(:focus-visible) .more{opacity:1}
+.step.hv .more,.step:has(:focus-visible) .more{opacity:1}
 .crumb{font-size:13px;color:var(--sub);margin-bottom:6px}.crumb a:hover{color:var(--blue)}
 .detail-list li{position:relative;padding-left:16px;margin:6px 0;font-size:16px}
 .detail-list li:before{content:"";position:absolute;left:0;top:.72em;width:6px;height:6px;background:var(--blue)}
@@ -384,28 +384,28 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 /* 11-18 사업 분야 카드 클릭 유도: 늘 보이는 알약 버튼, 마우스 올리면 떠오름+그림자+버튼 채움 (카드 전체 링크는 .step-link:after) */
 .step{cursor:pointer}.step .box{padding-bottom:62px;transition:background .25s,box-shadow .25s,transform .25s,border-color .25s}
 .step .more{opacity:1;right:18px;bottom:16px;padding:6px 14px;border:1.5px solid var(--blue);border-radius:999px;background:#fff;font-size:13px;line-height:1.2;transition:background .25s,color .25s}
-.step:hover .box,.step:has(:focus-visible) .box{background:#DCEAFF;border-color:#BFD6F6;box-shadow:0 16px 34px rgba(20,40,80,.14);transform:translateY(-5px)}
-.step:hover .more,.step:has(:focus-visible) .more{background:var(--blue);color:#fff}
+.step.hv .box,.step:has(:focus-visible) .box{background:#DCEAFF;border-color:#BFD6F6;box-shadow:0 16px 34px rgba(20,40,80,.14);transform:translateY(-5px)}
+.step.hv .more,.step:has(:focus-visible) .more{background:var(--blue);color:#fff}
 @media (max-width:560px){.step .box{padding-bottom:58px}.step .more{bottom:14px;right:14px}}
 /* 11-18 카드 더 눈에 띄게: 화살표가 가끔 오른쪽으로 살짝, 마우스 올리면 6px 떠오름·파란 테두리·진한 그림자 */
 .step .more .arr{display:inline-block;font-style:normal;animation:nudge 2.6s ease-in-out infinite}
 @keyframes nudge{0%,62%,100%{transform:none}74%{transform:translateX(5px)}86%{transform:none}}
 @media (prefers-reduced-motion:reduce){.step .more .arr{animation:none}}
-@media (hover:hover){.step:hover .box,.step:has(:focus-visible) .box{transform:translateY(-2px);border-color:var(--blue);box-shadow:0 20px 40px rgba(20,60,130,.20),0 4px 10px rgba(20,60,130,.08)}.step:hover .more .arr,.step:has(:focus-visible) .more .arr{animation:none;transform:translateX(5px);transition:transform .25s}}
+@media (hover:hover){.step.hv .box,.step:has(:focus-visible) .box{transform:translateY(-2px);border-color:var(--blue);box-shadow:0 20px 40px rgba(20,60,130,.20),0 4px 10px rgba(20,60,130,.08)}.step.hv .more .arr,.step:has(:focus-visible) .more .arr{animation:none;transform:translateX(5px);transition:transform .25s}}
 /* 11-18 카드 마우스 올림: 맑은 그라데이션 + 연한 파랑 그림자, 설명 글자 한 단계 진하게 */
-.step:hover .box,.step:has(:focus-visible) .box{background:linear-gradient(135deg,#FFFFFF 0%,#D6EBFF 100%);box-shadow:0 18px 38px rgba(26,115,232,.18),0 3px 8px rgba(26,115,232,.08)}
-.step:hover .box p,.step:has(:focus-visible) .box p{color:#3F4752}
+.step.hv .box,.step:has(:focus-visible) .box{background:linear-gradient(135deg,#FFFFFF 0%,#D6EBFF 100%);box-shadow:0 18px 38px rgba(26,115,232,.18),0 3px 8px rgba(26,115,232,.08)}
+.step.hv .box p,.step:has(:focus-visible) .box p{color:#3F4752}
 /* 11-18 A안: 카드에 마우스 → 위 동그라미 파랗게 채움·살짝 커짐, 다음 화살표까지 선이 파랗게 그려짐(PC만) */
 @media (min-width:561px) and (hover:hover){.step .node{transition:background .3s,transform .3s}
 .step:before{content:"";position:absolute;left:24px;top:9px;height:2px;width:0;background:var(--blue);border-radius:1px;transition:width .5s ease-out;pointer-events:none}
-.step:hover .node,.step:has(:focus-visible) .node{background:var(--blue);transform:scale(1.25)}
-.step:hover:before,.step:has(:focus-visible):before{width:calc(100% - 39px)}.step:last-child:hover:before,.step:last-child:has(:focus-visible):before{width:calc(100% - 53px)}}
+.step.hv .node,.step:has(:focus-visible) .node{background:var(--blue);transform:scale(1.25)}
+.step.hv:before,.step:has(:focus-visible):before{width:calc(100% - 39px)}.step:last-child.hv:before,.step:last-child:has(:focus-visible):before{width:calc(100% - 53px)}}
 /* 11-18 1118r: 떠오름 뺌, 카드 위 테두리 파란 3px 선이 왼→오, 타임라인 화살표 머리가 날아가며 2px 선이 따라감(PC만) */
-.step:hover .box,.step:has(:focus-visible) .box{transform:none}
+.step.hv .box,.step:has(:focus-visible) .box{transform:none}
 .step .box:before{content:"";position:absolute;left:-1px;top:-1px;height:3px;width:0;background:var(--blue);border-radius:6px 6px 0 0;transition:width .5s cubic-bezier(.2,.7,.2,1);pointer-events:none;z-index:2}
-.step:hover .box:before,.step:has(:focus-visible) .box:before{width:calc(100% + 2px)}
+.step.hv .box:before,.step:has(:focus-visible) .box:before{width:calc(100% + 2px)}
 @media (min-width:561px) and (hover:hover){.step:before{top:4px;height:12px;background:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 12 12%27%3E%3Cpath d=%27M3 2 L10 6 L3 10%27 fill=%27none%27 stroke=%27%231877F2%27 stroke-width=%272.2%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E") right center/12px 12px no-repeat,linear-gradient(var(--blue),var(--blue)) left center/calc(100% - 3px) 2px no-repeat;border-radius:0;transition:width .5s cubic-bezier(.2,.7,.2,1)}
-.step:hover:before,.step:has(:focus-visible):before{width:calc(100% - 36px)}.step:last-child:hover:before,.step:last-child:has(:focus-visible):before{width:calc(100% - 50px)}}
+.step.hv:before,.step:has(:focus-visible):before{width:calc(100% - 36px)}.step:last-child.hv:before,.step:last-child:has(:focus-visible):before{width:calc(100% - 50px)}}
 /* 11-19 1118v: 키보드 포커스 테두리 겹침 없앰(파란 테두리로 충분) */
 .step:has(.step-link:focus-visible) .box{outline:none}
 /* 11-19 1118w 첫 화면 심볼 마우스 효과(A+B): 연필 애니 끝난 뒤(.ready) 살짝 기울었다 제자리 + 아래→위 핑크 차오름(1.2초, 윗면 물결). 떼면 천천히 검정 */
@@ -431,5 +431,7 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 .draw-mark .in{transform-box:view-box;transform-origin:496px 500px}.draw-mark.shk .in{animation:mkjit .8s linear}
 @keyframes mkjit{0%{transform:none}4.44%{transform:rotate(-5deg)}8.89%{transform:rotate(4.62deg)}13.33%{transform:rotate(-4.25deg)}17.78%{transform:rotate(3.88deg)}22.22%{transform:rotate(-3.5deg)}26.67%{transform:rotate(3.12deg)}31.11%{transform:rotate(-2.75deg)}35.56%{transform:rotate(2.38deg)}40%{transform:none}100%{transform:none}}
 @media (prefers-reduced-motion:reduce){.draw-mark.shk .in{animation:none}}
+/* 11-19 1119g: 카드 강조는 .hv(마우스 올림/터치 순간)로 — 폰도 PC와 같은 모양, 탭 하이라이트 없음 */
+.step,.step-link{-webkit-tap-highlight-color:transparent}
 
 /* Draft A — 흰 바탕 · 먹색 글 · 맑은 파랑 포인트 · 도면 모눈 (11-18 고니) */
