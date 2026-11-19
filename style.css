@@ -458,5 +458,8 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 @media (max-width:900px){.sg.cad2{grid-template-columns:1fr}.sg.cad2 .c-line,.sg.cad2 .c-man1,.sg.cad2 .c-man2,.sg.cad2 .c-move{grid-column:auto;grid-row:auto}.sg.cad2 .c-man1 img,.sg.cad2 .c-man2 img{position:static;width:100%;height:auto}}
 /* 11-19 1119p: 폰·태블릿 = 심볼을 숫자 줄 끝(국내·해외 오른쪽)에 44px, 탭하면 바르르·차오름·회전·뿅 */
 @media (max-width:900px){.hero-stats .mk-li{margin-left:auto;align-self:center;list-style:none}.mk-li .mk-hit{display:inline-flex;padding:0;margin:0;cursor:pointer;-webkit-tap-highlight-color:transparent}.mk-li .draw-mark{display:block;width:44px}}
+/* 11-19 1119q: 소프트웨어 협업·투자 문의 칸(첫 화면·소프트웨어 페이지 제품 목록 아래) */
+.inv{display:flex;align-items:center;gap:18px;margin-top:22px;padding:18px 20px;background:var(--sky);border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:6px}.inv div{flex:1;min-width:0}.inv b{display:block;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:3px}.inv span{display:block;font-size:14px;color:var(--sub);line-height:1.5}.inv a{flex:none;padding:9px 16px;border:1.5px solid var(--blue);border-radius:999px;color:var(--blue);font-size:14px;font-weight:600;white-space:nowrap;background:#fff;transition:background .2s,color .2s}.inv a:hover{background:var(--blue);color:#fff}
+@media (max-width:560px){.inv{flex-direction:column;align-items:flex-start;gap:12px;padding:16px}.inv a{align-self:flex-end}}
 
 /* Draft A — 흰 바탕 · 먹색 글 · 맑은 파랑 포인트 · 도면 모눈 (11-18 고니) */
