@@ -456,5 +456,7 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 .sg.cad2 .c-man1 .sg-im,.sg.cad2 .c-man2 .sg-im{position:relative;min-height:0}.sg.cad2 .c-man1 img,.sg.cad2 .c-man2 img{position:absolute;inset:8px;width:calc(100% - 16px);height:calc(100% - 16px);object-fit:contain}
 .sg.cad2 .c-move img{width:100%;max-height:none}
 @media (max-width:900px){.sg.cad2{grid-template-columns:1fr}.sg.cad2 .c-line,.sg.cad2 .c-man1,.sg.cad2 .c-man2,.sg.cad2 .c-move{grid-column:auto;grid-row:auto}.sg.cad2 .c-man1 img,.sg.cad2 .c-man2 img{position:static;width:100%;height:auto}}
+/* 11-19 1119p: 폰·태블릿 = 심볼을 숫자 줄 끝(국내·해외 오른쪽)에 44px, 탭하면 바르르·차오름·회전·뿅 */
+@media (max-width:900px){.hero-stats .mk-li{margin-left:auto;align-self:center;list-style:none}.mk-li .mk-hit{display:inline-flex;padding:0;margin:0;cursor:pointer;-webkit-tap-highlight-color:transparent}.mk-li .draw-mark{display:block;width:44px}}
 
 /* Draft A — 흰 바탕 · 먹색 글 · 맑은 파랑 포인트 · 도면 모눈 (11-18 고니) */
