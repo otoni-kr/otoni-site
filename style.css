@@ -462,4 +462,17 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 .inv{display:flex;align-items:center;gap:18px;margin-top:22px;padding:18px 20px;background:var(--sky);border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:6px}.inv div{flex:1;min-width:0}.inv b{display:block;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:3px}.inv span{display:block;font-size:14px;color:var(--sub);line-height:1.5}.inv a{flex:none;padding:9px 16px;border:1.5px solid var(--blue);border-radius:999px;color:var(--blue);font-size:14px;font-weight:600;white-space:nowrap;background:#fff;transition:background .2s,color .2s}.inv a:hover{background:var(--blue);color:#fff}
 @media (max-width:560px){.inv{flex-direction:column;align-items:flex-start;gap:12px;padding:16px}.inv a{align-self:flex-end}}
 
+/* 11-19 1119w: 설계·제작 페이지 머리 = 좌(설계)·우(제작) 두 칸, 같은 모양·높이, 폰은 위아래 */
+.hd2{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+.hd2-c{padding-right:40px}.hd2-c+.hd2-c{padding:0 0 0 40px;border-left:1px solid var(--line)}
+.hd2-c .detail-list{margin-top:14px}
+@media (max-width:760px){.hd2{grid-template-columns:1fr}.hd2-c{padding-right:0}.hd2-c+.hd2-c{padding:22px 0 0;margin-top:22px;border-left:0;border-top:1px solid var(--line)}}
+/* 11-19 1119w: 폰 = 메뉴 이름이 길어져(설계·제작·프로젝트 수행 실적) 머리를 두 줄로: 위 로고, 아래 메뉴 한 줄(안 접힘) */
+@media (max-width:640px){:root{--hd:84px}.hd-in{flex-wrap:wrap;gap:0}.hd .brand{height:44px}
+.nav{width:100%;height:40px;justify-content:space-between;gap:10px;white-space:nowrap;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.nav a{flex:none}}
+/* 11-19 1119w: 실적 페이지 = 설명·항목 빠져서 '연도별 실적'을 제목 바로 아래로 */
+.p-build .sec.detail .wrap>.recs-hd:first-child{margin-top:4px}
+/* 11-19 1119w: 실적 '진행 중' = 모양은 tag 그대로, 색만 '개발 중' 배지 핑크(깜빡임 없음) */
+.tag.ing{color:var(--pink);background:#FDE7EC;border-color:#FDE7EC}
+
 /* Draft A — 흰 바탕 · 먹색 글 · 맑은 파랑 포인트 · 도면 모눈 (11-18 고니) */
