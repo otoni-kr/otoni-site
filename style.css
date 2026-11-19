@@ -436,8 +436,9 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 /* 11-19 CAD 칸 5장(짝 맞추기 뺌): 마지막 설명서 칸을 2칸 너비로 채움(PC 3열만) */
 .sg-c.wide{grid-column:span 2}@media (max-width:900px){.sg-c.wide{grid-column:auto}}
 /* 11-19 1119i: '개발 중' 배지 은은하게 깜빡(투명도 1↔0.45, 1.8초 왕복), 소프트웨어 제목 옆 배지 */
-.soon.dev{animation:devblink 1.8s ease-in-out infinite alternate}
-@keyframes devblink{from{opacity:1}to{opacity:.45}}
+/* 11-19 고니: 은은한 투명도 대신 '글자만' 또렷하게 깜빡(배지 바탕은 그대로, 1.4초에 한 번 꺼짐) */
+.soon.dev{animation:devblink 1.4s steps(1,end) infinite}
+@keyframes devblink{0%,65%{color:var(--pink)}66%,100%{color:transparent}}
 @media (prefers-reduced-motion:reduce){.soon.dev{animation:none}}
 .h1-badge{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.h1-badge .soon{font-size:15px;font-weight:600;letter-spacing:0;line-height:1.2;color:var(--blue);background:#EAF3FF;border-radius:999px;padding:5px 14px;white-space:nowrap}
 @media (max-width:560px){.h1-badge{gap:10px}.h1-badge .soon{font-size:12px;padding:3px 10px}}
