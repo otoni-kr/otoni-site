@@ -15,19 +15,19 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#ffffff">
-<link rel="icon" href="mark.svg?v=1121p" type="image/svg+xml">
-<link rel="stylesheet" href="style.css?v=1121p">
+<link rel="icon" href="mark.svg?v=1121r" type="image/svg+xml">
+<link rel="stylesheet" href="style.css?v=1121r">
 </head>
 <body class="p-software">
 <header class="hd">
   <div class="wrap hd-in">
-    <a class="brand" href="index.html?v=1121p" aria-label="OTONI 홈"><img class="logo" src="logo_small.svg?v=1121p" alt="OTONI" width="127" height="40"></a>
+    <a class="brand" href="index.html?v=1121r" aria-label="OTONI 홈"><img class="logo" src="logo_small.svg?v=1121r" alt="OTONI" width="127" height="40"></a>
     <nav class="nav">
-      <a href="index.html?v=1121p#about" data-page="p-home">회사 소개</a>
-      <a href="design.html?v=1121p" data-page="p-design">설계·제작</a>
-      <a href="build.html?v=1121p" data-page="p-build">프로젝트 수행 실적</a>
-      <a href="software.html?v=1121p" data-page="p-software">소프트웨어</a>
-      <a href="contact.html?v=1121p" data-page="p-contact">고객지원</a>
+      <a href="index.html?v=1121r#about" data-page="p-home">회사 소개</a>
+      <a href="design.html?v=1121r" data-page="p-design">설계·제작</a>
+      <a href="build.html?v=1121r" data-page="p-build">프로젝트 수행 실적</a>
+      <a href="software.html?v=1121r" data-page="p-software">소프트웨어</a>
+      <a href="contact.html?v=1121r" data-page="p-contact">고객지원</a>
     </nav>
   </div>
 </header>
@@ -36,12 +36,11 @@
 <section class="page-hd">
   <div class="wrap sw-hd">
     <div class="sw-hd-l">
-    <p class="crumb"><a href="index.html?v=1121p">← 처음으로</a></p>
+    <p class="crumb"><a href="index.html?v=1121r">← 처음으로</a></p>
     <h1 class="h1-badge">소프트웨어 <span class="soon dev">개발 중</span></h1>
     <p class="lead">전장 설계와 현장 Setup을 위한 설계 통합 자동화 시스템을 개발합니다.</p>
     </div>
-    <div class="rm-side"><p class="rm-key">설계 데이터 하나로 도면(CAD)과 문서(Excel)가 함께 만들어지는 전장 설계 통합 자동화 시스템</p>
-    <button type="button" class="rm-open" aria-haspopup="dialog" aria-controls="rm">개발 로드맵<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button></div>
+    <div class="rm-side">    <button type="button" class="rm-open" aria-haspopup="dialog" aria-controls="rm">개발 로드맵<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button></div>
   </div>
   <div class="rm" id="rm" hidden><div class="rm-box" role="dialog" aria-modal="true" aria-labelledby="rm-t" tabindex="-1"><div class="rm-hd"><b id="rm-t">개발 로드맵</b><button type="button" class="rm-x" aria-label="닫기">×</button></div><div class="rm-body">
     <div class="sw-why">
@@ -61,7 +60,162 @@
       <h4 class="sw-last"><b>아이디어와 단계별 개발 방향은 구체적으로 정리를 마쳤으며, 개발하면서 보완해 갑니다.</b></h4>
     </div>
   </div></div></div>
-  <script>(function(){var m=document.getElementById("rm"),o=document.querySelector(".rm-open"),bx=m.querySelector(".rm-box");function op(){m.hidden=false;document.documentElement.classList.add("rm-on");bx.focus();}function cl(){m.hidden=true;document.documentElement.classList.remove("rm-on");o.focus();}o.onclick=op;m.querySelector(".rm-x").onclick=cl;m.addEventListener("click",function(e){if(e.target===m)cl();});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!m.hidden)cl();});})();</script>
+  <script>
+/* 11-21 고니: 개발 로드맵 팝업 — 누르면 음악(roadmap_bgm, 1.8초 지점부터 = 첫 강한 박자에 펼쳐짐, 처음 크기 30%·고른 크기 기억)과 함께 작은 로드맵 조각이 버튼에서 곡선으로 슉 와서 가운데에서 펼쳐지고, 글이 위에서부터 차례로 나타남(PPT처럼). 두 번째부터는 짧게.
+   닫기 = X·바깥·Esc, 닫으면 음악 0.5초 줄며 멈춤. 소리 끄기 + 크기 막대(폰은 끄기만). 소리·움직임 값은 RM_SOUND·RM_OPEN 한 곳. 팝업 안 내용(.rm-body)은 통째로 바꿔 끼워도 같은 움직임이 붙음 */
+(function(){
+var RM_SOUND={src:'roadmap_bgm.mp3',start:1.8,fade:500},RM_OPEN={travel:900,unfold:280,step:170};
+var m=document.getElementById("rm"),o=document.querySelector(".rm-open"),bx=m.querySelector(".rm-box"),body=bx.querySelector(".rm-body"),hdx=bx.querySelector(".rm-hd");
+function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){}}
+var AU=null,V=+(ls('otoni_rm_vol')||.3),MU=ls('otoni_rm_mute')=='1',seen=false,own=[];
+var vh=document.createElement('div');vh.className='rv-vol';vh.innerHTML='<button type="button" class="rv-mute" aria-label="소리 끄기/켜기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="w" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/><path class="x" d="M16 9l5 6M21 9l-5 6"/></svg></button><input type="range" min="0" max="1" step="0.05" aria-label="소리 크기">';
+hdx.insertBefore(vh,hdx.querySelector('.rm-x'));var rg=vh.querySelector('input'),mb=vh.querySelector('.rv-mute');rg.value=V;
+function ui(){vh.classList.toggle('off',MU||V==0);rg.style.setProperty('--v',(MU?0:V)*100+'%');if(AU)AU.volume=MU?0:V;}ui();
+mb.onclick=function(){MU=!MU;ls('otoni_rm_mute',MU?'1':'0');ui();};rg.oninput=function(){V=+rg.value;MU=false;ls('otoni_rm_vol',V);ls('otoni_rm_mute','0');ui();};
+function play(){try{if(AU)AU.pause();AU=new Audio(RM_SOUND.src);AU.currentTime=RM_SOUND.start;AU.volume=MU?0:V;var p=AU.play();if(p&&p.catch)p.catch(function(){});}catch(e){}}
+function stop(){var a=AU;AU=null;if(!a)return;var v0=a.volume,t0=performance.now();(function f(){var k=Math.min(1,(performance.now()-t0)/RM_SOUND.fade);a.volume=v0*(1-k);if(k<1)requestAnimationFrame(f);else a.pause();})();}
+function anim(){own.forEach(function(a){a.cancel();});own=[];if(!bx.animate||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))return;
+  var items=[].slice.call(body.querySelectorAll('.sw-why > *'));if(!items.length)items=[].slice.call(body.children);
+  if(seen){own.push(bx.animate([{opacity:0,transform:'scale(.97)'},{opacity:1,transform:'none'}],{duration:180,easing:'ease-out'}));return;}
+  seen=true;var T=RM_OPEN.travel,U=RM_OPEN.unfold,r=o.getBoundingClientRect(),sx=r.left+r.width/2,sy=r.top+r.height/2,cx=innerWidth/2,cy=innerHeight/2;
+  var pc=document.createElement('div');pc.className='rv-piece';document.body.appendChild(pc);
+  var PK=[];for(var q=0;q<=30;q++){var u=q/30,e=u<.5?4*u*u*u:1-Math.pow(-2*u+2,3)/2,qx=sx+(cx>sx?260:-140),qy=sy+40,x=(1-e)*(1-e)*sx+2*(1-e)*e*qx+e*e*cx,y=(1-e)*(1-e)*sy+2*(1-e)*e*qy+e*e*cy;PK.push({transform:'translate('+x+'px,'+y+'px) scale('+(.6+.5*e)+')',opacity:Math.min(1,u/.12)});}
+  var a1=pc.animate(PK,{duration:T,fill:'both'});own.push(a1);var a2=pc.animate([{opacity:1},{opacity:0}],{duration:120,delay:T,fill:'forwards'});own.push(a2);a2.onfinish=function(){pc.remove();};
+  own.push(m.animate([{background:'rgba(15,20,27,0)'},{background:'rgba(15,20,27,.55)'}],{duration:T,easing:'ease-out'}));
+  own.push(bx.animate([{transform:'scale(.06)',opacity:0},{transform:'scale(.06)',opacity:1,offset:.05},{transform:'scale(1.02)',opacity:1,offset:.8},{transform:'scale(1)',opacity:1}],{duration:U,delay:T,easing:'cubic-bezier(.2,.8,.2,1)',fill:'backwards'}));
+  items.forEach(function(el,i){own.push(el.animate([{opacity:0,transform:'translateY(10px)'},{opacity:1,transform:'none'}],{duration:300,delay:T+U+i*RM_OPEN.step,easing:'ease-out',fill:'backwards'}));});}
+function op(){m.hidden=false;document.documentElement.classList.add("rm-on");play();anim();bx.focus();}
+function cl(){stop();own.forEach(function(a){a.cancel();});own=[];var pc=document.querySelector('.rv-piece');if(pc)pc.remove();m.hidden=true;document.documentElement.classList.remove("rm-on");o.focus();}
+o.onclick=op;m.querySelector(".rm-x").onclick=cl;m.addEventListener("click",function(e){if(e.target===m)cl();});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!m.hidden)cl();});
+})();
+  </script>
+<script>
+/* 11-21 고니: 개발 로드맵 버튼 = 전선 테두리 + 양 끝 단자 점. "귀여운 삼형제"(첫 화면 로고 줄 3개)가 설명 줄 끝 공중에서 포물선으로 내려와 착지 → 성격대로 통통 달림 → 단자 점 앞에서 충전(전기 줄기·색 차오름·반짝) → 물방울처럼 늘어나며 단자 점으로 쏙 → 셋 다 들어가면 전류가 테두리 한 바퀴 → 반복.
+   움직임은 매 프레임(60fps) 물리·스프링 계산으로 만들어 키프레임으로 굽는다(외부 라이브러리 없음). 움직임 줄이기 설정이면 끔, 창 크기가 바뀌면 다시 계산. 미리보기 원본 = _preview_sw\rmpath\inject.js (#k=7) */
+(function(){
+if(!Element.prototype.animate)return;
+var b=document.querySelector('.rm-open'),hd=document.querySelector('.sw-hd'),lead=document.querySelector('.page-hd .lead');if(!b||!hd||!lead)return;
+b.classList.add('a7');
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+var NS='http://www.w3.org/2000/svg',anims=[],ENT=[],LOOP=4200,lay=null;
+function A(el,kf,opt){var a=el.animate(kf,Object.assign({duration:LOOP,iterations:Infinity,easing:'linear'},opt||{}));anims.push(a);return a;}
+function btnLoop(){var e=ENT[ENT.length-1]+.012,kf=[{background:'#fff',offset:0},{background:'#fff',offset:e},{background:'#F5F9FF',offset:e+.02},{background:'#fff',offset:e+.045},{background:'#fff',offset:1}];A(b,kf);}
+function build(){
+  var narrow=innerWidth<=900,hr=hd.getBoundingClientRect(),br=b.getBoundingClientRect();
+  var svg=document.createElementNS(NS,'svg');svg.setAttribute('class','rp-svg');svg.setAttribute('width',hr.width);svg.setAttribute('height',hr.height);lay.appendChild(svg);
+    { // A안 "살아 있는 삼형제"(11-21 고니): 고정 키프레임 대신 매 프레임(60fps) 물리·스프링 계산으로 움직임을 만들어 키프레임으로 굽는다(외부 라이브러리 없음).
+      // 원칙: 눌림·늘어남(부피 유지) / 준비 동작(출발 전 웅크림) / 뒤따름(멈출 때 앞으로 쏠렸다 돌아옴) / 곡선(포물선 걸음)·가감속 / 성격 차이 / 작은 생동감(선두가 뒤돌아보듯, 뒤처지면 서두름)
+      var sc=narrow?.55:1,dir=narrow?-1:1;
+      var G=br.bottom-hr.top-2,ent=dir>0?br.left-hr.left:br.right-hr.left,by3=(br.top+br.bottom)/2-hr.top,gx0;
+      if(narrow)gx0=hr.width-20;else{var r3=document.createRange();r3.selectNodeContents(lead);var rs3=r3.getClientRects(),lr3=rs3[rs3.length-1];gx0=lr3.right-hr.left+18;}
+      // 성격: 심볼 = 맏이·가볍고 통통 / OTONI = 묵직하고 듬직 / nes = 작고 날쌔게 따라붙음
+      var PS=[{src:'combo.png',w:46,h:46,v:.30,hop:10,per:360,air:.62,K:.20,C:.15,kick:.075,lean:7,land:.11,dust:2.2},
+              {src:'logo.svg',w:112,h:36,v:.28,hop:4.5,per:520,air:.48,K:.11,C:.24,kick:.045,lean:4,land:.08,dust:3.2},
+              {src:'nes_h2.png',w:106,h:36,v:.32,hop:7,per:290,air:.6,K:.26,C:.19,kick:.065,lean:9,land:.10,dust:1.8}];
+      var DT=1000/60,GAP=16*sc,CH=[],DU=[];
+      // 착지 자리: 선두가 가장 앞, 뒤 형제는 로고 1.2개 폭씩 뒤에(처음엔 넓게 → 버튼 앞에서 바짝)
+      var LS=[],ws=PS.map(function(q){return Math.round(q.w*sc);}),aw=(ws[0]+ws[1]+ws[2])/3*1.2;LS[2]=gx0+dir*(ws[2]/2+ws[2]*.7+6);LS[1]=LS[2]+dir*(ws[2]/2+aw+ws[1]/2);LS[0]=LS[1]+dir*(ws[1]/2+aw+ws[0]/2);
+      PS.forEach(function(q,j){var w=Math.round(q.w*sc),h=Math.round(q.h*sc);
+        CH.push({j:j,q:q,w:w,h:h,st:'wait',tAp:250+j*850,x:0,y:0,vx:0,vy:0,v:0,sy:1,vs:0,tl:0,vt:0,ph:0,prevAir:false,hopY:0,F:[],SH:[],tPrep:0,look:0,xe:ent-dir*(w/2+3)});});
+      function goNow(pr){return !pr||pr.st=='shrink'||pr.st=='gone'||(pr.st=='stand'&&pr.tShrink&&T>pr.tShrink+150);}
+      function spring(c,tgtS,tgtT){var q=c.q;c.vs+=(-(c.sy-tgtS)*q.K-c.vs*q.C);c.sy+=c.vs;c.vt+=(-(c.tl-tgtT)*.09-c.vt*.24);c.tl+=c.vt;}
+      var T=0,done=false,lineK=[],plan={};
+      for(var step=0;step<60*40&&!done;step++){T=step*DT;
+        CH.forEach(function(c){var q=c.q,w=c.w,h=c.h,pred=c.j>0?CH[c.j-1]:null;
+          if(c.st=='wait'){var go1=c.j==0?T>=c.tAp:(pred.tLand!=null&&T>=pred.tLand+520);if(go1){c.tAp=T;c.st='fall';var dx=w*.7,HH=h*2;c.HH=HH;c.fx0=LS[c.j]-dir*w*.7;c.x=c.fx0-dir*dx*0;c.x=c.fx0-dir*(dx*.0);c.fx=c.fx0+dir*dx;c.x=c.fx0;c.y=-HH;c.vy=0;c.g=2*HH/(650*650);c.vx=dir*dx/650;c.tl=dir*2;}else return;}
+          if(c.st=='fall'){var fu=Math.min(1,(T-c.tAp)/820);c.y=-c.HH*(1-Math.pow(fu,2.6));c.x=c.fx0+dir*w*.7*fu;c.vt+=(dir*3-c.tl)*.02;c.tl+=c.vt*.5;c.vy=fu>=1?1:0;   // 꼭대기 근처 잠깐 떠 있다(감속) 빠르게 내려옴
+            if(fu>=1){c.y=0;c.st='land';c.tLand=T;c.lx=c.x;c.sy=.75;c.vs=.02;c.v=0;c.vt+= dir*.6;DU.push({t:T,x:c.x,y:G,s:q.dust,n:4,both:1,hw:w*.42});}   // 착지: 납작 25% + 먼지 퐁   // 착지 충격: 눌림(스프링이 튕겨 늘어났다 제자리)
+            else{c.sy+=((1+.16*Math.pow(fu,3))-c.sy)*.25;}}
+          else if(c.st=='land'){spring(c,1,0);var ld=T-c.tLand;c.hopY=(ld>110&&ld<350)?6*sc*Math.sin(Math.PI*(ld-110)/240):0;if(ld>=350&&!c.lb){c.lb=1;c.vs-=.03;}if(ld>420){c.hopY=0;c.st='prep';c.tPrep=T;}}
+          else if(c.st=='prep'){spring(c,.88,-dir*2);if(T-c.tPrep>150){c.st='run';c.vs+=q.kick*.8;c.ph=0;}}   // 준비 동작: 살짝 웅크렸다 튀어나감
+          else if(c.st=='run'||c.st=='queue'){
+            var tx,stopIsStand=false;
+            if(goNow(pred)){tx=c.xe;stopIsStand=true;}
+            else{tx=pred.x-dir*(pred.w/2+GAP+w/2);}
+            var dist=(tx-c.x)*dir,hurry=1;
+            if(pred&&pred.st!='shrink'&&pred.st!='gone'&&pred.v<.03&&dist>w*.6)hurry=1.35;   // 앞 형제가 서면 뒤가 서둘러 바짝 붙음   // 형제와 멀어지면 서두름
+            var vDes=Math.max(0,Math.min(q.v*hurry,Math.sqrt(2*.0003*Math.max(0,dist))));
+            var acc=Math.max(-.0005,Math.min(.00025,(vDes-c.v)/DT));c.v+=acc*DT;if(dist<=.3&&c.v<.012){c.v=0;}
+            c.x+=dir*c.v*DT;if((tx-c.x)*dir<0)c.x=tx;
+            var sr=Math.min(1,c.v/q.v);
+            if(c.v>0){c.st='run';c.ph+=DT/q.per*(.55+.45*sr);var u=c.ph%1,air=u<q.air;
+              c.hopY=air?q.hop*sc*Math.sin(Math.PI*u/q.air)*(.35+.65*sr):0;   // 포물선 걸음(곡선)
+              if(air&&!c.prevAir)c.vs+=q.kick*.6*sr;          // 도약: 늘어남
+              if(!air&&c.prevAir){c.vs-=q.kick*sr;if(sr>.3)DU.push({t:T,x:c.x-dir*w*.25,y:G,s:q.dust*(.5+.5*sr),n:2,both:0});}   // 착지: 눌림 + 발밑 먼지
+              c.prevAir=air;
+              var look=0;if(c.j==0&&!c.looked&&CH[1].st=='run'&&((c.x-CH[1].x)*dir)>(c.w/2+CH[1].w/2+GAP)*2.2){c.looked=T;}
+              if(c.looked&&T-c.looked<520)look=-dir*6*Math.sin(Math.PI*(T-c.looked)/520);   // 선두가 뒤를 한 번 돌아보듯
+              spring(c,1,dir*q.lean*sr+dir*(-acc)*-9000+look);}
+            else{c.hopY=0;c.prevAir=false;
+              if(c.st=='run'){c.st='stop';c.tStop=T;c.vt+=dir*.9;}   // 뒤따름: 멈추는 순간 몸이 앞으로 쏠렸다 돌아옴
+              var br2=Math.sin(Math.PI*2*(T-(c.tStop||T))/1000);spring(c,1+.012*br2,0);
+              if(stopIsStand&&T-c.tStop>220){c.st='stand';c.tStand=T;c.vs-=.05;}   // 멈칫 + 숨 고르듯 한 번 눌림
+              else if(!stopIsStand&&goNow(pred)){c.st='prep';c.tPrep=T;}
+              else c.st='queue';}}
+          else if(c.st=='stop'){c.st='queue';}
+          else if(c.st=='stand'){spring(c,1,0);var ts=c.tStand;if(!c.tSpark){c.tSpark=ts+200;c.tCharge=ts+250;c.tShrink=ts+1050;}
+            if(T>=c.tShrink){c.st='shrink';}}
+          else if(c.st=='shrink'){var u=Math.min(1,(T-c.tShrink)/400);c.sh=u;if(u>=1){c.st='gone';c.tGone=T;}}
+          // 기록
+          if(c.st!='wait'&&c.st!='gone'){var sy=c.sy,sx=1+(1-sy)*.95,x=c.x,y=G-h-(c.st=='fall'?-c.y:0)-c.hopY,op=c.st=='fall'?Math.min(1,(T-c.tAp)/160):1,rot=c.tl,gl=0;
+            if(c.st=='fall')y=G-h+c.y;
+            if(c.tCharge&&T>c.tCharge)gl=Math.min(1,(T-c.tCharge)/850);
+            if(c.st=='shrink'){var u=c.sh,s1=Math.min(1,u/.45),e2=Math.pow(Math.max(0,(u-.3)/.7),1.6);   // 빨려 들기: 단자 점 쪽으로 물방울처럼 늘어나며(점 쪽 좁아짐) 살짝 돌고 빠르게 작아지며 쏙
+              sx=(1+.75*s1)*(1-e2*.97);sy=(1-.42*s1)*(1-e2*.97);var mv=Math.min(1,u*1.4);x=c.xe+((ent-dir*(w/2)*sx)-c.xe)*mv;y=(G-h)+((by3-h+h*sy/2)-(G-h))*mv;rot=dir*-7*s1*(1-e2);op=u<.85?1:1-(u-.85)/.15;gl=1;}
+            var bri=c.tCharge?1+.4*Math.max(0,1-Math.abs(T-(c.tCharge+880))/110):1;c.F.push({t:T,x:x,y:y,rot:rot,sx:sx,sy:sy,op:op,gl:gl,br:bri});
+            var air=c.st=='fall'?-c.y:c.hopY,fk=c.st=='fall'?(.45+.35*(1+c.y/c.HH)):(c.st=='land'&&T-c.tLand<200?1.35-.35*(T-c.tLand)/200:Math.max(.35,1-air/(h*2.2)));c.SH.push({t:T,x:x,k:c.st=='shrink'?.4:fk,op:c.st=='shrink'?0:(c.st=='fall'?Math.max(.1,(1+c.y/c.HH)*1.1):1)*op});
+            c.SL=c.SL||[];c.SL.push({t:T,x:x,y:y+h*.5,op:c.st=='run'?Math.max(0,Math.min(1,(c.v/c.q.v-.7)/.3))*.55:0});}
+        });
+        if(CH[0].st!='wait'&&CH[0].st!='fall'&&!plan.lineEnd){lineK.push({t:T,x:CH[0].x});if(CH[0].st=='stand')plan.lineEnd=T;}
+        if(CH[2].st=='gone'){done=true;plan.end=T;}
+      }
+      var lastEnd=plan.end;LOOP=lastEnd+1100+700;
+      function O(ms){return Math.min(1,Math.max(0,ms/LOOP));}
+      // 땅선: 선두 발밑을 따라 그려짐 → 다 들어간 뒤 사라짐
+      var lx0=LS[2]-dir*ws[2]/2,ln=document.createElementNS(NS,'line');ln.setAttribute('x1',lx0);ln.setAttribute('x2',ent);ln.setAttribute('y1',G+.5);ln.setAttribute('y2',G+.5);ln.setAttribute('stroke','#D6E3F6');ln.setAttribute('stroke-width','1');svg.appendChild(ln);
+      var lL=Math.abs(ent-lx0);ln.setAttribute('stroke-dasharray',lL);var lk=[{strokeDashoffset:lL,opacity:1,offset:0}];
+      lineK.forEach(function(a,i){if(i%3==0)lk.push({strokeDashoffset:Math.max(0,lL-Math.abs(a.x+dir*CH[0].w/2-lx0)),opacity:1,offset:O(a.t)});});
+      lk.push({strokeDashoffset:0,opacity:1,offset:O(lastEnd+300)});lk.push({strokeDashoffset:0,opacity:0,offset:O(lastEnd+900)});lk.push({strokeDashoffset:0,opacity:0,offset:1});A(ln,lk);
+      ENT=[];
+      CH.forEach(function(c){var w=c.w,h=c.h;
+        var box=document.createElement('div');box.style.cssText='position:absolute;left:0;top:0;width:'+w+'px;height:'+h+'px;z-index:2;pointer-events:none;transform-origin:50% 100%';
+        box.innerHTML='<div class="tp" style="position:absolute;inset:0"><img src="'+c.q.src+'" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:saturate(.08) brightness(1.2);opacity:.38"><img class="cl" src="'+c.q.src+'" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;clip-path:inset(100% 0 0 0)"></div>';lay.appendChild(box);
+        var sh=document.createElement('i');sh.style.cssText='position:absolute;left:0;top:0;width:'+Math.round(w*.7)+'px;height:'+Math.max(4,Math.round(6*sc))+'px;margin:-'+Math.round(3*sc)+'px 0 0 -'+Math.round(w*.35)+'px;border-radius:50%;background:rgba(20,40,80,.18);filter:blur(1.5px);z-index:1;pointer-events:none';lay.appendChild(sh);
+        var kf=[{transform:'translate('+(c.F[0].x-w/2)+'px,'+c.F[0].y+'px)',opacity:0,filter:'brightness(1) drop-shadow(0 0 0px rgba(24,119,242,0))',offset:0}];
+        c.F.forEach(function(a){kf.push({transform:'translate('+(a.x-w/2).toFixed(2)+'px,'+a.y.toFixed(2)+'px) rotate('+a.rot.toFixed(2)+'deg) scale('+a.sx.toFixed(3)+','+a.sy.toFixed(3)+')',opacity:+a.op.toFixed(3),filter:'brightness('+a.br.toFixed(2)+') drop-shadow(0 0 '+(8*a.gl).toFixed(1)+'px rgba(24,119,242,'+(.6*a.gl).toFixed(2)+'))',offset:O(a.t)});});
+        var lkf=kf[kf.length-1];kf.push({transform:lkf.transform,opacity:0,filter:lkf.filter,offset:O(c.tGone+20)});kf.push({transform:lkf.transform,opacity:0,filter:lkf.filter,offset:1});A(box,kf);
+        var ks=[{transform:'translate('+c.SH[0].x+'px,'+G+'px) scale(.3)',opacity:0,offset:0}];c.SH.forEach(function(a,i){if(i%2==0)ks.push({transform:'translate('+a.x.toFixed(2)+'px,'+G+'px) scale('+a.k.toFixed(3)+')',opacity:+a.op.toFixed(3),offset:O(a.t)});});ks.push({transform:ks[ks.length-1].transform,opacity:0,offset:O(c.tGone+20)});ks.push({transform:ks[ks.length-1].transform,opacity:0,offset:1});A(sh,ks);
+        box.insertAdjacentHTML('beforeend','<i class="bd" style="position:absolute;left:-2px;right:-2px;height:3px;margin-top:-1.5px;top:100%;border-radius:2px;background:linear-gradient(90deg,transparent,#CFE7FF,#fff,#CFE7FF,transparent);box-shadow:0 0 6px 2px rgba(120,190,255,.85);opacity:0"></i>');
+        A(box.querySelector('.bd'),[{top:'100%',opacity:0,offset:0},{top:'100%',opacity:0,offset:O(c.tCharge)},{top:'96%',opacity:1,offset:O(c.tCharge+40)},{top:'4%',opacity:1,offset:O(c.tCharge+780)},{top:'0%',opacity:0,offset:O(c.tCharge+840)},{top:'0%',opacity:0,offset:1}]);   // 차오르는 경계 빛 띠
+        // 단자 점에서 로고로 가는 가는 전기 줄기 2가닥(살짝 깜박이며 모양이 바뀜), 멈칫 뒤 ~ 충전 끝
+        [0,1].forEach(function(bi){var paths=[];for(var v=0;v<2;v++){var pz=document.createElementNS(NS,'path'),tx=c.xe,ty=G-h*(bi?.35:.62),pts=[[ent,by3]],nseg=4;for(var s2=1;s2<nseg;s2++){var f2=s2/nseg;pts.push([ent+(tx-ent)*f2,by3+(ty-by3)*f2+((s2+v+bi)%2?1:-1)*(2.5+v)*sc]);}pts.push([tx,ty]);
+          pz.setAttribute('d','M'+pts.map(function(p){return p[0].toFixed(1)+' '+p[1].toFixed(1);}).join(' L'));pz.setAttribute('fill','none');pz.setAttribute('stroke','#8CC8FF');pz.setAttribute('stroke-width',bi?'1.1':'1.4');pz.setAttribute('stroke-linejoin','round');pz.style.filter='drop-shadow(0 0 2px rgba(24,119,242,.95))';svg.appendChild(pz);paths.push(pz);}
+          var t1=c.tStand+200,t2=c.tCharge+820;paths.forEach(function(pz,v){var kz=[{opacity:0,offset:0},{opacity:0,offset:O(t1)}];for(var tt=t1;tt<t2;tt+=70){var on=(Math.floor((tt-t1)/70)+v+bi)%2==0;kz.push({opacity:on?(.85-.25*bi):.12,offset:O(tt)});}kz.push({opacity:0,offset:O(t2+60)});kz.push({opacity:0,offset:1});A(pz,kz);});});        var P0=dir>0?'polygon(0% 0%,100% 0%,100% 100%,0% 100%)':'polygon(0% 0%,100% 0%,100% 100%,0% 100%)',P1=dir>0?'polygon(0% 0%,100% 34%,100% 66%,0% 100%)':'polygon(0% 34%,100% 0%,100% 100%,0% 66%)';   // 물방울: 단자 점 쪽이 좁아짐
+        A(box.querySelector('.tp'),[{clipPath:'none',offset:0},{clipPath:'none',offset:O(c.tShrink-2)},{clipPath:P0,offset:O(c.tShrink)},{clipPath:P1,offset:O(c.tShrink+190)},{clipPath:P1,offset:O(c.tGone)},{clipPath:'none',offset:O(c.tGone+20)},{clipPath:'none',offset:1}]);   // 빨려 들 때만 자름(평소엔 빛이 네모로 잘리지 않게)
+        var cl=box.querySelector('.cl');A(cl,[{clipPath:'inset(100% 0 0 0)',offset:0},{clipPath:'inset(100% 0 0 0)',offset:O(c.tCharge)},{clipPath:'inset(0% 0 0 0)',offset:O(c.tCharge+800)},{clipPath:'inset(0% 0 0 0)',offset:O(c.tGone)},{clipPath:'inset(100% 0 0 0)',offset:O(c.tGone+20)},{clipPath:'inset(100% 0 0 0)',offset:1}]);
+        [-34,0,34].forEach(function(ang,qq){var a=(dir>0?180:0)+ang,rd=a*Math.PI/180,sp=document.createElementNS(NS,'line');sp.setAttribute('x1',ent+Math.cos(rd)*5);sp.setAttribute('y1',by3+Math.sin(rd)*5);sp.setAttribute('x2',ent+Math.cos(rd)*13);sp.setAttribute('y2',by3+Math.sin(rd)*13);sp.setAttribute('stroke','#6FB2FF');sp.setAttribute('stroke-width','1.8');sp.setAttribute('stroke-linecap','round');sp.style.filter='drop-shadow(0 0 2px rgba(24,119,242,.9))';svg.appendChild(sp);
+          var s1=c.tShrink+380+qq*25;A(sp,[{opacity:0,offset:0},{opacity:0,offset:O(s1)},{opacity:1,offset:O(s1+40)},{opacity:0,offset:O(s1+200)},{opacity:0,offset:1}]);});});
+      // 먼지 퐁: 착지(양옆 4개) / 걸음(뒤로 2개), 작은 회색 원이 퍼지며 사라짐
+      DU.forEach(function(ev){for(var k=0;k<ev.n;k++){var side=ev.both?(k%2?1:-1):-dir,sp=(ev.both?(10+8*(k>>1)):(8+6*k))*sc,cc=document.createElementNS(NS,'circle');cc.setAttribute('cx',ev.x+(ev.both?side*ev.hw:0));cc.setAttribute('cy',ev.y-2);cc.setAttribute('r',ev.s*1.5*sc);cc.setAttribute('fill','rgba(130,140,158,.6)');svg.appendChild(cc);
+        var dx2=side*sp,dy2=-(3+k*1.5)*sc;A(cc,[{transform:'translate(0,0) scale(.4)',opacity:0,offset:0},{transform:'translate(0,0) scale(.4)',opacity:0,offset:O(ev.t)},{transform:'translate('+dx2*.5+'px,'+dy2*.6+'px) scale(1)',opacity:.85,offset:O(ev.t+90)},{transform:'translate('+dx2+'px,'+dy2+'px) scale(1.4)',opacity:0,offset:O(ev.t+380)},{transform:'translate('+dx2+'px,'+dy2+'px) scale(1.4)',opacity:0,offset:1}]);}});
+      // 속도선: 빨라질 때만 로고 뒤에 짧은 옅은 선 3개
+      CH.forEach(function(c){var gq=document.createElementNS(NS,'g');[-6,0,6].forEach(function(dy,k){var l=document.createElementNS(NS,'line');l.setAttribute('x1',0);l.setAttribute('x2',-dir*(10+4*(k%2))*sc);l.setAttribute('y1',dy*sc);l.setAttribute('y2',dy*sc);l.setAttribute('stroke','rgba(150,160,175,.7)');l.setAttribute('stroke-width','1.4');l.setAttribute('stroke-linecap','round');gq.appendChild(l);});svg.appendChild(gq);
+        var kk=[{transform:'translate(0px,0px)',opacity:0,offset:0}];(c.SL||[]).forEach(function(a,i){if(i%2==0)kk.push({transform:'translate('+(a.x-dir*(c.w/2+6)).toFixed(1)+'px,'+a.y.toFixed(1)+'px)',opacity:+a.op.toFixed(2),offset:O(a.t)});});kk.push({transform:kk[kk.length-1].transform,opacity:0,offset:1});A(gq,kk);});      var bx=br.left-hr.left,bt=br.top-hr.top,bw=br.width,bh=br.height,rr=bh/2;
+      [bx,bx+bw].forEach(function(x,q){var d=document.createElement('i');d.className='rp-term';d.style.left=x+'px';d.style.top=(bt+bh/2)+'px';lay.appendChild(d);
+        if((q==0)==(dir>0)){var kq=[{transform:'scale(1)',offset:0}];CH.forEach(function(c){kq.push({transform:'scale(1)',offset:O(c.tShrink+360)});kq.push({transform:'scale(2.2)',offset:O(c.tShrink+430)});kq.push({transform:'scale(1)',offset:O(c.tShrink+680)});});kq.push({transform:'scale(1)',offset:1});A(d,kq);}});
+      var dd='M'+(bx+rr)+' '+bt+' H'+(bx+bw-rr)+' A'+rr+' '+rr+' 0 0 1 '+(bx+bw-rr)+' '+(bt+bh)+' H'+(bx+rr)+' A'+rr+' '+rr+' 0 0 1 '+(bx+rr)+' '+bt+' Z';
+      var cp=document.createElementNS(NS,'path');cp.setAttribute('d',dd);cp.setAttribute('fill','none');cp.setAttribute('stroke','#7CB8FF');cp.setAttribute('stroke-width','2.5');cp.setAttribute('stroke-linecap','round');cp.style.filter='drop-shadow(0 0 4px rgba(24,119,242,.95))';svg.appendChild(cp);
+      var PL=cp.getTotalLength();cp.setAttribute('stroke-dasharray','26 '+PL);var st0=dir>0?PL*.75:PL*.25,ce=lastEnd;
+      A(cp,[{strokeDashoffset:-st0,opacity:0,offset:0},{strokeDashoffset:-st0,opacity:0,offset:O(ce)},{strokeDashoffset:-st0,opacity:1,offset:O(ce+40)},{strokeDashoffset:-(st0+PL),opacity:1,offset:O(ce+1000)},{strokeDashoffset:-(st0+PL),opacity:0,offset:O(ce+1060)},{strokeDashoffset:-(st0+PL),opacity:0,offset:1}]);
+      A(b,[{boxShadow:'0 0 0 0 rgba(24,119,242,0)',offset:0},{boxShadow:'0 0 0 0 rgba(24,119,242,0)',offset:O(ce+900)},{boxShadow:'0 0 0 6px rgba(24,119,242,.14), 0 0 22px 4px rgba(24,119,242,.35)',offset:O(ce+1250)},{boxShadow:'0 0 0 0 rgba(24,119,242,0)',offset:O(ce+1900)},{boxShadow:'0 0 0 0 rgba(24,119,242,0)',offset:1}]);   // 마지막에 버튼 전체가 한 번 은은하게 빛남
+      ENT=[O(ce)-.012];btnLoop();return;
+    }
+}
+function go(){anims.forEach(function(a){a.cancel();});anims=[];ENT=[];if(lay)lay.remove();lay=document.createElement('div');lay.className='rp-lay';hd.appendChild(lay);try{build();}catch(e){}}
+var lw=innerWidth,tm=0;addEventListener('resize',function(){if(Math.abs(innerWidth-lw)<40)return;lw=innerWidth;clearTimeout(tm);tm=setTimeout(go,250);});
+if(document.readyState==='complete')go();else addEventListener('load',go);
+})();
+</script>
 </section><section class="sec detail">
   <div class="wrap">
 <div class="recs-hd hd3"><h3>CAD</h3><p>캐드 전장 설계 자동화</p><div class="hd-notes"><p class="nb">CAD 도구는 보안상 일부 화면만 공개하고 있습니다. 양해 부탁드립니다.</p><p class="nb">특허 등 권리 보호 절차를 마친 뒤 더 자세히 공개하겠습니다.</p><p class="nr">AutoCAD 2024에서 작동을 확인했으며, 다른 버전은 시험 중입니다.</p></div></div>
@@ -87,7 +241,7 @@ merge:['x_merge',2994,1260,'병합 / 해제 · DATA 재배치'],short:['s_xl_sho
 var XL=[['Page · Smart · BOM · Harness',['page','smart','bom','harness']],['진수 · 알파벳',['base','alpha']],['File · 병합 · Data',['file','merge']],['테두리 · Color',['short','color']]];
 // PJT 판 (11-20 고니): 탭마다 PJT 창(왼쪽) + 그 기능의 설명서 창(오른쪽) 나란히, 같은 기능 묶음은 아래 작은 그림으로 바꿈.
 //   폭은 자동: 원본 px 가 보이는 크기의 2배 이상 되게(늘려 쓰지 않음). 항목: [PJT 그림, 이름, 옆 그림(설명서 등)]
-var Q={p_io_group:[850,1400],p_io_cards:[495,1528]};function dim(n){return Q[n]||(n.charAt(0)=='m'?[2100,1392]:[1900,1478]);}
+var Q={p_io_group:[850,1400],p_io_cards:[495,1528]};function dim(n){return Q[n]||(n.charAt(0)=='m'?[2100,1262]:[1900,1478]);}
 var PJ=[['TEXT',[['p_text_clean','Clean Text','m_text','괄호·빈칸 삭제'],['p_text_add','Join Text','m_text','문자 추가·숫자 증가'],['p_text_num','Re-Number','m_text','숫자 무시·다시 부여']]],
 ['SHEET',[['p_paste','Paste Visible','m_paste','보이는 셀에만 붙이기'],['p_merge','Merge Sheets','m_merge','시트 하나로 합치기'],['p_compare','File Compare','m_compare','엑셀 파일 비교']]],
 ['CHECK',[['p_dup','Duplicates','m_check','중복값 표시'],['p_health','File Check','m_check','숨긴 줄·오류 점검']]],
@@ -96,23 +250,22 @@ var PJ=[['TEXT',[['p_text_clean','Clean Text','m_text','괄호·빈칸 삭제'],
 // 누름 방식 = 설계·제작 페이지와 같게(11-20 고니): 판·그림을 처음에 다 만들어 두고 누르면 보이기만 바꿈(새로 안 만듦 → 깜빡임 없음),
 //   그림마다 가로·세로 크기를 적어 자리를 미리 잡음, 판들은 같은 칸에 겹쳐 두어 판 높이 = 가장 큰 판(누를 때 아래 내용이 안 들썩임).
 function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;}
-function pic(n,w,h,a,flex){return '<img src="'+n+'.png?v=1121p" width="'+w+'" height="'+h+'" alt="'+a+'"'+(flex?' style="flex:'+(w/h).toFixed(4)+' 1 0"':'')+' decoding="async">';}
+function pic(n,w,h,a,flex){return '<img src="'+n+'.png?v=1121r" width="'+w+'" height="'+h+'" alt="'+a+'"'+(flex?' style="flex:'+(w/h).toFixed(4)+' 1 0"':'')+' decoding="async">';}
 function rows(g){return g.map(function(r){return '<div class="xv-row n'+r.length+'">'+r.map(function(k){var i=P[k];return pic(i[0],i[1],i[2],i[3],1);}).join('')+'</div>';}).join('');}
 function pair(it){var ns=[it[0]].concat(it[2]?[it[2]]:[]),sa=0,h=1e9;ns.forEach(function(n){var d=dim(n);sa+=d[0]/d[1];h=Math.min(h,d[1]/2);});
   var W=Math.round(h*sa+24*(ns.length-1)),port=dim(ns[0])[0]<dim(ns[0])[1];
   return '<div class="xv-grp'+(ns.length==2&&!port?' std':'')+'" data-w="'+W+'" data-sa="'+sa.toFixed(4)+'" data-n="'+ns.length+'" style="width:min(100%,'+W+'px)"><div class="xv-row pair n'+ns.length+(port?' port':'')+'">'+ns.map(function(n,k){var d=dim(n);return pic(n,d[0],d[1],k?(n.charAt(0)=='m'?it[1]+' 설명서':it[1]+' · 카드'):it[1],1);}).join('')+'</div></div>';}
-function tabbar(v,names,onTab){var bar=el('div','xv-tabs');bar.setAttribute('role','tablist');names.forEach(function(n,i){var b=el('button','xv-tab',n);b.type='button';b.setAttribute('role','tab');b.onclick=function(){b.blur();onTab(i);};bar.appendChild(b);});v.appendChild(bar);
+function tabbar(v,names,onTab){var bar=el('div','xv-tabs');names.forEach(function(n,i){var b=el('button','xv-tab',n);b.type='button';b.setAttribute('role','tab');b.onclick=function(){b.blur();onTab(i);};bar.appendChild(b);});v.appendChild(bar);
   return function(i){[].forEach.call(bar.children,function(b,k){b.classList.toggle('on',k===i);b.setAttribute('aria-selected',k===i);});};}
 function stack(parent,cls){var s=el('div','xv-stack '+(cls||''));parent.appendChild(s);return s;}
 function only(box,i){[].forEach.call(box.children,function(c,k){c.classList.toggle('on',k===i);c.setAttribute('aria-hidden',k!==i);});}
 var xv=document.querySelector('.xv[data-kind="xl"]'),pv=document.querySelector('.xv[data-kind="pjt"]');
 // 엑셀 판 (11-21 가로 고정형): 묶음 = [칩 줄] + [팝업 한 줄]. 폰(좁은 칸)은 4개 줄 = 2개씩, 2개 줄 = 하나씩 아래로
 var XG=24,xRows=[],xMains=[];
-XL.forEach(function(t,gi){var sec=el('div','xg');sec.id='xg'+gi;var bar=el('div','xv-tabs');bar.setAttribute('role','tablist');
-  XL.forEach(function(t2,k){var b=el('button','xv-tab'+(k===gi?' on':''),t2[0]);b.type='button';if(k===gi)b.setAttribute('aria-current','true');
-    b.onclick=function(){b.blur();if(k!==gi)document.getElementById('xg'+k).scrollIntoView({behavior:'smooth',block:'start'});};bar.appendChild(b);});
+XL.forEach(function(t,gi){var sec=el('div','xg');sec.id='xg'+gi;var bar=el('div','xv-tabs');
+  var b=el('span','xv-tab on',t[0]);bar.appendChild(b);   // 11-21 고니: 묶음마다 자기 칩 하나만(제목 역할, 눌러 이동 없음)
   sec.appendChild(bar);var body=el('div','xv-body solo');var main=el('div','xv-main xz');body.appendChild(main);sec.appendChild(body);
-  var row=el('div','xv-row xs n'+t[1].length);t[1].forEach(function(k){var i=P[k];row.insertAdjacentHTML('beforeend','<img src="'+i[0]+'.png?v=1121p" width="'+i[1]+'" height="'+i[2]+'" alt="'+i[3]+'" decoding="async">');});
+  var row=el('div','xv-row xs n'+t[1].length);t[1].forEach(function(k){var i=P[k];row.insertAdjacentHTML('beforeend','<img src="'+i[0]+'.png?v=1121r" width="'+i[1]+'" height="'+i[2]+'" alt="'+i[3]+'" decoding="async">');});
   main.appendChild(row);xv.appendChild(sec);xRows.push(row);xMains.push(main);});
 function fitX(){var m=xMains[0],cs=getComputedStyle(m),avail=m.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight),narrow=avail<540,gp=narrow?12:XG;
   XL.forEach(function(t,gi){var r=t[1],row=xRows[gi],per=narrow?(r.length>2?2:1):r.length,sa=0,mh=1e9;
@@ -151,15 +304,15 @@ lb.onclick=function(){lb.hidden=true;};document.addEventListener('keydown',funct
             <div class="sale-l"><p class="sale-1">현재 판매하지 않습니다. <button type="button" class="sub-open" aria-expanded="false">소식 받기</button></p><p class="sale-2">소식 받기를 누르면 출시에 맞춰 소식을 보냅니다.</p></div>
             <form class="sub-form" hidden novalidate>
               <div class="sub-row"><input type="email" name="email" placeholder="이메일 주소" autocomplete="email" required aria-label="이메일 주소"><button type="submit">받기</button></div>
-              <label class="sub-ok"><input type="checkbox" name="agree"> (필수) 개인정보 수집·이용 동의 — 이메일 주소, 소식 메일 발송, 수신 거부 때까지 보관 · <a href="privacy.html?v=1121p#subscribe">자세히</a></label>
+              <label class="sub-ok"><input type="checkbox" name="agree"> (필수) 개인정보 수집·이용 동의 — 이메일 주소, 소식 메일 발송, 수신 거부 때까지 보관 · <a href="privacy.html?v=1121r#subscribe">자세히</a></label>
               <p class="sub-msg" aria-live="polite"></p>
             </form>
           </div>
           <ul class="sw-list">
-          <li><img class="pi" src="pi_cad.png?v=1121p" alt=""><div><b>OTONI CAD</b><span>캐드 전장 설계 자동화</span></div><span class="soon dev">1단계 개발 중</span></li>
-          <li><img class="pi" src="pi_excel.png?v=1121p" alt=""><div><b>OTONI EXCEL</b><span>엑셀 데이터 정리 및 캐드 설계 통합 자동화</span></div><span class="soon done">1단계 완료 · 시험·안정성 검토 중</span></li>
-          <li><img class="pi" src="pi_send.png?v=1121p" alt=""><div><b>OTONI FILE SEND</b><span>대용량 메일 파일 생성 도구</span></div><span class="soon done">1단계 완료</span></li>
-          <li><img class="pi" src="nes.png?v=1121p" alt=""><div><b>NES</b><span>OTONI 도구를 하나로 잇는 통합 플랫폼</span></div><span class="soon">준비 중</span></li>
+          <li><img class="pi" src="pi_cad.png?v=1121r" alt=""><div><b>OTONI CAD</b><span>캐드 전장 설계 자동화</span></div><span class="soon dev">1단계 개발 중</span></li>
+          <li><img class="pi" src="pi_excel.png?v=1121r" alt=""><div><b>OTONI EXCEL</b><span>엑셀 데이터 정리 및 캐드 설계 통합 자동화</span></div><span class="soon done">1단계 완료 · 시험·안정성 검토 중</span></li>
+          <li><img class="pi" src="pi_send.png?v=1121r" alt=""><div><b>OTONI FILE SEND</b><span>대용량 메일 파일 생성 도구</span></div><span class="soon done">1단계 완료</span></li>
+          <li><img class="pi" src="nes.png?v=1121r" alt=""><div><b>NES</b><span>OTONI 도구를 하나로 잇는 통합 플랫폼</span></div><span class="soon">준비 중</span></li>
         </ul>
         <div class="inv"><div><b>소프트웨어 협업·투자 문의</b><span>오토니 설계 통합 자동화 시스템에 관심 있으신 협업·투자 파트너를 찾고 있습니다.</span></div><a href="mailto:otoni@otoni.co.kr">문의하기 →</a></div></div>
   </div>
@@ -169,7 +322,7 @@ lb.onclick=function(){lb.hidden=true;};document.addEventListener('keydown',funct
 <footer class="ft">
   <div class="wrap ft-in">
     <div class="ft-brand">
-      <a class="brand" href="index.html?v=1121p" aria-label="OTONI 홈"><img class="logo" src="logo.svg?v=1121p" alt="OTONI" width="124" height="40"></a>
+      <a class="brand" href="index.html?v=1121r" aria-label="OTONI 홈"><img class="logo" src="logo.svg?v=1121r" alt="OTONI" width="124" height="40"></a>
       <p>전장 설계 및 제작, 자동화 설계 소프트웨어까지.</p><p class="copy">© 2026 OTONI. All rights reserved.</p>
     </div>
     <ul class="ft-info">
@@ -181,7 +334,7 @@ lb.onclick=function(){lb.hidden=true;};document.addEventListener('keydown',funct
     <ul class="ft-info">
       <li><b>주소</b> 충청남도 천안시 서북구 2공단4로 40-11, 천안G1비즈캠퍼스 10층 1024호(성성동)</li>
       <li><b>업태·종목</b> 제조업, 도매 및 소매업 · 자동화설비제작, 전기용 기계·장비 및 관련 기자재 도매업</li>
-      <li><b>이메일</b> <a href="mailto:otoni@otoni.co.kr">otoni@otoni.co.kr</a></li><li><b>안내</b> <a class="pp" href="privacy.html?v=1121p"><b>개인정보처리방침</b></a></li>
+      <li><b>이메일</b> <a href="mailto:otoni@otoni.co.kr">otoni@otoni.co.kr</a></li><li><b>안내</b> <a class="pp" href="privacy.html?v=1121r"><b>개인정보처리방침</b></a></li>
     </ul>
   </div>
 </footer>
@@ -199,11 +352,11 @@ Object.keys(map).forEach(function(id){var s=document.getElementById(id);if(s)io.
   <span>OTONI 소프트웨어 출시·업데이트 소식을 메일로 알려 드립니다.</span>
   <form class="sub-form" novalidate>
     <div class="sub-row"><input type="email" name="email" placeholder="이메일 주소" autocomplete="email" required aria-label="이메일 주소"><button type="submit">받기</button></div>
-    <label class="sub-ok"><input type="checkbox" name="agree"> (필수) 개인정보 수집·이용 동의 · <a href="privacy.html?v=1121p#subscribe">자세히</a></label>
+    <label class="sub-ok"><input type="checkbox" name="agree"> (필수) 개인정보 수집·이용 동의 · <a href="privacy.html?v=1121r#subscribe">자세히</a></label>
     <p class="sub-msg" aria-live="polite"></p>
   </form>
 </div>
-<script src="sub_config.js?v=1121p"></script>
+<script src="sub_config.js?v=1121r"></script>
 <script>
 /* 업데이트 소식 받기 (11-20 고니): 아래 구석 알림 띠 = 조금 내리면 뜸 / [받기] 뒤 다시 안 뜸 / [X] 30일 안 뜸 / 아무것도 안 누르면 다음 방문에도.
    상태는 이 브라우저(localStorage)에만 둠, 회사로 보내지 않음. 메일 서비스(스티비) 구독 폼 주소는 sub_config.js 한 줄 — 비어 있으면 "곧 열립니다" 안내만. */
