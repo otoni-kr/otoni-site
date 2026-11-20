@@ -1,5 +1,5 @@
 @font-face{font-family:"Pretendard";font-style:normal;font-weight:400;font-display:swap;src:url("Pretendard-Regular.subset.woff2") format("woff2")}@font-face{font-family:"Pretendard";font-style:normal;font-weight:500;font-display:swap;src:url("Pretendard-Medium.subset.woff2") format("woff2")}@font-face{font-family:"Pretendard";font-style:normal;font-weight:600;font-display:swap;src:url("Pretendard-SemiBold.subset.woff2") format("woff2")}@font-face{font-family:"Pretendard";font-style:normal;font-weight:700 900;font-display:swap;src:url("Pretendard-Bold.subset.woff2") format("woff2")}
-/* OTONI site — 흰 바탕 · 먹색 글 · 맑은 파랑(오토니 팝업 파랑 #1877F2) · 핑크는 로고·'오토니' 낱말만 */
+
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 :root{--ink:#1A1D21;--sub:#5A616C;--line:#E3E7EC;--line2:#D3D9E0;--bg:#fff;--sky:#F4F8FE;--grid:#E9F1FC;--blue:#1877F2;--blue-d:#0F5FCC;--blue-l:#D6E6FD;--pink:#F13D62;--wrap:1800px;--hd:38px}
@@ -10,7 +10,7 @@ ul{list-style:none}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(20px,4vw,64px)}
 .o{color:var(--pink);font-weight:800}
 
-/* header */
+
 .hd{position:sticky;top:0;z-index:20;height:var(--hd);background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
 .hd .wrap{max-width:none;padding:0 clamp(20px,2.5vw,48px)}
 .hd-in{height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -22,7 +22,7 @@ ul{list-style:none}
 .nav a:hover,.nav a.on{color:var(--blue)}
 .nav a.on:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--blue)}
 
-/* common */
+
 .sec{padding:44px 0}
 .kicker{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--blue);margin-bottom:14px}
 h1{font-size:clamp(34px,5vw,58px);line-height:1.22;font-weight:800;letter-spacing:-.02em;margin-bottom:22px}
@@ -32,14 +32,14 @@ h3{font-size:20px;font-weight:700;margin-bottom:8px}
 .lead{font-size:clamp(16px,1.5vw,18px);color:var(--sub);max-width:760px}
 h1,h2,h3,p,li{text-wrap:pretty}
 
-/* 도면 표제란 모양 섹션 머리 */
+
 .tb{display:inline-flex;align-items:stretch;border:1px solid var(--line2);border-radius:2px;margin-bottom:28px;font-size:13px;background:#fff}
 .tb>span{padding:6px 14px;display:flex;align-items:center}
 .tb>span+span{border-left:1px solid var(--line2)}
 .tb-name{font-weight:700;color:var(--ink)}
 .tb-rev{color:#8A929D;font-size:12px;letter-spacing:.08em}
 
-/* hero: 흰 바탕, 글 왼쪽 · 심볼 오른쪽(선 그리기) */
+
 .hero{padding:22px 0 26px;border-bottom:1px solid var(--line)}
 .hero-in{display:flex;align-items:center;justify-content:space-between;gap:40px}
 .hero h1{font-size:clamp(30px,3.4vw,56px);margin-bottom:16px}
@@ -60,7 +60,7 @@ h1,h2,h3,p,li{text-wrap:pretty}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes fade{to{opacity:1}}
 @media (prefers-reduced-motion:reduce){.draw-mark .ol,.draw-mark .ht,.draw-mark .fl{animation:none!important;stroke-dashoffset:0;opacity:1}}
-/* stats */
+
 .stats{border-bottom:1px solid var(--line)}
 .stats-in{display:grid;grid-template-columns:repeat(3,1fr)}
 .stat{padding:18px 20px;text-align:center}
@@ -69,12 +69,12 @@ h1,h2,h3,p,li{text-wrap:pretty}
 .stat b small{font-size:.6em;color:var(--blue)}
 .stat span{font-size:14px;color:var(--sub)}
 
-/* about */
+
 .about{padding:40px 0}
 .about-in{display:block}
 .about-in h2{margin:0}
 .about-in .lead{max-width:900px;font-size:clamp(16px,1.4vw,19px);color:var(--ink)}
-/* 사업 흐름: 설계 → 제작 → 소프트웨어 (결선처럼 얇은 선으로 이음) */
+
 .flow{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:8px;position:relative}
 .step:after{content:"";position:absolute;left:24px;right:12px;top:4px;height:12px;background:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 12 12%27%3E%3Cpath d=%27M3 2 L10 6 L3 10%27 fill=%27none%27 stroke=%27%231877F2%27 stroke-width=%271.6%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E") right center/12px 12px no-repeat,linear-gradient(#A9C3E6,#A9C3E6) left center/calc(100% - 3px) 1.5px no-repeat}
 .step{position:relative;padding:26px 0 0 0}
@@ -103,7 +103,7 @@ h1,h2,h3,p,li{text-wrap:pretty}
 .v em{display:block;font-style:normal;font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--blue);margin-bottom:6px}
 .v strong{font-size:19px}
 
-/* business (옅은 하늘 칸) */
+
 .business{background:var(--sky);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:22px 24px;transition:background .2s}
@@ -124,7 +124,7 @@ h1,h2,h3,p,li{text-wrap:pretty}
 .fields{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
 .fields span{font-size:14px;font-weight:600;padding:7px 16px;border-radius:4px;border:1px solid var(--line2);background:#fff;color:var(--ink)}
 
-/* software */
+
 .sw-in{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start}
 .win{margin-top:36px;border:1px solid var(--line2);border-radius:8px;background:#fff;box-shadow:0 10px 30px rgba(20,40,80,.06);max-width:640px}
 .win-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--sky);border-radius:8px 8px 0 0}
@@ -152,7 +152,7 @@ h1,h2,h3,p,li{text-wrap:pretty}
 .sw-list b{font-size:16px;font-weight:600;letter-spacing:0}
 .sw-list span{color:var(--sub);font-size:15px}
 
-/* sub pages */
+
 .page-hd{padding:28px 0 18px;border-bottom:1px solid var(--line);margin-bottom:24px}
 .page-hd h1{margin-bottom:12px}
 .sec.contact{padding-top:24px}
@@ -179,7 +179,7 @@ a.cbox:hover{border-color:var(--blue)}
 .doc a{color:var(--blue);text-decoration:underline}
 .note{margin-top:14px;padding:16px 18px;border-left:3px solid var(--blue);background:var(--sky);border-radius:0 6px 6px 0}
 
-/* footer: 표 없는 작은 글 3단 */
+
 body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{flex-shrink:0;padding:20px 0 14px;font-size:12.5px;color:var(--sub);border-top:1px solid var(--line);background:#FBFCFE}
 .ft-in{display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1fr) minmax(0,1.6fr);gap:12px 40px;align-items:start}
 .ft-brand{display:flex;flex-direction:column;gap:6px;align-self:stretch}
@@ -189,7 +189,7 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 .ft-info li>b{color:var(--ink);font-weight:600}.ft-info a.pp{color:var(--blue)}.ft-info a.pp:hover{text-decoration:underline}
 .ft a:hover{color:var(--blue)}
 .copy{margin-top:auto;font-size:11.5px;line-height:1.75;opacity:.7}
-/* responsive */
+
 
 @media (max-width:1100px){
   .ft-in{grid-template-columns:1fr 1fr}.ft-brand{grid-column:1/-1}
@@ -245,16 +245,16 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
   .doc .kv tr{display:flex}.doc .kv th{border:0}
 }
 
-/* 11-18 추가 칸: 대상 장비 선 그림 · 연도별 실적 · 설계 사례(누르면 크게) · 소프트웨어 화면. base.css 뒤에 붙임 */
 
-/* 대상 장비 (fields-line 대신) */
+
+
 .eqs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:4px}
 .eq{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#fff;border:1px solid var(--line);border-radius:6px}
 .eq img{width:132px;height:auto;flex:none}
 .eq b{display:block;font-size:16px;font-weight:700;line-height:1.35}
 .eq span{font-size:13.5px;color:var(--sub);line-height:1.45}
 
-/* 연도별 실적 */
+
 .recs-hd{display:flex;align-items:baseline;gap:14px;margin:28px 0 12px}
 .recs-hd{flex-wrap:wrap;row-gap:2px}.recs-hd h3{font-size:22px;margin:0;white-space:nowrap}
 .recs-hd p{font-size:14px;color:var(--sub)}
@@ -270,7 +270,7 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 .yr li span:before{content:"· ";color:#B7C3D2}
 .tag{font-style:normal;display:inline-block;margin-left:6px;padding:0 6px;font-size:11.5px;font-weight:700;line-height:18px;color:var(--blue);border:1px solid var(--blue-l);border-radius:3px;background:#F4F8FE;vertical-align:1px}
 
-/* 설계 사례 */
+
 .works{padding-top:8px}
 .works .lead{margin-bottom:22px}
 .wk{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -287,7 +287,7 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 .lb p{color:#fff;font-size:15px}
 .lb button{all:unset;position:absolute;top:14px;right:20px;color:#fff;font-size:34px;line-height:1;cursor:pointer}
 
-/* 소프트웨어 화면 */
+
 .shots{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:16px;margin-top:36px;align-items:start}
 .shot{background:var(--sky);border:1px solid var(--line);border-radius:6px;padding:14px;display:flex;flex-direction:column;gap:10px}
 .shot img{width:auto;max-width:100%;height:auto;margin:0 auto;border-radius:4px;box-shadow:0 6px 18px rgba(20,40,80,.10)}
@@ -319,7 +319,7 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
   .shots{grid-template-columns:1fr}
 }
 
-/* 11-18 software 화면 격자: 칸마다 1장, 같은 크기·비율, 이름 한 줄 */
+
 .sg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:6px 0 34px}
 .sg-c{margin:0;display:flex;flex-direction:column}.sg-c .sg-im{flex:1}.sg-c.big{grid-column:span 2;grid-row:span 2}.sg-c.big .sg-im{aspect-ratio:auto}
 .sg-im{aspect-ratio:16/10;background:var(--sky);border:1px solid var(--line);border-radius:6px;display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden}
@@ -328,7 +328,7 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 @media (max-width:900px){.sg{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.sg{grid-template-columns:1fr}.sg-c.big{grid-column:auto;grid-row:auto}.sg-c.big .sg-im{aspect-ratio:16/10}}
 
-/* 11-18 시연 영상: 창 틀 + 제목 띠 */
+
 .vd{margin:6px 0 26px;max-width:1080px;border-radius:12px;overflow:hidden;background:#151A21;border:1px solid #2A313B;box-shadow:0 22px 48px rgba(16,30,60,.22),0 4px 12px rgba(16,30,60,.10)}
 .vd-bar{display:flex;align-items:center;gap:12px;padding:11px 16px;background:linear-gradient(#262D37,#1E242D);border-bottom:1px solid #2F3743;color:#E8ECF2;font-size:14px;line-height:1.3}
 .vd-dots{display:flex;gap:6px;flex:none}.vd-dots i{width:10px;height:10px;border-radius:50%;background:#4A5360}
@@ -338,7 +338,7 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 @media (max-width:560px){.vd{border-radius:8px;margin-bottom:18px}.vd-bar{padding:9px 12px;gap:8px;font-size:13px}.vd-sub{display:none}}
 
 .vds{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}.vds .vd{margin:0;max-width:none}.vds .vd-bar{padding:9px 12px;gap:9px;font-size:13px}.vds .vd-dots i{width:8px;height:8px}
-/* 영상 비율대로 칸 너비(CAD 1170x720, EXCEL 954x712) → 두 영상 높이 같음, 검은 띠 없음. 제목 띠는 같은 높이 줄(subgrid) */
+
 .vds{grid-template-columns:1.625fr 1.34fr;grid-template-rows:auto auto;align-items:stretch}
 .vds .vd{display:grid;grid-row:span 2;grid-template-rows:subgrid;row-gap:0}
 .vds .vd-bar{display:grid;grid-template-columns:1fr auto;column-gap:10px;row-gap:2px;align-items:center;align-content:center;padding:9px 12px}.vds .vd-dots{display:none}.vds .vd-bar b{grid-column:1;grid-row:1}.vds .vd-live{grid-column:2;grid-row:1;margin:0}
@@ -346,7 +346,7 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 .vds .vd video{height:100%;object-fit:cover}
 @media (max-width:560px){.vds{grid-template-columns:1fr;grid-template-rows:none;gap:14px}.vds .vd{display:block}.vds .vd-sub{display:block}}
 
-/* 11-18 시연 영상 크게 보기 */
+
 .vd{position:relative}.vd video{cursor:zoom-in}
 .vd-zoom{position:absolute;right:10px;bottom:10px;display:flex;align-items:center;gap:5px;padding:5px 9px;border-radius:6px;background:rgba(15,20,27,.72);color:#fff;font-size:12px;font-weight:600;line-height:1;pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity .15s,transform .15s}
 .vd-zoom svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
@@ -364,7 +364,7 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 .vlb video:fullscreen{max-height:none;height:100%}
 @media (max-width:560px){.vlb{padding:8px}.vlb-box{width:100%;border-radius:8px}.vlb-bar{padding:6px 6px 6px 12px}.vlb-t{font-size:13px}}html.vlb-on{overflow:hidden}
 
-/* 11-18 영상 칸 꾸미기 B안(고니 선택): 살짝 기울여 겹침 + 그림자 + 제목 앞 작은 제품 아이콘. 마우스 올린 영상이 맨 앞으로 오며 반듯해짐 */
+
 .vds{gap:0;padding:22px 18px 46px 14px}
 .vds .vd{overflow:visible;box-shadow:0 30px 60px rgba(16,30,60,.26),0 8px 18px rgba(16,30,60,.14);transition:transform .3s ease,box-shadow .3s ease}
 .vds .vd-bar{border-radius:11px 11px 0 0}.vds .vd video{border-radius:0 0 11px 11px}
@@ -378,37 +378,37 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 .vds .vd:nth-child(1) .vd-zoom{right:auto;left:10px}
 @media (max-width:560px){.vds{display:flex;flex-direction:column;gap:30px;padding:18px 12px 20px}.vds .vd:nth-child(1){transform:rotate(-1.2deg);margin-right:0}.vds .vd:nth-child(2),.vds .vd:nth-child(2):hover,.vds .vd:nth-child(2):focus-within{transform:rotate(1.2deg)}.vds .vd:nth-child(1):hover,.vds .vd:nth-child(1):focus-within{transform:rotate(-1.2deg)}.vds .vd-bar b::before{width:18px;height:18px}.vds .vd:nth-child(1) .vd-zoom{left:auto;right:10px}}
 
-/* 11-18 로고 줄: 심볼 | OTONI | nes 세 덩어리, 폰에서도 한 줄 */
+
 @media (max-width:560px){.sw-side .syms{flex-wrap:nowrap;gap:14px}.sw-side .syms img{height:28px}.sw-side .syms .sym-pjt{height:36px}.sw-side .sym-bar{height:26px}}
 
-/* 11-18 사업 분야 카드 클릭 유도: 늘 보이는 알약 버튼, 마우스 올리면 떠오름+그림자+버튼 채움 (카드 전체 링크는 .step-link:after) */
+
 .step{cursor:pointer}.step .box{padding-bottom:62px;transition:background .25s,box-shadow .25s,transform .25s,border-color .25s}
 .step .more{opacity:1;right:18px;bottom:16px;padding:6px 14px;border:1.5px solid var(--blue);border-radius:999px;background:#fff;font-size:13px;line-height:1.2;transition:background .25s,color .25s}
 .step.hv .box,.step:has(:focus-visible) .box{background:#DCEAFF;border-color:#BFD6F6;box-shadow:0 16px 34px rgba(20,40,80,.14);transform:translateY(-5px)}
 .step.hv .more,.step:has(:focus-visible) .more{background:var(--blue);color:#fff}
 @media (max-width:560px){.step .box{padding-bottom:58px}.step .more{bottom:14px;right:14px}}
-/* 11-18 카드 더 눈에 띄게: 화살표가 가끔 오른쪽으로 살짝, 마우스 올리면 6px 떠오름·파란 테두리·진한 그림자 */
+
 .step .more .arr{display:inline-block;font-style:normal;animation:nudge 2.6s ease-in-out infinite}
 @keyframes nudge{0%,62%,100%{transform:none}74%{transform:translateX(5px)}86%{transform:none}}
 @media (prefers-reduced-motion:reduce){.step .more .arr{animation:none}}
 @media (hover:hover){.step.hv .box,.step:has(:focus-visible) .box{transform:translateY(-2px);border-color:var(--blue);box-shadow:0 20px 40px rgba(20,60,130,.20),0 4px 10px rgba(20,60,130,.08)}.step.hv .more .arr,.step:has(:focus-visible) .more .arr{animation:none;transform:translateX(5px);transition:transform .25s}}
-/* 11-18 카드 마우스 올림: 맑은 그라데이션 + 연한 파랑 그림자, 설명 글자 한 단계 진하게 */
+
 .step.hv .box,.step:has(:focus-visible) .box{background:linear-gradient(135deg,#FFFFFF 0%,#D6EBFF 100%);box-shadow:0 18px 38px rgba(26,115,232,.18),0 3px 8px rgba(26,115,232,.08)}
 .step.hv .box p,.step:has(:focus-visible) .box p{color:#3F4752}
-/* 11-18 A안: 카드에 마우스 → 위 동그라미 파랗게 채움·살짝 커짐, 다음 화살표까지 선이 파랗게 그려짐(PC만) */
+
 @media (min-width:561px) and (hover:hover){.step .node{transition:background .3s,transform .3s}
 .step:before{content:"";position:absolute;left:24px;top:9px;height:2px;width:0;background:var(--blue);border-radius:1px;transition:width .5s ease-out;pointer-events:none}
 .step.hv .node,.step:has(:focus-visible) .node{background:var(--blue);transform:scale(1.25)}
 .step.hv:before,.step:has(:focus-visible):before{width:calc(100% - 39px)}.step:last-child.hv:before,.step:last-child:has(:focus-visible):before{width:calc(100% - 53px)}}
-/* 11-18 1118r: 떠오름 뺌, 카드 위 테두리 파란 3px 선이 왼→오, 타임라인 화살표 머리가 날아가며 2px 선이 따라감(PC만) */
+
 .step.hv .box,.step:has(:focus-visible) .box{transform:none}
 .step .box:before{content:"";position:absolute;left:-1px;top:-1px;height:3px;width:0;background:var(--blue);border-radius:6px 6px 0 0;transition:width .5s cubic-bezier(.2,.7,.2,1);pointer-events:none;z-index:2}
 .step.hv .box:before,.step:has(:focus-visible) .box:before{width:calc(100% + 2px)}
 @media (min-width:561px) and (hover:hover){.step:before{top:4px;height:12px;background:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 12 12%27%3E%3Cpath d=%27M3 2 L10 6 L3 10%27 fill=%27none%27 stroke=%27%231877F2%27 stroke-width=%272.2%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E") right center/12px 12px no-repeat,linear-gradient(var(--blue),var(--blue)) left center/calc(100% - 3px) 2px no-repeat;border-radius:0;transition:width .5s cubic-bezier(.2,.7,.2,1)}
 .step.hv:before,.step:has(:focus-visible):before{width:calc(100% - 36px)}.step:last-child.hv:before,.step:last-child:has(:focus-visible):before{width:calc(100% - 50px)}}
-/* 11-19 1118v: 키보드 포커스 테두리 겹침 없앰(파란 테두리로 충분) */
+
 .step:has(.step-link:focus-visible) .box{outline:none}
-/* 11-19 1118w 첫 화면 심볼 마우스 효과(A+B): 연필 애니 끝난 뒤(.ready) 살짝 기울었다 제자리 + 아래→위 핑크 차오름(1.2초, 윗면 물결). 떼면 천천히 검정 */
+
 .draw-mark .pk{pointer-events:none}.draw-mark .pkf{fill:var(--pink)}.draw-mark .pks{fill:none;stroke:var(--pink);stroke-width:15;stroke-linejoin:round}.draw-mark .wv{animation:mkwave 1.3s linear infinite}
 .draw-mark .lvl{transform:translateY(1150px);transition:transform 1.6s ease-in-out}
 @keyframes mkwave{from{transform:translateX(0)}to{transform:translateX(-300px)}}
@@ -417,71 +417,71 @@ body{min-height:100vh;display:flex;flex-direction:column}main{flex:1 0 auto}.ft{
 .draw-mark.shk{animation:mktilt .8s cubic-bezier(.3,.6,.4,1)}
 @keyframes mktilt{0%{transform:none}40%{transform:rotate(-20deg)}100%{transform:none}}
 @media (prefers-reduced-motion:reduce){.draw-mark .wv,.draw-mark.shk{animation:none}}
-/* 11-19 1118x: 사업 분야 카드에 마우스 → 위 메뉴 같은 이름 파랗게 + 밑에 겹꺾쇠가 올라오며 흐려졌다 다시(PC만) */
+
 @media (min-width:561px) and (hover:hover){.nav a{transition:color .25s}.nav a.hl{color:var(--blue)}
 .nav a.hl:before{content:"";position:absolute;left:50%;bottom:-8px;margin-left:-6px;width:12px;height:12px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2012%2012%27%3E%3Cpath%20d%3D%27M2%206%20L6%202%20L10%206%20M2%2010.5%20L6%206.5%20L10%2010.5%27%20fill%3D%27none%27%20stroke%3D%27%231877F2%27%20stroke-width%3D%271.6%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;pointer-events:none;animation:navrise 1.2s ease-in-out infinite alternate}
 @keyframes navrise{from{transform:translateY(0)}to{transform:translateY(-4px)}}}
 @media (prefers-reduced-motion:reduce){.nav a.hl:before{animation:none}}
-/* 11-19 1118y: 애니 끝나면 완전 검정(흑연 질감 위에 단색 덮기), 심볼 1.3배 */
+
 .draw-mark{width:100px}.draw-mark .sol{fill:var(--ink);opacity:0;transition:opacity .6s ease}.draw-mark.ready .sol{opacity:1}
-/* 11-19 1119c: 마우스 판정은 돌지 않는 바깥 상자(심볼보다 10px 크게) */
+
 .mk-hit{display:inline-flex;flex:none;padding:10px;margin:-10px}.draw-mark.ready{cursor:default}.mk-hit:has(.draw-mark.ready){cursor:pointer}
 @media (max-width:900px){.mk-hit{display:none}}
-/* 11-19 1119d: 기울어 가는 동안(0→-20°)만 ±5° 바르르, 돌아올 땐 부드럽게. 안쪽 층(.in)이 구멍 중심으로 떨림 */
+
 .draw-mark .in{transform-box:view-box;transform-origin:496px 500px}.draw-mark.shk .in{animation:mkjit .8s linear}
 @keyframes mkjit{0%{transform:none}4.44%{transform:rotate(-5deg)}8.89%{transform:rotate(4.62deg)}13.33%{transform:rotate(-4.25deg)}17.78%{transform:rotate(3.88deg)}22.22%{transform:rotate(-3.5deg)}26.67%{transform:rotate(3.12deg)}31.11%{transform:rotate(-2.75deg)}35.56%{transform:rotate(2.38deg)}40%{transform:none}100%{transform:none}}
 @media (prefers-reduced-motion:reduce){.draw-mark.shk .in{animation:none}}
-/* 11-19 1119g: 카드 강조는 .hv(마우스 올림/터치 순간)로 — 폰도 PC와 같은 모양, 탭 하이라이트 없음 */
+
 .step,.step-link{-webkit-tap-highlight-color:transparent}
-/* 11-19 CAD 칸 5장(짝 맞추기 뺌): 마지막 설명서 칸을 2칸 너비로 채움(PC 3열만) */
+
 .sg-c.wide{grid-column:span 2}@media (max-width:900px){.sg-c.wide{grid-column:auto}}
-/* 11-19 1119i: '개발 중' 배지 은은하게 깜빡(투명도 1↔0.45, 1.8초 왕복), 소프트웨어 제목 옆 배지 */
-/* 11-19 고니: 은은한 투명도 대신 '글자만' 또렷하게 깜빡(배지 바탕은 그대로, 1.4초에 한 번 꺼짐) */
+
+
 .soon.dev{animation:devblink 1.4s steps(1,end) infinite}
 @keyframes devblink{0%,65%{color:var(--pink)}66%,100%{color:transparent}}
 @media (prefers-reduced-motion:reduce){.soon.dev{animation:none}}
 .h1-badge{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.h1-badge .soon{font-size:15px;font-weight:600;letter-spacing:0;line-height:1.2;color:var(--blue);background:#EAF3FF;border-radius:999px;padding:5px 14px;white-space:nowrap}
 @media (max-width:560px){.h1-badge{gap:10px}.h1-badge .soon{font-size:12px;padding:3px 10px}}
-/* 11-19 1119j: '개발 중' 배지 OTONI 핑크 */
+
 .soon.dev,.sw-list .soon.dev,.h1-badge .soon.dev{color:var(--pink);background:#FDE7EC}
-/* 11-19 1119k: 소프트웨어 CAD 칸 배치(고니) — 위: 라인 창(2칸) | 메뉴(작게) / 아래: 하네스 표(2칸·2줄) | 설명서 2장 위아래 */
+
 .sg.cad{grid-template-columns:repeat(3,1fr)}
 .sg.cad .sg-c .sg-im{aspect-ratio:auto;padding:8px}.sg.cad .sg-im img{width:100%;max-height:none}
 .sg.cad .c-line{grid-column:1/3;grid-row:1}.sg.cad .c-menu{grid-column:3;grid-row:1}.sg.cad .c-menu img{width:auto;max-width:82%;max-height:100%}
 .sg.cad .c-move{grid-column:1/3;grid-row:2/4}.sg.cad .c-man1{grid-column:3;grid-row:2}.sg.cad .c-man2{grid-column:3;grid-row:3}
 @media (max-width:900px){.sg.cad{grid-template-columns:1fr 1fr}.sg.cad .c-line{grid-column:1/-1}.sg.cad .c-menu,.sg.cad .c-move,.sg.cad .c-man1,.sg.cad .c-man2{grid-column:auto;grid-row:auto}.sg.cad .c-menu img{max-width:100%}}
 @media (max-width:560px){.sg.cad{grid-template-columns:1fr}.sg.cad .c-line{grid-column:auto}}
-/* 11-19 1119l: 위 = 라인 창 | 설명서 2장 위아래(라인 창 높이에 맞춤), 아래 = 하네스 전체 너비·낮게. 흰 메뉴 뺌 */
+
 .sg.cad2{grid-template-columns:minmax(0,3.2fr) minmax(0,1fr)}
 .sg.cad2 .c-line{grid-column:1;grid-row:1/3}.sg.cad2 .c-man1{grid-column:2;grid-row:1}.sg.cad2 .c-man2{grid-column:2;grid-row:2}.sg.cad2 .c-move{grid-column:1/-1;grid-row:3}
 .sg.cad2 .c-man1 .sg-im,.sg.cad2 .c-man2 .sg-im{position:relative;min-height:0}.sg.cad2 .c-man1 img,.sg.cad2 .c-man2 img{position:absolute;inset:8px;width:calc(100% - 16px);height:calc(100% - 16px);object-fit:contain}
 .sg.cad2 .c-move img{width:100%;max-height:none}
 @media (max-width:900px){.sg.cad2{grid-template-columns:1fr}.sg.cad2 .c-line,.sg.cad2 .c-man1,.sg.cad2 .c-man2,.sg.cad2 .c-move{grid-column:auto;grid-row:auto}.sg.cad2 .c-man1 img,.sg.cad2 .c-man2 img{position:static;width:100%;height:auto}}
-/* 11-19 1119p: 폰·태블릿 = 심볼을 숫자 줄 끝(국내·해외 오른쪽)에 44px, 탭하면 바르르·차오름·회전·뿅 */
+
 @media (max-width:900px){.hero-stats .mk-li{margin-left:auto;align-self:center;list-style:none}.mk-li .mk-hit{display:inline-flex;padding:0;margin:0;cursor:pointer;-webkit-tap-highlight-color:transparent}.mk-li .draw-mark{display:block;width:44px}}
-/* 11-19 1119q: 소프트웨어 협업·투자 문의 칸(첫 화면·소프트웨어 페이지 제품 목록 아래) */
+
 .inv{display:flex;align-items:center;gap:18px;margin-top:22px;padding:18px 20px;background:var(--sky);border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:6px}.inv div{flex:1;min-width:0}.inv b{display:block;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:3px}.inv span{display:block;font-size:14px;color:var(--sub);line-height:1.5}.inv a{flex:none;padding:9px 16px;border:1.5px solid var(--blue);border-radius:999px;color:var(--blue);font-size:14px;font-weight:600;white-space:nowrap;background:#fff;transition:background .2s,color .2s}.inv a:hover{background:var(--blue);color:#fff}
 @media (max-width:560px){.inv{flex-direction:column;align-items:flex-start;gap:12px;padding:16px}.inv a{align-self:flex-end}}
 
-/* 11-19 1119w: 설계·제작 페이지 머리 = 좌(설계)·우(제작) 두 칸, 같은 모양·높이, 폰은 위아래 */
+
 .hd2{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
 .hd2-c{padding-right:40px}.hd2-c+.hd2-c{padding:0 0 0 40px;border-left:1px solid var(--line)}
 .hd2-c .detail-list{margin-top:14px}
 @media (max-width:760px){.hd2{grid-template-columns:1fr}.hd2-c{padding-right:0}.hd2-c+.hd2-c{padding:22px 0 0;margin-top:22px;border-left:0;border-top:1px solid var(--line)}}
-/* 11-19 1119w: 폰 = 메뉴 이름이 길어져(설계·제작·프로젝트 수행 실적) 머리를 두 줄로: 위 로고, 아래 메뉴 한 줄(안 접힘) */
+
 @media (max-width:640px){:root{--hd:84px}.hd-in{flex-wrap:wrap;gap:0}.hd .brand{height:44px}
 .nav{width:100%;height:40px;justify-content:space-between;gap:10px;white-space:nowrap;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.nav a{flex:none}}
-/* 11-19 1119w: 실적 페이지 = 설명·항목 빠져서 '연도별 실적'을 제목 바로 아래로 */
+
 .p-build .sec.detail .wrap>.recs-hd:first-child{margin-top:4px}
-/* 11-19 1119w: 실적 '진행 중' = 모양은 tag 그대로, 색만 '개발 중' 배지 핑크(깜빡임 없음) */
+
 .tag.ing{color:var(--pink);background:#FDE7EC;border-color:#FDE7EC}
 
-/* 11-20 phone: no square tap highlight on pill buttons; focus ring follows pill */
+
 .inv a,.btn{-webkit-tap-highlight-color:transparent}
 .inv a:focus{outline:none}
 .inv a:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:999px}
 
-/* 11-20 contact map */
+
 .map-box{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fff;margin-bottom:24px}
 .map-frame{display:block;width:100%;height:500px;border:0;background:var(--sky)}
 .map-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 24px;border-top:1px solid var(--line)}
@@ -498,7 +498,7 @@ a.cbox.cc:hover{background:#EEF5FF}
 .cbox.cc strong{font-size:22px;margin-bottom:6px;word-break:keep-all}
 @media (max-width:560px){.map-frame{height:340px}.map-bar{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 16px}.cbox.cc{padding:18px 20px}.cbox.cc strong{font-size:19px}}.cbox.cc strong .nw{display:inline;font-size:inherit;color:inherit;white-space:nowrap}
 
-/* 11-20 소프트웨어 EXCEL 보기 판 2개 (시안 B, 엑셀 판 = 묶음 탭 / PJT 판 = 탭 + 작은 그림) */
+
 .xv{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:6px 0 22px;background:#fff}
 .xv-tabs{display:flex;gap:4px;padding:10px 14px 0;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
 .xv-tabs::-webkit-scrollbar{display:none}
@@ -519,7 +519,7 @@ a.cbox.cc:hover{background:#EEF5FF}
 @media (max-width:900px){.xv-body{grid-template-columns:1fr}.xv-main{height:auto;min-height:0}.xv-thumbs{border-left:0;border-top:1px solid var(--line);flex-direction:row;align-items:flex-start;overflow-x:auto;max-height:none}.xv-thumbs button{flex:0 0 130px}.xv-thumbs>button>img{max-height:110px;width:auto;max-width:100%;margin:0 auto}.xv-tabs{flex-wrap:wrap;padding:6px 8px 0}
  .xv-row{flex-wrap:wrap;gap:16px}.xv-grp{gap:16px}.xv-tabs button{font-size:13.5px;padding:9px 8px 11px}.xv-tabs{gap:0}}
 
-/* 11-20 9번: 엑셀 판 = 탭만(작은 그림 줄 없음), 높이는 내용대로, 줄 맞춤(줄 안 높이 같고 줄 폭 = 판 폭) */
+
 .xv-body.solo{grid-template-columns:1fr}
 .xv-body.solo .xv-main{height:auto;padding:clamp(18px,3vw,44px) clamp(14px,3vw,44px)}
 .xv-body.solo .xv-grp{display:flex;flex-direction:column;align-items:stretch;gap:24px}
@@ -528,18 +528,18 @@ a.cbox.cc:hover{background:#EEF5FF}
 @media (max-width:900px){.xv-body.solo .xv-grp,.xv-body.solo .xv-row{gap:12px}}
 @media (max-width:560px){.xv-body.solo .xv-row.n4{flex-wrap:wrap}.xv-body.solo .xv-row.n4 img{flex:1 1 calc(50% - 6px)!important;width:auto}}
 
-/* 11-20 PJT 판 = PJT 창 + 설명서 창 나란히, 같은 기능 묶음 작은 그림은 아래 한 줄 */
+
 .xv-body.below .xv-thumbs{border-left:0;border-top:1px solid var(--line);flex-direction:row;justify-content:center;flex-wrap:wrap;max-height:none;overflow:visible;padding:14px}
 .xv-body.below .xv-thumbs[hidden]{display:none}
 .xv-body.below .xv-thumbs{align-items:flex-start}.xv-body.below .xv-thumbs button{flex:0 0 150px;height:118px;display:flex;align-items:center;justify-content:center}
 .xv-body.below .xv-thumbs>button>img{width:auto;height:auto;max-width:100%;max-height:100%}
 @media (max-width:560px){.xv-body.solo .xv-row.pair:not(.port){flex-direction:column;gap:12px}.xv-body.solo .xv-row.pair:not(.port) img{width:100%;flex:none!important}.xv-body.below .xv-thumbs{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto}.xv-body.below .xv-thumbs button{flex:0 0 120px;height:96px}}
 
-/* 11-20 지원 환경 안내(빨간 글씨, 제목 줄 바로 아래) */
+
 .env-note{color:var(--pink);font-size:14px;line-height:1.6;margin:-6px 0 14px;word-break:keep-all}
 @media (max-width:560px){.env-note{font-size:13px}}
 
-/* 11-20 업데이트 소식 받기: 소프트웨어 페이지 칸 + 모든 페이지 아래 구석 알림 띠(흰 바탕·얇은 테두리, OTONI 파란 머리띠 아님) */
+
 .env-note a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 .sub-box{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap;border:1px solid var(--line);border-radius:12px;background:#fff;padding:22px 26px;margin:6px 0 30px;scroll-margin-top:70px}
 .sub-txt b{display:block;font-size:18px;margin-bottom:2px}.sub-txt span{font-size:14px;color:var(--sub)}
@@ -560,7 +560,7 @@ a.cbox.cc:hover{background:#EEF5FF}
 @media (max-width:560px){.sub-box{padding:18px}.sub-form{flex-basis:100%}
  .sub-bar{right:12px;left:12px;bottom:12px;width:auto;padding:12px 14px 10px}.sub-bar>b{font-size:14px}.sub-bar>span{display:none}.sub-bar .sub-row{margin-top:8px}.sub-bar .sub-ok{font-size:11.5px;margin-top:6px}}
 
-/* 11-20 제품 목록 맨 앞: "현재 판매하지 않습니다." + [소식 받기] (누르면 이메일 칸 열림) */
+
 .sale-row{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding:16px 4px;border-bottom:1px solid var(--line);scroll-margin-top:70px}
 .sale-1{margin:0;font-size:16px;font-weight:700;color:var(--pink);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .sale-2{margin:2px 0 0;font-size:13px;color:var(--sub)}
@@ -570,7 +570,7 @@ a.cbox.cc:hover{background:#EEF5FF}
 @media (max-width:560px){.sale-row .sub-form{flex-basis:100%}.sale-1{font-size:15px}}
 .sw-side .sale-row{border-top:1px solid var(--ink);padding:16px 0}.sw-side .sale-row+.sw-list li:first-child{border-top:0}
 
-/* 11-20 탭 누름 = 설계·제작 페이지와 같게: 둥근 단추 탭(같은 크기·색·0.2초 색 바뀜), 판은 겹쳐 두고 보이기만 바꿈(높이 고정·깜빡임 없음) */
+
 .xv-tabs{display:flex;flex-wrap:wrap;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);overflow:visible}
 .xv-tabs .xv-tab{display:inline-flex;align-items:baseline;padding:9px 16px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);font:inherit;font-size:15px;font-weight:600;line-height:1.4;cursor:pointer;white-space:nowrap;transition:border-color .2s,background .2s,color .2s}
 .xv-tabs .xv-tab:not(.on):hover{background:#F1F3F5;border-color:#D5DAE1;color:var(--ink)}
@@ -589,7 +589,7 @@ a.cbox.cc:hover{background:#EEF5FF}
  .xv-trow{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto}.xv-body.below .xv-trow>button>img{max-height:100%}}
 
 
-/* 11-20 PJT 하위 탭 = PJT 화면 기능 카드 모양(이름 + 작은 설명, 고른 것 = 흰 바탕·파란 이름) — 아래 작은 그림 줄 대신 */
+
 .xv-stack.subtabs{border-bottom:1px solid var(--line);background:#fff}
 .xv-sub{display:flex;flex-wrap:wrap;gap:8px;padding:12px 16px}
 .xv-sub:empty{padding:0}
@@ -600,7 +600,7 @@ a.cbox.cc:hover{background:#EEF5FF}
 .xv-subtab.on{background:#fff;border-color:var(--blue-l)}.xv-subtab.on b{color:var(--blue)}
 @media (max-width:700px){.xv-sub{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding:8px 12px;gap:6px}.xv-sub::-webkit-scrollbar{display:none}.xv-subtab{flex:none;min-width:0;padding:7px 12px 6px}.xv-subtab b{font-size:14px}.xv-subtab span{font-size:11.5px}}
 
-/* 11-20 실적 페이지 아래 "소프트웨어 개발" 표 + 첫 화면 실적 카드 오른쪽(세로 구분선) */
+
 .recs.sw{margin-top:0}.sw-hd{margin-top:40px}.recs.sw .yr h4 small{color:#B8C0CC}.recs.sw .tag{white-space:nowrap}
 @media (min-width:1600px) and (min-height:900px){body.p-build{display:flex;flex-direction:column;min-height:100vh}body.p-build main{flex:1 0 auto}}
 .bx2{display:grid;grid-template-columns:auto 1fr;gap:0 22px;align-items:start}
@@ -611,22 +611,22 @@ a.cbox.cc:hover{background:#EEF5FF}
 @media (max-width:700px){.bx2{grid-template-columns:1fr;gap:12px}.bx2-r{border-left:0;border-top:1px solid var(--line);padding:12px 0 0}}
 .box .bx2-l li{padding-left:0;margin:0}
 
-/* 11-20 상태 배지 색 규칙(고니 다시 정함): 개발 중 = 분홍 / 1단계 완료(검토 중 포함) = 파랑(.tag 기본 그대로) / 준비 중 = 회색 — 크기·모양 그대로 */
+
 .tag.prep{color:#5A616C;background:#EEF0F3}
 .soon:not(.dev),.sw-list .soon:not(.dev){color:#5A616C;background:#EEF0F3}
 
-/* 11-20 소프트웨어 개발 목록: 이름 칸 폭 = 가장 긴 이름(OTONI FILE SEND, 잰 폭 8.06em) + 여백 10px 에 고정 → 배지가 같은 세로선에서 시작. 좁으면 이름 칸이 줄어듦(배지는 한 줄) */
+
 .bx2-l li{display:grid;grid-template-columns:8.1em auto;column-gap:10px;justify-content:start;align-items:center}
 .recs.sw li b{display:grid;grid-template-columns:8.1em auto;column-gap:10px;justify-content:start;align-items:center}
 .bx2-l .tag,.recs.sw li b .tag{margin:0;justify-self:start;white-space:nowrap}
-/* 폰: 이름은 한 줄 그대로(칸 폭 고정), 배지 글이 길면 배지 안에서 줄바꿈 */
+
 .bx2-l li,.recs.sw li b{white-space:nowrap}
 @media (max-width:560px){.bx2-l li,.recs.sw li b{grid-template-columns:8.1em minmax(0,auto);column-gap:10px}.bx2-l .tag,.recs.sw li b .tag{white-space:normal;line-height:1.35}}
 
-/* 11-20 PM: 제품 목록 배지 = 소프트웨어 개발 상태와 같게(1단계 완료 = 파랑) */
+
 .soon.done,.sw-list .soon.done{color:var(--blue);background:#EAF3FF}
 
-/* 11-20 고니 "메뉴는 고정해 두고 바로 클릭": 펼침·서랍 없이(원래 없음) 누르는 칸만 넉넉히 — 글자 둘레 칸 전체가 눌림, 칸 사이 빈틈 없음 */
+
 :root{--hd:48px}
 .nav{gap:0}
 .nav a{padding:0 15px;justify-content:center}
@@ -634,13 +634,13 @@ a.cbox.cc:hover{background:#EEF5FF}
 .nav a:not(.on):hover{background:rgba(24,119,242,.05)}
 @media (max-width:640px){:root{--hd:92px}.nav{height:48px;justify-content:space-between;gap:0;margin:0 -6px;width:calc(100% + 12px)}.nav a{padding:0 6px;min-width:44px}.nav a.on:after{left:6px;right:6px}}
 
-/* 11-20 고니: 실적 카드는 왼쪽(연도별 건수)이 주인공 — 구분선을 오른쪽으로(왼쪽 48%), 오른쪽 소프트웨어 칸은 좁게, 긴 배지는 배지 안에서 줄바꿈 */
+
 .bx2{grid-template-columns:45% minmax(0,1fr)}
 .bx2-l .tag{white-space:normal;line-height:1.35}
-/* 카드가 좁은 화면(노트북 1366 등)은 오른쪽 칸이 너무 좁아 배지가 부서짐 → 실적 위·소프트웨어 아래(가로 구분선), 폰과 같음 */
+
 @media (max-width:1600px){.bx2{grid-template-columns:1fr;gap:12px}.bx2-r{border-left:0;border-top:1px solid var(--line);padding:12px 0 0}.bx2-l .tag{white-space:nowrap}}
 
-/* 11-20 고니(그림): 실적 카드 왼쪽·오른쪽 줄 한 줄씩 높이 맞춤 — 왼쪽에 오른쪽 작은 제목과 같은 높이 빈 자리, 오른쪽도 왼쪽과 같은 파란 네모 점·글자 크기·줄 간격 */
+
 .bx2-h{height:22px;line-height:22px;margin:0 0 10px;font-size:13px}
 .bx2 ul{margin-top:0}
 .bx2-l li{position:relative;padding-left:14px;margin:3px 0;font-size:15px;font-weight:400;color:var(--ink);min-height:1.7em}
@@ -648,18 +648,17 @@ a.cbox.cc:hover{background:#EEF5FF}
 .bx2-l li:before{display:block;content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;background:var(--blue)}
 .bx2-l .tag{line-height:1.3;padding-top:1px;padding-bottom:1px}
 @media (max-width:1600px){.bx2-sp{display:none}}
-/* 오른쪽 줄 높이 = 왼쪽 줄 높이(1.7em) 고정 — 긴 배지(EXCEL)는 배지 안 두 줄을 작게 해서 같은 줄 높이 안에 */
+
 .bx2-l li{height:1.7em;min-height:0;align-items:center}
 .bx2-l .tag{font-size:10.5px;line-height:1.15;padding:1px 6px}
 @media (max-width:1600px){.bx2-l li{height:auto}.bx2-l .tag{font-size:11px;line-height:1.3}}
-/* 11-20 고니: 세 카드 모두 큰 제목 아래 빈칸을 조금 늘려 위아래 균형(아래 [자세히 보기] 위 빈칸과 비슷하게) */
+
 .step h3{margin-bottom:16px}
 .box .bx2-l li{margin:3px 0;padding-left:14px}
 .tbr{display:none}@media (min-width:1601px){.bx2{gap:0 16px}.bx2-r{padding-left:16px}.bx2-l .tag{white-space:nowrap}.tbr{display:block;height:0}}
 @media (min-width:1601px){.bx2-l .tag{padding:0 5px;line-height:1.2}}
 
-/* 11-20 고니: PJT 하위 탭 = PJT 팝업 안 기능 탭과 같은 모양(PjtToolButton) — 위 모서리만 5px 둥근 폴더 탭, 안 고른 탭 = 연회색(236,240,245)·2px 낮게, 고른 탭 = 흰 바탕·파란 이름·아래 판과 이어짐(아래 선 없음)
-   이름 14px 굵게 / 설명 12px, 왼쪽 여백 13px, 높이 52px. 아래 판(PJT 그림 칸)도 흰 바탕으로 이어 붙이고, 그림은 위에 붙여 큰 빈칸 없앰 */
+
 .xv[data-kind="pjt"] .xv-stack.subtabs{border-bottom:0;background:#fff}
 .xv[data-kind="pjt"] .xv-sub{align-items:flex-end;gap:3px;padding:12px 16px 0;border-bottom:1px solid var(--line);flex-wrap:nowrap}
 .xv[data-kind="pjt"] .xv-sub:empty{padding:0;border-bottom:0}
@@ -675,7 +674,7 @@ a.cbox.cc:hover{background:#EEF5FF}
 @media (max-width:700px){.xv[data-kind="pjt"] .xv-sub{padding:8px 12px 0;overflow-x:auto}.xv[data-kind="pjt"] .xv-subtab{min-width:0;height:44px;padding:0 12px 0 10px;flex:none}.xv[data-kind="pjt"] .xv-subtab.on{height:46px}.xv[data-kind="pjt"] .xv-subtab b{font-size:13px}.xv[data-kind="pjt"] .xv-subtab span{font-size:11px}.xv[data-kind="pjt"] .xv-main{padding-top:14px}}
 .xv[data-kind="pjt"] .xv-pane>.items{align-items:start}.xv[data-kind="pjt"] .xv-main>.xv-stack{align-items:start}
 
-/* 11-20 고니: 첫 화면 협업 상자 바로 아래 같은 모양 상자 "현재 판매하지 않습니다." + [소식 받기](문의하기와 같은 단추) → 누르면 이메일 칸이 상자 안 아래 줄에 열림 */
+
 .inv.inv-sale{flex-wrap:wrap;margin-top:12px;border-bottom:1px solid var(--line);border-top:1px solid var(--line)}
 .inv.inv-sale .sale-l{flex:1;min-width:0}
 .inv .inv-btn{flex:none;font:inherit;padding:9px 16px;border:1.5px solid var(--blue);border-radius:999px;color:var(--blue);font-size:14px;font-weight:600;white-space:nowrap;background:#fff;cursor:pointer;transition:background .2s,color .2s}
@@ -685,7 +684,7 @@ a.cbox.cc:hover{background:#EEF5FF}
 @media (max-width:560px){.inv.inv-sale .inv-btn{align-self:flex-end}.inv.inv-sale .sub-form{max-width:none}}
 .inv.inv-sale>.inv-t{flex:1 1 0;min-width:0}.inv.inv-sale>.sub-form{flex:0 0 100%;max-width:none;margin:4px 0 0}.inv.inv-sale .sub-row{max-width:560px;margin-left:auto}.inv.inv-sale .sub-ok,.inv.inv-sale .sub-msg{max-width:560px;margin-left:auto}.inv.inv-sale .sub-row div,.inv.inv-sale .sub-form div{flex:none}.inv.inv-sale .sub-row{display:flex}.inv.inv-sale .sub-row input{flex:1}
 
-/* 11-20 고니 "휑해": 엑셀 판 = 탭마다 내용 높이(0.25초 부드럽게), 안 여백 줄임, 같은 배율 */
+
 .xv[data-kind="xl"] .xv-main{padding:36px 24px}
 .xv-stack.xfit{align-items:start;overflow:hidden;transition:height .25s ease}
 .xv-stack.xfit>.xv-pane{align-items:flex-start;justify-content:center}
@@ -696,30 +695,29 @@ a.cbox.cc:hover{background:#EEF5FF}
 @media (prefers-reduced-motion:reduce){.xv-stack.xfit{transition:none}}
 .xv-row.xs{row-gap:12px}
 .xv-stack.xfit>.xv-pane{padding:0 14px 30px}.xv[data-kind="xl"] .xv-main{padding-bottom:10px}
-/* 11-20 고니: 엑셀 판 위아래 빈 바탕 조금 더 줄임, 위 엑셀 판과 아래 PJT 판 사이 간격 22 → 40px */
+
 .xv[data-kind="xl"] .xv-main{padding-top:28px;padding-bottom:4px}.xv[data-kind="xl"]{margin-bottom:40px}
 .sub-msg{font-size:12.5px;margin-top:5px}.sub-msg.good{color:#15803D;font-weight:600}
 
-/* 11-21 고니: PJT 판 높이 내용대로(아래 빈 바탕 = 위 여백과 비슷) */
+
 .xv[data-kind="pjt"] .xv-main{padding-bottom:22px}
 .xv[data-kind="pjt"] .xv-main>.xv-stack{overflow:hidden;transition:height .25s ease}
 .xv[data-kind="pjt"] .xv-pane>.items{align-items:start}
 @media (max-width:700px){.xv[data-kind="pjt"] .xv-main{padding-bottom:14px}}
-/* 11-21 고니: 첫 화면 실적 카드(1601 이상) — 구분선을 왼쪽으로(왼쪽 칸 = 연도 글자 폭), 오른쪽 배지 전부 한 줄, 이름-배지 16px */
+
 @media (min-width:1601px){.bx2{grid-template-columns:max-content minmax(0,1fr);gap:0 28px}.bx2-r{padding-left:28px}.tbr{display:none}.bx2-l li{grid-template-columns:8.1em auto;column-gap:16px}.bx2-l .tag{font-size:11px;white-space:nowrap;line-height:1.3;padding:1px 6px}}
-/* 11-21 고니: 엑셀·PJT 판 높이 고정, 작은 탭 내용은 위아래 가운데 */
+
 .xv-stack.xfit{align-items:center}.xv-stack.xfit>.xv-pane{align-self:center}.xv[data-kind="pjt"] .xv-main>.xv-stack,.xv[data-kind="pjt"] .xv-pane>.items{align-items:center}
 
-/* 11-21 고니(버그): CAD 칸 그림 모서리 직각 → 원인 = 그림은 엑셀 팝업과 똑같이 네모로 찍혔고, 엑셀 판은 CSS 로 8px 둥글게, CAD 칸(.sg-im img)은 3px 라서 직각처럼 보임 → CAD 그림도 실제 창처럼 8px 둥글게 + 같은 그림자 */
+
 .sg.cad2 .sg-im img{border-radius:8px;box-shadow:0 10px 28px rgba(20,40,80,.16)}
-/* 11-21 고니: CAD 칸 제목 옆 | 보안 안내(설명 글과 같은 크기·회색), 폰은 제목 아래 줄 */
+
 .cad-hd .cad-note{position:relative;padding-left:15px;font-size:14px;color:var(--sub)}
 .cad-hd .cad-note:before{content:"";position:absolute;left:0;top:.2em;bottom:.2em;width:1px;background:var(--line2)}
 @media (max-width:700px){.cad-hd .cad-note{flex-basis:100%;padding-left:0;margin-top:2px}.cad-hd .cad-note:before{display:none}}
 .sg.cad2 .c-line img,.sg.cad2 .c-move img{border-radius:14px}.sg.cad2 .c-man1 img,.sg.cad2 .c-man2 img{border-radius:10px}
 
-/* 11-21 고니 확정: 실적 카드 제목 줄 "프로젝트 수행 실적 ┃ 개발 현황" — 오른쪽 작은 "소프트웨어 개발" 제목 대신, 진한 세로 막대 + 한 단계 작은 글자.
-   큰 화면(1601 이상)은 막대가 큰 제목과 같은 줄에, 막대 아래로 칸 구분선이 이어짐(막대·구분선 한 줄). 좁은 화면은 오른쪽(아래) 칸 맨 위 제목 */
+
 .step p.bx2-t{height:auto;line-height:1.25;margin:0 0 12px;font-size:18px;font-weight:600;color:#3F4752}
 .step p.bx2-t .h3-bar{display:inline-block;width:3px;height:.95em;background:#1A1D21;vertical-align:-.12em;margin-right:14px;border-radius:1px}
 @media (min-width:1601px){
@@ -731,24 +729,22 @@ a.cbox.cc:hover{background:#EEF5FF}
  .step p.bx2-t .h3-bar{position:relative;z-index:1;margin:0 19px 0 0}
  .bx2-box .bx2-l li{padding-left:17px}.bx2-box .bx2-l li:before{left:3px}}
 
-/* 11-21 고니 확정: 시연 영상 "크게 보기" 표시 = 얇은 흰 원 테두리(은은히 빛남, 안은 아주 옅은 반투명) + 가운데 흰 재생 삼각형, 글자 없음.
-   마우스 올리면 영상 가운데에 은은하게 나타남, 폰(마우스 없음)은 늘 작게 */
+
 .vd-zoom,.vds .vd:nth-child(1) .vd-zoom{left:50%;top:calc(50% + 17px);right:auto;bottom:auto;width:80px;height:80px;padding:0;gap:0;border-radius:50%;background:none;transform:translate(-50%,-50%) scale(.92);opacity:0;transition:opacity .2s,transform .2s;filter:drop-shadow(0 0 6px rgba(255,255,255,.45)) drop-shadow(0 2px 10px rgba(0,0,0,.35))}
 .vd-zoom svg{width:100%;height:100%}
 .vd-zoom circle{fill:rgba(255,255,255,.12);stroke:#fff;stroke-width:2}
 .vd-zoom path{fill:#fff;stroke:#fff;stroke-width:2;stroke-linejoin:round}
 .vd:hover .vd-zoom,.vd video:focus-visible~.vd-zoom{opacity:1;transform:translate(-50%,-50%)}
 @media (hover:none){.vd-zoom,.vds .vd:nth-child(1) .vd-zoom{width:48px;height:48px;opacity:.9;transform:translate(-50%,-50%)}}
-@media (max-width:560px){.vds .vd:nth-child(1) .vd-zoom{left:50%;right:auto}}/* 11-21 확정 C안: 첫 화면 판매 안내 = 소프트웨어 페이지와 같은 줄 모양, 제품 목록 바로 아래(밑줄 없음), 협업 상자는 그 아래 */
+@media (max-width:560px){.vds .vd:nth-child(1) .vd-zoom{left:50%;right:auto}}
 .sale-c{border-bottom:0;padding:18px 0 4px}
-/* 실적 카드 큰 화면: 긴 배지(EXCEL)도 카드 안 한 줄 */
+
 @media (min-width:1601px){.bx2-box .bx2-l .tag{font-size:10.5px;padding:1px 5px}}
-/* 흰 엑셀 영상 위에서도 재생 표시가 보이게 바깥 그림자 조금 진하게 */
-.vd-zoom,.vds .vd:nth-child(1) .vd-zoom{filter:drop-shadow(0 0 5px rgba(255,255,255,.4)) drop-shadow(0 2px 14px rgba(0,0,0,.5))}/* 폰: 긴 배지(EXCEL)가 카드 오른쪽 선을 넘지 않게 배지 안에서 줄바꿈 */
+
+.vd-zoom,.vds .vd:nth-child(1) .vd-zoom{filter:drop-shadow(0 0 5px rgba(255,255,255,.4)) drop-shadow(0 2px 14px rgba(0,0,0,.5))}
 @media (max-width:560px){.bx2-l li{height:auto}.bx2-l .tag{white-space:normal;line-height:1.3}}
 
-/* 11-21 고니: CAD·EXCEL 제목 줄 오른쪽 = 세로 막대(3줄 높이) + 3줄 묶음. 마지막 줄이 제목 줄과 같은 기준선(위로 쌓임), 줄 순서 = 위에서 짧은 줄 → 긴 줄.
-   CAD = 파랑 2줄(보안 안내) + 빨강 1줄(작동 확인), EXCEL = 빨강 3줄. 폰은 제목 아래로(막대 없음) */
+
 .recs-hd.hd3{align-items:last baseline}
 .hd-notes{border-left:2px solid #C9D0DA;padding-left:14px;margin-left:6px}
 .hd-notes p{margin:0;font-size:14px;line-height:1.5;white-space:nowrap}
@@ -756,21 +752,21 @@ a.cbox.cc:hover{background:#EEF5FF}
 @media (max-width:1100px){.hd-notes p{white-space:normal;word-break:keep-all}}
 @media (max-width:700px){.recs-hd.hd3{align-items:baseline}.hd-notes{flex-basis:100%;border-left:0;padding-left:0;margin:4px 0 0}.hd-notes p{font-size:13px}}
 
-/* 11-21 고니 B안: CAD 칸 윗줄 = 하네스 팝업 + 설명서 2장 한 줄(같은 높이·위아래 끝선, 판 폭 가득). 폭 = 18px(안 여백+테두리) + 가로세로비 비율 → 그림 높이 같음. 아래 실행 전·후 줄 그대로 */
+
 .sg.cad2{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start}
 .sg.cad2 .sg-c{min-width:0}
 .sg.cad2 .c-line{flex:1.6133 1 18px}.sg.cad2 .c-man1,.sg.cad2 .c-man2{flex:1 1 18px}.sg.cad2 .c-move{flex:0 0 100%}
 .sg.cad2 .c-man1 .sg-im,.sg.cad2 .c-man2 .sg-im{position:static}
 .sg.cad2 .c-man1 img,.sg.cad2 .c-man2 img{position:static;inset:auto;width:100%;height:auto}
-@media (max-width:560px){.sg.cad2 .c-line,.sg.cad2 .c-man1,.sg.cad2 .c-man2{flex:0 0 100%}}/* 11-21 고니: 재생 표시 과하게 큼 → 80px에서 56px, 테두리 선 조금 얇게(폰 40px) */
+@media (max-width:560px){.sg.cad2 .c-line,.sg.cad2 .c-man1,.sg.cad2 .c-man2{flex:0 0 100%}}
 .vd-zoom,.vds .vd:nth-child(1) .vd-zoom{width:56px;height:56px}.vd-zoom circle{stroke-width:2.2}
 @media (hover:none){.vd-zoom,.vds .vd:nth-child(1) .vd-zoom{width:40px;height:40px}}
-/* 11-21 고니: PJT·엑셀 판 그림은 위 정렬(하위 탭·탭 줄 바로 아래, 위 빈칸 없음) */
+
 .xv[data-kind="pjt"] .xv-main>.xv-stack,.xv[data-kind="pjt"] .xv-pane>.items,.xv[data-kind="pjt"] .xv-pane,.xv[data-kind="pjt"] .xv-item{align-items:flex-start;align-self:start}
 .xv-stack.xfit{align-items:start}.xv-stack.xfit>.xv-pane{align-self:start}
-/* 11-21 고니: 판매 안내 줄 ↔ 협업 상자 간격 약 2/3 */
+
 .sale-c+.inv{margin-top:8px}
-/* 11-21 고니: 실적 카드 "개발 현황" = 큰 제목과 같은 크기·굵기. 진한 막대는 글자 높이만, 얇은 세로선은 막대와 띄워 목록 첫 줄부터(같은 세로 위치), 왼쪽 목록과 선 사이 넉넉히 */
+
 .step p.bx2-t{font-size:22px;font-weight:700;color:var(--ink)}
 @media (min-width:1601px){
  .bx2-box .bx2-r{border-left:0;padding-left:0}
@@ -779,33 +775,33 @@ a.cbox.cc:hover{background:#EEF5FF}
  .bx2-box .bx2-l{position:relative}
  .bx2-box .bx2-l:after{content:"";position:absolute;left:1px;top:3px;bottom:3px;width:1px;background:#DDE3EA}
  .bx2-box .bx2-l li{padding-left:40px}.bx2-box .bx2-l li:before{left:26px}}@media (min-width:1601px){.bx2-box .bx2-l li{padding-left:30px;grid-template-columns:7.9em auto}.bx2-box .bx2-l li:before{left:17px}.bx2-box .bx2-l .tag{padding:1px 4px}}
-/* 11-21 [버그] CAD 카드 재생 표시 안 뜸 — 원인: 위 ".vds .vd:nth-child(1) .vd-zoom{opacity:0}"(선택자 힘 0,4,0)이 마우스 올림 ".vd:hover .vd-zoom"(0,3,0)보다 세서 CAD 카드만 계속 투명. → 마우스 올림 규칙을 같은 힘 이상으로 */
+
 .vds .vd:hover .vd-zoom,.vds .vd:nth-child(1):hover .vd-zoom,.vds .vd video:focus-visible~.vd-zoom,.vds .vd:nth-child(1) video:focus-visible~.vd-zoom{opacity:1;transform:translate(-50%,-50%)}
-/* 11-21 고니: 재생 표시 = 원 안 반투명 어둡게(살짝 흐림) + 흰 테두리 바깥 은은한 흰 빛, 흰 삼각형 그대로 — 흰 엑셀 영상 위에서도 보이게, 두 카드 같은 모양 */
+
 .vd-zoom,.vds .vd:nth-child(1) .vd-zoom{filter:none;background:rgba(0,0,0,.35);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);box-shadow:0 0 16px rgba(255,255,255,.5),0 2px 10px rgba(0,0,0,.25)}
-.vd-zoom circle{fill:none}/* 11-21 고니: 실적 카드 목록 첫 줄 = 옆 두 카드 첫 내용 줄과 같은 높이(제목 바닥 → 첫 줄 25px, 잰 값), "개발 현황" 글자 바닥 = 큰 제목 바닥(4.6px 떠 있던 것 내림) */
+.vd-zoom circle{fill:none}
 @media (min-width:1601px){.step p.bx2-t{margin-bottom:22px;position:relative;top:4.6px}}
-/* 11-21 고니: 판매 안내 줄 ↔ 협업 상자 간격 절반, [소식 받기] 버튼 높이 낮게(약 32px, 글자 그대로) — 첫 화면·소프트웨어 페이지 같게 */
+
 .sale-c{padding-bottom:0}.sale-c+.inv{margin-top:2px}
 .sale-1 .sub-open{line-height:1.3;padding:5px 16px}
-/* 11-21 고니: 엑셀·PJT 판 안쪽 하늘색 빼고 흰색(도면 판과 같게), 팝업·설명서 그림은 얇은 테두리+은은한 그림자로 경계 보이게 */
+
 .xv[data-kind="xl"] .xv-body,.xv[data-kind="pjt"] .xv-body{background:#fff}
 .xv-row.xs img,.xv-row.pair img{border:1px solid #D3D9E0;border-radius:8px;box-shadow:0 6px 18px rgba(20,40,80,.12)}
-/* 11-21 고니: 엑셀 판 탭3 처럼 판 높이보다 낮은 탭은 위아래 가운데(탭1·2는 판 높이와 같아 그대로) */
+
 .xv-stack.xfit>.xv-pane{align-self:center}
-/* 판 높이 = 고른 탭 높이로 바꿨으니 가운데 정렬 대신 위 정렬(가운데면 높은 탭 기준 칸에서 가운데로 가 잘림) */
+
 .xv-stack.xfit>.xv-pane{align-self:start}
 
-/* 11-21 고니(1시 30분): 엑셀 판 가로 고정형 — 묶음마다 칩 줄 + 팝업 한 줄, 아래로 쌓음. 두 번째 묶음부터 칩 줄 위에 얇은 선. 칩 누르면 그 묶음이 메뉴 바로 아래로 */
+
 .xv[data-kind="xl"] .xg{scroll-margin-top:calc(var(--hd) + 12px)}
 .xv[data-kind="xl"] .xg+.xg .xv-tabs{border-top:1px solid var(--line)}
 .xv[data-kind="xl"] .xv-main{height:auto;padding:28px 38px 34px}
 .xv[data-kind="xl"] .xv-row.xs{align-items:flex-start}
 .xv[data-kind="xl"] .xv-tab[aria-current]{cursor:default}
 @media (max-width:700px){.xv[data-kind="xl"] .xv-main{padding:18px 12px}}
-/* 11-21 고니: 실적 카드 긴 배지(1단계 완료 · 시험·안정성 검토 중)가 카드 밖으로 → 카드 안(넘칠 땐 배지 안에서 줄바꿈, 글자 그대로) */
+
 @media (min-width:1601px){.bx2-box .bx2-l li{grid-template-columns:7.9em minmax(0,1fr)}.bx2-box .bx2-l .tag{white-space:normal;line-height:1.3}}
-/* 11-21 고니: 소프트웨어 머리 오른쪽 = 세로 막대 + 글(왜 만드나·지금·앞으로) + 흐름 띠. 폰은 머리 아래 */
+
 .sw-hd{display:flex;gap:48px;align-items:flex-start}
 .sw-hd-l{flex:0 0 auto;max-width:44%}
 .sw-why{flex:1;min-width:0;border-left:3px solid #1A1D21;padding:2px 0 2px 28px;font-size:14.5px;line-height:1.65;color:var(--sub)}
@@ -820,7 +816,7 @@ a.cbox.cc:hover{background:#EEF5FF}
 .sw-flow li:nth-child(even){background:#E1ECFB}
 @media (max-width:900px){.sw-hd{flex-direction:column;gap:22px}.sw-hd-l{max-width:none}.sw-why{padding-left:16px;font-size:14px}}.sw-why .sw-sub{font-size:13.5px;color:var(--sub);margin-top:-1px}
 
-/* 11-21 고니: 소프트웨어 머리 오른쪽 "개발 로드맵" 버튼 → 팝업(글 전부). 바깥·X·Esc 로 닫힘, 길면 팝업 안에서 스크롤. 폰 = 버튼은 설명 줄 아래, 팝업 화면 가득 */
+
 .sw-hd{align-items:center}
 .rm-open{flex:none;margin-left:auto;display:inline-flex;align-items:center;gap:8px;padding:10px 18px 10px 20px;border:1.5px solid var(--blue);border-radius:999px;background:#fff;color:var(--blue);font:inherit;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,color .2s,box-shadow .2s}
 .rm-open svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
@@ -837,19 +833,19 @@ html.rm-on{overflow:hidden}
 .rm .sw-why h4{font-size:14px;margin-top:18px}.rm .sw-why h4:first-child{margin-top:0}.rm .sw-why h4.sw-last{font-size:14px;margin-top:20px}
 .rm .sw-why .sw-sub{font-size:13px}.rm .sw-flow li{font-size:12.5px}
 @media (max-width:900px){.sw-hd{align-items:flex-start}.rm-open{margin-left:0;font-size:14px;padding:8px 14px 8px 16px}}
-@media (max-width:560px){.rm{padding:0}.rm-box{width:100%;height:100%;max-height:none;border-radius:0}.rm-body{padding:18px 16px 24px}}/* 11-21 고니: 머리 오른쪽 = 핵심 한 줄(굵게) + 개발 로드맵 버튼 한 덩어리, 파란 점 3줄 삭제 */
+@media (max-width:560px){.rm{padding:0}.rm-box{width:100%;height:100%;max-height:none;border-radius:0}.rm-body{padding:18px 16px 24px}}
 .rm-side{margin-left:auto;flex:0 1 420px;display:flex;flex-direction:column;align-items:flex-end;gap:14px;text-align:right}
 .rm-side .rm-open{margin-left:0}
 .rm-key{margin:0;font-size:15px;font-weight:700;line-height:1.6;color:var(--ink);word-break:keep-all}
 @media (max-width:900px){.rm-side{margin-left:0;flex:none;align-items:flex-start;text-align:left;gap:12px}.rm-key{font-size:14px}}
 @media (min-width:1201px){.rm-side{flex:0 1 auto}.rm-key{white-space:nowrap}}
 .xv[data-kind="xl"] span.xv-tab{cursor:default;pointer-events:none}
-/* 11-21 [버그] CAD 설명서 그림 맨 아래 설명서 창 아래 줄(안내 글·100% 칸)이 그림에 찍혀 있었음 → 그림 아래를 그 줄 위에서 자름(900x842), 칸 비율도 맞춤 */
+
 .sg.cad2 .c-man1,.sg.cad2 .c-man2{flex:1.0689 1 18px}
-/* 11-21 고니: 머리 오른쪽 = 개발 로드맵 버튼만(핵심 한 줄 삭제), 머리 세로 가운데 */
+
 .rm-side{align-self:center}
 
-/* 11-21 고니: 개발 로드맵 버튼 = 전선 테두리 + 단자 점 + 삼형제 움직임(software 페이지 스크립트), 로드맵 팝업 소리 버튼·여는 조각 */
+
 .sw-hd{position:relative}
 .rp-lay{position:absolute;inset:0;pointer-events:none}
 .rp-svg{position:absolute;left:0;top:0;overflow:visible;pointer-events:none;z-index:5}
@@ -868,4 +864,4 @@ html.rm-on{overflow:hidden}
 @media (hover:none),(max-width:560px){.rv-vol input{display:none}}
 .rv-piece{position:fixed;left:0;top:0;z-index:120;width:46px;height:32px;margin:-16px 0 0 -23px;border-radius:7px;background:#fff;border:1.5px solid #1877F2;box-shadow:0 8px 20px rgba(24,119,242,.3);pointer-events:none}
 .rv-piece:before{content:"";position:absolute;left:7px;right:7px;top:9px;height:3px;border-radius:2px;background:#F13D62;box-shadow:0 7px 0 #CFE0FB,0 14px 0 #CFE0FB}
-/* Draft A — 흰 바탕 · 먹색 글 · 맑은 파랑 포인트 · 도면 모눈 (11-18 고니) */
+
