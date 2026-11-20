@@ -498,4 +498,41 @@ a.cbox.cc:hover{background:#EEF5FF}
 .cbox.cc strong{font-size:22px;margin-bottom:6px;word-break:keep-all}
 @media (max-width:560px){.map-frame{height:340px}.map-bar{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 16px}.cbox.cc{padding:18px 20px}.cbox.cc strong{font-size:19px}}.cbox.cc strong .nw{display:inline;font-size:inherit;color:inherit;white-space:nowrap}
 
+/* 11-20 소프트웨어 EXCEL 보기 판 2개 (시안 B, 엑셀 판 = 묶음 탭 / PJT 판 = 탭 + 작은 그림) */
+.xv{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:6px 0 22px;background:#fff}
+.xv-tabs{display:flex;gap:4px;padding:10px 14px 0;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.xv-tabs::-webkit-scrollbar{display:none}
+.xv-tabs button{font:inherit;font-size:15px;font-weight:700;color:var(--sub);background:none;border:0;padding:10px 16px 12px;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
+.xv-tabs button:hover{color:var(--ink)}.xv-tabs button.on{color:var(--blue);border-bottom-color:var(--blue)}
+.xv-body{display:grid;grid-template-columns:minmax(0,1fr) 240px;background:linear-gradient(180deg,#F4F8FE 0%,#E9F1FC 100%)}
+.xv-main{display:flex;align-items:center;justify-content:center;padding:clamp(16px,2.6vw,40px);height:860px;box-sizing:border-box;min-width:0}
+.xv-main>img{max-width:100%;max-height:100%;width:auto;height:auto;border-radius:8px;box-shadow:0 12px 32px rgba(20,40,80,.18);cursor:zoom-in}
+.xv-grp{display:flex;flex-direction:column;align-items:center;gap:28px;max-width:100%}
+.xv-row{display:flex;justify-content:center;align-items:flex-start;gap:28px;max-width:100%}
+.xv-row img{min-width:0;max-width:100%;height:auto;border-radius:8px;box-shadow:0 10px 28px rgba(20,40,80,.16);cursor:zoom-in}
+.xv-thumbs{border-left:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:12px;background:#fff;overflow-y:auto;max-height:860px;box-sizing:border-box}
+.xv-thumbs button{border:2px solid var(--line);border-radius:8px;padding:6px;background:#fff;cursor:pointer;display:block;flex:0 0 auto}
+.xv-thumbs button:hover{border-color:var(--blue-l)}.xv-thumbs button.on{border-color:var(--blue)}
+.xv-thumbs img{width:100%;height:auto;display:block;border-radius:4px}
+.xlb{position:fixed;inset:0;z-index:99;background:rgba(10,16,28,.82);display:flex;align-items:center;justify-content:center;padding:3vw;cursor:zoom-out}
+.xlb[hidden]{display:none}.xlb img{max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+@media (max-width:900px){.xv-body{grid-template-columns:1fr}.xv-main{height:auto;min-height:0}.xv-thumbs{border-left:0;border-top:1px solid var(--line);flex-direction:row;align-items:flex-start;overflow-x:auto;max-height:none}.xv-thumbs button{flex:0 0 130px}.xv-thumbs>button>img{max-height:110px;width:auto;max-width:100%;margin:0 auto}.xv-tabs{flex-wrap:wrap;padding:6px 8px 0}
+ .xv-row{flex-wrap:wrap;gap:16px}.xv-grp{gap:16px}.xv-tabs button{font-size:13.5px;padding:9px 8px 11px}.xv-tabs{gap:0}}
+
+/* 11-20 9번: 엑셀 판 = 탭만(작은 그림 줄 없음), 높이는 내용대로, 줄 맞춤(줄 안 높이 같고 줄 폭 = 판 폭) */
+.xv-body.solo{grid-template-columns:1fr}
+.xv-body.solo .xv-main{height:auto;padding:clamp(18px,3vw,44px) clamp(14px,3vw,44px)}
+.xv-body.solo .xv-grp{display:flex;flex-direction:column;align-items:stretch;gap:24px}
+.xv-body.solo .xv-row{display:flex;justify-content:flex-start;align-items:flex-start;gap:24px;width:100%;flex-wrap:nowrap}
+.xv-body.solo .xv-row img{width:0;min-width:0;max-width:none;height:auto;display:block}
+@media (max-width:900px){.xv-body.solo .xv-grp,.xv-body.solo .xv-row{gap:12px}}
+@media (max-width:560px){.xv-body.solo .xv-row.n4{flex-wrap:wrap}.xv-body.solo .xv-row.n4 img{flex:1 1 calc(50% - 6px)!important;width:auto}}
+
+/* 11-20 PJT 판 = PJT 창 + 설명서 창 나란히, 같은 기능 묶음 작은 그림은 아래 한 줄 */
+.xv-body.below .xv-thumbs{border-left:0;border-top:1px solid var(--line);flex-direction:row;justify-content:center;flex-wrap:wrap;max-height:none;overflow:visible;padding:14px}
+.xv-body.below .xv-thumbs[hidden]{display:none}
+.xv-body.below .xv-thumbs{align-items:flex-start}.xv-body.below .xv-thumbs button{flex:0 0 150px;height:118px;display:flex;align-items:center;justify-content:center}
+.xv-body.below .xv-thumbs>button>img{width:auto;height:auto;max-width:100%;max-height:100%}
+@media (max-width:560px){.xv-body.solo .xv-row.pair{flex-direction:column;gap:12px}.xv-body.solo .xv-row.pair img{width:100%;flex:none!important}.xv-body.below .xv-thumbs{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto}.xv-body.below .xv-thumbs button{flex:0 0 120px;height:96px}}
+
 /* Draft A — 흰 바탕 · 먹색 글 · 맑은 파랑 포인트 · 도면 모눈 (11-18 고니) */
