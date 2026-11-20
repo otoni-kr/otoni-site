@@ -15,19 +15,19 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#ffffff">
-<link rel="icon" href="mark.svg?v=1121i" type="image/svg+xml">
-<link rel="stylesheet" href="style.css?v=1121i">
+<link rel="icon" href="mark.svg?v=1121j" type="image/svg+xml">
+<link rel="stylesheet" href="style.css?v=1121j">
 </head>
 <body class="p-contact">
 <header class="hd">
   <div class="wrap hd-in">
-    <a class="brand" href="index.html?v=1121i" aria-label="OTONI 홈"><img class="logo" src="logo_small.svg?v=1121i" alt="OTONI" width="127" height="40"></a>
+    <a class="brand" href="index.html?v=1121j" aria-label="OTONI 홈"><img class="logo" src="logo_small.svg?v=1121j" alt="OTONI" width="127" height="40"></a>
     <nav class="nav">
-      <a href="index.html?v=1121i#about" data-page="p-home">회사 소개</a>
-      <a href="design.html?v=1121i" data-page="p-design">설계·제작</a>
-      <a href="build.html?v=1121i" data-page="p-build">프로젝트 수행 실적</a>
-      <a href="software.html?v=1121i" data-page="p-software">소프트웨어</a>
-      <a href="contact.html?v=1121i" data-page="p-contact">고객지원</a>
+      <a href="index.html?v=1121j#about" data-page="p-home">회사 소개</a>
+      <a href="design.html?v=1121j" data-page="p-design">설계·제작</a>
+      <a href="build.html?v=1121j" data-page="p-build">프로젝트 수행 실적</a>
+      <a href="software.html?v=1121j" data-page="p-software">소프트웨어</a>
+      <a href="contact.html?v=1121j" data-page="p-contact">고객지원</a>
     </nav>
   </div>
 </header>
@@ -62,7 +62,7 @@
 <footer class="ft">
   <div class="wrap ft-in">
     <div class="ft-brand">
-      <a class="brand" href="index.html?v=1121i" aria-label="OTONI 홈"><img class="logo" src="logo.svg?v=1121i" alt="OTONI" width="124" height="40"></a>
+      <a class="brand" href="index.html?v=1121j" aria-label="OTONI 홈"><img class="logo" src="logo.svg?v=1121j" alt="OTONI" width="124" height="40"></a>
       <p>전장 설계 및 제작, 자동화 설계 소프트웨어까지.</p><p class="copy">© 2026 OTONI. All rights reserved.</p>
     </div>
     <ul class="ft-info">
@@ -74,7 +74,7 @@
     <ul class="ft-info">
       <li><b>주소</b> 충청남도 천안시 서북구 2공단4로 40-11, 천안G1비즈캠퍼스 10층 1024호(성성동)</li>
       <li><b>업태·종목</b> 제조업, 도매 및 소매업 · 자동화설비제작, 전기용 기계·장비 및 관련 기자재 도매업</li>
-      <li><b>이메일</b> <a href="mailto:otoni@otoni.co.kr">otoni@otoni.co.kr</a></li><li><b>안내</b> <a class="pp" href="privacy.html?v=1121i"><b>개인정보처리방침</b></a></li>
+      <li><b>이메일</b> <a href="mailto:otoni@otoni.co.kr">otoni@otoni.co.kr</a></li><li><b>안내</b> <a class="pp" href="privacy.html?v=1121j"><b>개인정보처리방침</b></a></li>
     </ul>
   </div>
 </footer>
@@ -92,11 +92,11 @@ Object.keys(map).forEach(function(id){var s=document.getElementById(id);if(s)io.
   <span>OTONI 소프트웨어 출시·업데이트 소식을 메일로 알려 드립니다.</span>
   <form class="sub-form" novalidate>
     <div class="sub-row"><input type="email" name="email" placeholder="이메일 주소" autocomplete="email" required aria-label="이메일 주소"><button type="submit">받기</button></div>
-    <label class="sub-ok"><input type="checkbox" name="agree"> (필수) 개인정보 수집·이용 동의 · <a href="privacy.html?v=1121i#subscribe">자세히</a></label>
+    <label class="sub-ok"><input type="checkbox" name="agree"> (필수) 개인정보 수집·이용 동의 · <a href="privacy.html?v=1121j#subscribe">자세히</a></label>
     <p class="sub-msg" aria-live="polite"></p>
   </form>
 </div>
-<script src="sub_config.js?v=1121i"></script>
+<script src="sub_config.js?v=1121j"></script>
 <script>
 /* 업데이트 소식 받기 (11-20 고니): 아래 구석 알림 띠 = 조금 내리면 뜸 / [받기] 뒤 다시 안 뜸 / [X] 30일 안 뜸 / 아무것도 안 누르면 다음 방문에도.
    상태는 이 브라우저(localStorage)에만 둠, 회사로 보내지 않음. 메일 서비스(스티비) 구독 폼 주소는 sub_config.js 한 줄 — 비어 있으면 "곧 열립니다" 안내만. */
@@ -115,13 +115,13 @@ document.querySelectorAll('.sub-form').forEach(function(f){f.onsubmit=function(e
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){m.textContent='이메일 주소를 확인해 주세요.';m.classList.add('bad');return}
   if(!f.agree.checked){m.textContent='개인정보 수집·이용 동의에 체크해 주세요.';m.classList.add('bad');return}
   if(!SUB_URL){m.textContent='소식 받기는 곧 열립니다. 잠시 뒤 다시 들러 주세요.';return}
-  // 스티비 구독 폼과 같은 POST(form 형식) — 페이지 이동 없이 보냄. 다른 사이트라 답 내용은 못 읽고, 보내기 자체가 실패(인터넷 끊김 등)하면 실패 안내
-  var btn=f.querySelector('button[type=submit]');btn.disabled=true;m.textContent='보내는 중…';
+  // 스티비 구독 폼과 같은 POST(form 형식) — 페이지 이동 없이 보냄(11-21 확인 메일 끔 → 바로 명단, 안내는 칸 바로 아래 작게). 다른 사이트라 답 내용은 못 읽고, 보내기 자체가 실패(인터넷 끊김 등)하면 실패 안내
+  var btn=f.querySelector('button[type=submit]');btn.disabled=true;m.textContent='';
   var body=new URLSearchParams();body.append(FIELD,em);
   fetch(SUB_URL,{method:'POST',mode:'no-cors',body:body}).then(function(){
-    set({done:1});m.textContent='확인 메일을 보냈습니다. 메일함에서 [구독 확인]을 누르면 신청이 끝납니다.';m.classList.add('good');f.email.value='';f.agree.checked=false;
-    if(bar&&!bar.hidden)setTimeout(function(){bar.classList.remove('show');setTimeout(function(){bar.hidden=true},250)},4000);
-  },function(){m.textContent='보내지 못했습니다. 잠시 뒤 다시 시도하시거나 otoni@otoni.co.kr로 알려 주세요.';m.classList.add('bad');}).then(function(){btn.disabled=false;});};});
+    set({done:1});m.textContent='✓ 신청되었습니다.';m.classList.add('good');f.email.value='';f.agree.checked=false;
+    if(bar&&!bar.hidden)setTimeout(function(){bar.classList.remove('show');setTimeout(function(){bar.hidden=true},250)},2500);
+  },function(){m.textContent='잠시 후 다시 시도해 주세요.';m.classList.add('bad');}).then(function(){btn.disabled=false;});};});
 })();
 </script>
 </body>

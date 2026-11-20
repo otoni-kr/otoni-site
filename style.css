@@ -698,5 +698,6 @@ a.cbox.cc:hover{background:#EEF5FF}
 .xv-stack.xfit>.xv-pane{padding:0 14px 30px}.xv[data-kind="xl"] .xv-main{padding-bottom:10px}
 /* 11-20 고니: 엑셀 판 위아래 빈 바탕 조금 더 줄임, 위 엑셀 판과 아래 PJT 판 사이 간격 22 → 40px */
 .xv[data-kind="xl"] .xv-main{padding-top:28px;padding-bottom:4px}.xv[data-kind="xl"]{margin-bottom:40px}
+.sub-msg{font-size:12.5px;margin-top:5px}.sub-msg.good{color:#15803D;font-weight:600}
 
 /* Draft A — 흰 바탕 · 먹색 글 · 맑은 파랑 포인트 · 도면 모눈 (11-18 고니) */
