@@ -791,5 +791,57 @@ a.cbox.cc:hover{background:#EEF5FF}
 /* 11-21 고니: 엑셀·PJT 판 안쪽 하늘색 빼고 흰색(도면 판과 같게), 팝업·설명서 그림은 얇은 테두리+은은한 그림자로 경계 보이게 */
 .xv[data-kind="xl"] .xv-body,.xv[data-kind="pjt"] .xv-body{background:#fff}
 .xv-row.xs img,.xv-row.pair img{border:1px solid #D3D9E0;border-radius:8px;box-shadow:0 6px 18px rgba(20,40,80,.12)}
+/* 11-21 고니: 엑셀 판 탭3 처럼 판 높이보다 낮은 탭은 위아래 가운데(탭1·2는 판 높이와 같아 그대로) */
+.xv-stack.xfit>.xv-pane{align-self:center}
+/* 판 높이 = 고른 탭 높이로 바꿨으니 가운데 정렬 대신 위 정렬(가운데면 높은 탭 기준 칸에서 가운데로 가 잘림) */
+.xv-stack.xfit>.xv-pane{align-self:start}
+
+/* 11-21 고니(1시 30분): 엑셀 판 가로 고정형 — 묶음마다 칩 줄 + 팝업 한 줄, 아래로 쌓음. 두 번째 묶음부터 칩 줄 위에 얇은 선. 칩 누르면 그 묶음이 메뉴 바로 아래로 */
+.xv[data-kind="xl"] .xg{scroll-margin-top:calc(var(--hd) + 12px)}
+.xv[data-kind="xl"] .xg+.xg .xv-tabs{border-top:1px solid var(--line)}
+.xv[data-kind="xl"] .xv-main{height:auto;padding:28px 38px 34px}
+.xv[data-kind="xl"] .xv-row.xs{align-items:flex-start}
+.xv[data-kind="xl"] .xv-tab[aria-current]{cursor:default}
+@media (max-width:700px){.xv[data-kind="xl"] .xv-main{padding:18px 12px}}
+/* 11-21 고니: 실적 카드 긴 배지(1단계 완료 · 시험·안정성 검토 중)가 카드 밖으로 → 카드 안(넘칠 땐 배지 안에서 줄바꿈, 글자 그대로) */
+@media (min-width:1601px){.bx2-box .bx2-l li{grid-template-columns:7.9em minmax(0,1fr)}.bx2-box .bx2-l .tag{white-space:normal;line-height:1.3}}
+/* 11-21 고니: 소프트웨어 머리 오른쪽 = 세로 막대 + 글(왜 만드나·지금·앞으로) + 흐름 띠. 폰은 머리 아래 */
+.sw-hd{display:flex;gap:48px;align-items:flex-start}
+.sw-hd-l{flex:0 0 auto;max-width:44%}
+.sw-why{flex:1;min-width:0;border-left:3px solid #1A1D21;padding:2px 0 2px 28px;font-size:14.5px;line-height:1.65;color:var(--sub)}
+.sw-why h4{position:relative;margin:16px 0 4px;font-size:15px;font-weight:700;color:var(--ink)}
+.sw-why h4:first-child{margin-top:0}
+.sw-why h4:before{content:"";display:inline-block;width:3px;height:.9em;background:var(--blue);margin-right:9px;vertical-align:-.1em}
+.sw-why p{margin:0 0 2px;word-break:keep-all}.sw-why b{color:var(--ink);font-weight:700}
+.sw-why h4.sw-last{margin-top:18px;font-size:14.5px}
+.sw-flow{list-style:none;display:flex;flex-wrap:wrap;margin:10px 0 2px;padding:0;gap:0}
+.sw-flow li{position:relative;padding:5px 14px 5px 18px;background:#EEF4FD;color:var(--blue);font-size:13px;font-weight:700;line-height:1.3;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 50%,calc(100% - 8px) 100%,0 100%,8px 50%);margin-left:-4px}
+.sw-flow li:first-child{margin-left:0;padding-left:12px;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 50%,calc(100% - 8px) 100%,0 100%)}
+.sw-flow li:nth-child(even){background:#E1ECFB}
+@media (max-width:900px){.sw-hd{flex-direction:column;gap:22px}.sw-hd-l{max-width:none}.sw-why{padding-left:16px;font-size:14px}}.sw-why .sw-sub{font-size:13.5px;color:var(--sub);margin-top:-1px}
+
+/* 11-21 고니: 소프트웨어 머리 오른쪽 "개발 로드맵" 버튼 → 팝업(글 전부). 바깥·X·Esc 로 닫힘, 길면 팝업 안에서 스크롤. 폰 = 버튼은 설명 줄 아래, 팝업 화면 가득 */
+.sw-hd{align-items:center}
+.rm-open{flex:none;margin-left:auto;display:inline-flex;align-items:center;gap:8px;padding:10px 18px 10px 20px;border:1.5px solid var(--blue);border-radius:999px;background:#fff;color:var(--blue);font:inherit;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s,color .2s,box-shadow .2s}
+.rm-open svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.rm-open:hover{background:var(--blue);color:#fff;box-shadow:0 6px 16px rgba(24,119,242,.25)}.rm-open:hover svg{transform:translateX(3px)}
+.rm{position:fixed;inset:0;z-index:100;background:rgba(15,20,27,.55);display:flex;align-items:center;justify-content:center;padding:24px}
+.rm[hidden]{display:none}
+html.rm-on{overflow:hidden}
+.rm-box{width:min(760px,100%);max-height:calc(100vh - 48px);display:flex;flex-direction:column;background:#fff;border-radius:14px;box-shadow:0 24px 60px rgba(0,0,0,.3);outline:none;overflow:hidden}
+.rm-hd{display:flex;align-items:center;justify-content:space-between;padding:16px 20px 14px 26px;border-bottom:1px solid var(--line)}
+.rm-hd b{font-size:18px;font-weight:700;color:var(--ink)}
+.rm-x{width:36px;height:36px;border:0;border-radius:8px;background:none;font-size:26px;line-height:1;color:var(--sub);cursor:pointer}.rm-x:hover{background:#F1F4F8;color:var(--ink)}
+.rm-body{overflow:auto;padding:22px 26px 26px}
+.rm .sw-why{border-left:0;padding:0;font-size:14px;line-height:1.7}
+.rm .sw-why h4{font-size:14px;margin-top:18px}.rm .sw-why h4:first-child{margin-top:0}.rm .sw-why h4.sw-last{font-size:14px;margin-top:20px}
+.rm .sw-why .sw-sub{font-size:13px}.rm .sw-flow li{font-size:12.5px}
+@media (max-width:900px){.sw-hd{align-items:flex-start}.rm-open{margin-left:0;font-size:14px;padding:8px 14px 8px 16px}}
+@media (max-width:560px){.rm{padding:0}.rm-box{width:100%;height:100%;max-height:none;border-radius:0}.rm-body{padding:18px 16px 24px}}/* 11-21 고니: 머리 오른쪽 = 핵심 한 줄(굵게) + 개발 로드맵 버튼 한 덩어리, 파란 점 3줄 삭제 */
+.rm-side{margin-left:auto;flex:0 1 420px;display:flex;flex-direction:column;align-items:flex-end;gap:14px;text-align:right}
+.rm-side .rm-open{margin-left:0}
+.rm-key{margin:0;font-size:15px;font-weight:700;line-height:1.6;color:var(--ink);word-break:keep-all}
+@media (max-width:900px){.rm-side{margin-left:0;flex:none;align-items:flex-start;text-align:left;gap:12px}.rm-key{font-size:14px}}
+@media (min-width:1201px){.rm-side{flex:0 1 auto}.rm-key{white-space:nowrap}}
 
 /* Draft A — 흰 바탕 · 먹색 글 · 맑은 파랑 포인트 · 도면 모눈 (11-18 고니) */
