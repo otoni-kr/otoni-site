@@ -15,19 +15,19 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#ffffff">
-<link rel="icon" href="mark.svg?v=1121t" type="image/svg+xml">
-<link rel="stylesheet" href="style.css?v=1121t">
+<link rel="icon" href="mark.svg?v=1121u" type="image/svg+xml">
+<link rel="stylesheet" href="style.css?v=1121u">
 </head>
 <body class="p-privacy">
 <header class="hd">
   <div class="wrap hd-in">
-    <a class="brand" href="index.html?v=1121t" aria-label="OTONI 홈"><img class="logo" src="logo_small.svg?v=1121t" alt="OTONI" width="127" height="40"></a>
+    <a class="brand" href="index.html?v=1121u" aria-label="OTONI 홈"><img class="logo" src="logo_small.svg?v=1121u" alt="OTONI" width="127" height="40"></a>
     <nav class="nav">
-      <a href="index.html?v=1121t#about" data-page="p-home">회사 소개</a>
-      <a href="design.html?v=1121t" data-page="p-design">설계·제작</a>
-      <a href="build.html?v=1121t" data-page="p-build">프로젝트 수행 실적</a>
-      <a href="software.html?v=1121t" data-page="p-software">소프트웨어</a>
-      <a href="contact.html?v=1121t" data-page="p-contact">고객지원</a>
+      <a href="index.html?v=1121u#about" data-page="p-home">회사 소개</a>
+      <a href="design.html?v=1121u" data-page="p-design">설계·제작</a>
+      <a href="build.html?v=1121u" data-page="p-build">프로젝트 수행 실적</a>
+      <a href="software.html?v=1121u" data-page="p-software">소프트웨어</a>
+      <a href="contact.html?v=1121u" data-page="p-contact">고객지원</a>
     </nav>
   </div>
 </header>
@@ -112,7 +112,7 @@
 <footer class="ft">
   <div class="wrap ft-in">
     <div class="ft-brand">
-      <a class="brand" href="index.html?v=1121t" aria-label="OTONI 홈"><img class="logo" src="logo.svg?v=1121t" alt="OTONI" width="124" height="40"></a>
+      <a class="brand" href="index.html?v=1121u" aria-label="OTONI 홈"><img class="logo" src="logo.svg?v=1121u" alt="OTONI" width="124" height="40"></a>
       <p>전장 설계 및 제작, 자동화 설계 소프트웨어까지.</p><p class="copy">© 2026 OTONI. All rights reserved.</p>
     </div>
     <ul class="ft-info">
@@ -124,7 +124,7 @@
     <ul class="ft-info">
       <li><b>주소</b> 충청남도 천안시 서북구 2공단4로 40-11, 천안G1비즈캠퍼스 10층 1024호(성성동)</li>
       <li><b>업태·종목</b> 제조업, 도매 및 소매업 · 자동화설비제작, 전기용 기계·장비 및 관련 기자재 도매업</li>
-      <li><b>이메일</b> <a href="mailto:otoni@otoni.co.kr">otoni@otoni.co.kr</a></li><li><b>안내</b> <a class="pp" href="privacy.html?v=1121t"><b>개인정보처리방침</b></a></li>
+      <li><b>이메일</b> <a href="mailto:otoni@otoni.co.kr">otoni@otoni.co.kr</a></li><li><b>안내</b> <a class="pp" href="privacy.html?v=1121u"><b>개인정보처리방침</b></a></li>
     </ul>
   </div>
 </footer>
@@ -139,14 +139,14 @@ Object.keys(map).forEach(function(id){var s=document.getElementById(id);if(s)io.
 <div class="sub-bar" id="subBar" hidden role="dialog" aria-label="업데이트 소식 받기">
   <button type="button" class="sub-x" aria-label="닫기">×</button>
   <b>업데이트 소식 받기</b>
-  <span>OTONI 소프트웨어 출시·업데이트 소식을 메일로 알려 드립니다.</span>
+  <span><strong>출시·업데이트</strong> 소식을 메일로 알려드립니다.</span>
   <form class="sub-form" novalidate>
     <div class="sub-row"><input type="email" name="email" placeholder="이메일 주소" autocomplete="email" required aria-label="이메일 주소"><button type="submit">받기</button></div>
-    <label class="sub-ok"><input type="checkbox" name="agree"> (필수) 개인정보 수집·이용 동의 · <a href="privacy.html?v=1121t#subscribe">자세히</a></label>
+    <label class="sub-ok"><input type="checkbox" name="agree"> (필수) 개인정보 수집·이용 동의 · <a href="privacy.html?v=1121u#subscribe">자세히</a></label>
     <p class="sub-msg" aria-live="polite"></p>
   </form>
 </div>
-<script src="sub_config.js?v=1121t"></script>
+<script src="sub_config.js?v=1121u"></script>
 <script>
 
 (function(){
@@ -156,7 +156,11 @@ function get(){try{return JSON.parse(localStorage.getItem(K)||'{}')}catch(e){ret
 function set(v){try{localStorage.setItem(K,JSON.stringify(v))}catch(e){}}
 var bar=document.getElementById('subBar'),st=get();
 var hideBar=st.done||(st.x&&Date.now()-st.x<30*DAY);
-if(bar&&!hideBar){var on=function(){var lim=Math.min(400,(document.documentElement.scrollHeight-innerHeight)*0.3);if(scrollY>lim){bar.hidden=false;requestAnimationFrame(function(){bar.classList.add('show')});removeEventListener('scroll',on)}};addEventListener('scroll',on,{passive:true});on();
+
+var hs=document.querySelector('.p-home .hero-stats');
+function pin(){if(!bar)return;if(!hs||innerWidth<901){bar.style.position='';bar.style.top='';bar.style.left='';bar.style.right='';return;}var r=hs.getBoundingClientRect();bar.style.position='absolute';bar.style.top=Math.round(r.bottom+scrollY+8)+'px';bar.style.right='auto';bar.style.left=Math.round(r.right+scrollX-bar.offsetWidth)+'px';}
+if(bar&&!hideBar&&hs){addEventListener('resize',pin);if(document.fonts)document.fonts.ready.then(pin);}
+if(bar&&!hideBar){var on=function(){if(hs&&innerWidth>900){bar.hidden=false;pin();requestAnimationFrame(function(){bar.classList.add('show')});removeEventListener('scroll',on);return;}var lim=Math.min(400,(document.documentElement.scrollHeight-innerHeight)*0.3);if(scrollY>lim){bar.hidden=false;requestAnimationFrame(function(){bar.classList.add('show')});removeEventListener('scroll',on)}};addEventListener('scroll',on,{passive:true});on();
   bar.querySelector('.sub-x').onclick=function(){set({x:Date.now()});bar.classList.remove('show');setTimeout(function(){bar.hidden=true},250)};}
 document.querySelectorAll('.sub-open').forEach(function(b){b.onclick=function(){var f=b.closest('.sale-row,.inv-sale').querySelector('.sub-form');f.hidden=!f.hidden;b.setAttribute('aria-expanded',!f.hidden);if(!f.hidden)f.email.focus();};});
 document.querySelectorAll('.sub-form').forEach(function(f){f.onsubmit=function(e){e.preventDefault();var m=f.querySelector('.sub-msg'),em=f.email.value.trim();
