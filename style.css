@@ -847,7 +847,7 @@ html.rm-on{overflow:hidden}
 
 
 .sw-hd{position:relative}
-.rp-lay{position:absolute;inset:0;pointer-events:none}
+.rp-lay{position:absolute;inset:0;pointer-events:none;overflow:hidden}   
 .rp-svg{position:absolute;left:0;top:0;overflow:visible;pointer-events:none;z-index:5}
 .rm-open{position:relative;z-index:3}
 .rm-open.a7{overflow:visible;border:1.5px solid #1877F2;padding:10px 22px}.rm-open.a7 svg{display:none}
