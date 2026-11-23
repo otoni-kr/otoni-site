@@ -15,19 +15,19 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#ffffff">
-<link rel="icon" href="mark.svg?v=1123a" type="image/svg+xml">
-<link rel="stylesheet" href="style.css?v=1123a">
+<link rel="icon" href="mark.svg?v=1124b" type="image/svg+xml">
+<link rel="stylesheet" href="style.css?v=1124b">
 </head>
 <body class="p-software">
 <header class="hd">
   <div class="wrap hd-in">
-    <a class="brand" href="index.html?v=1123a" aria-label="OTONI 홈"><img class="logo" src="logo_small.svg?v=1123a" alt="OTONI" width="143" height="40"></a>
+    <a class="brand" href="index.html?v=1124b" aria-label="OTONI 홈"><img class="logo" src="logo_small.svg?v=1124b" alt="OTONI" width="143" height="40"></a>
     <nav class="nav">
-      <a href="index.html?v=1123a#about" data-page="p-home">회사 소개</a>
-      <a href="design.html?v=1123a" data-page="p-design">설계·제작</a>
-      <a href="build.html?v=1123a" data-page="p-build">프로젝트 수행 실적</a>
-      <a href="software.html?v=1123a" data-page="p-software">소프트웨어</a>
-      <a href="contact.html?v=1123a" data-page="p-contact">고객지원</a>
+      <a href="index.html?v=1124b#about" data-page="p-home">회사 소개</a>
+      <a href="design.html?v=1124b" data-page="p-design">설계·제작</a>
+      <a href="build.html?v=1124b" data-page="p-build">프로젝트 수행 실적</a>
+      <a href="software.html?v=1124b" data-page="p-software">소프트웨어</a>
+      <a href="contact.html?v=1124b" data-page="p-contact">고객지원</a>
     </nav>
   </div>
 </header>
@@ -36,7 +36,7 @@
 <section class="page-hd">
   <div class="wrap sw-hd">
     <div class="sw-hd-l">
-    <p class="crumb"><a href="index.html?v=1123a">← 처음으로</a></p>
+    <p class="crumb"><a href="index.html?v=1124b">← 처음으로</a></p>
     <h1 class="h1-badge">소프트웨어 <span class="soon dev">개발 중</span></h1>
     <p class="lead">전장 설계와 현장 Setup을 위한 설계 통합 자동화 시스템을 개발합니다.</p>
     </div>
@@ -331,7 +331,7 @@ var PJ=[['TEXT',[['p_text_clean','Clean Text','m_text','괄호·빈칸 삭제'],
 
 
 function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;}
-function pic(n,w,h,a,flex){return '<img src="'+n+'.png?v=1123a" width="'+w+'" height="'+h+'" alt="'+a+'"'+(flex?' style="flex:'+(w/h).toFixed(4)+' 1 0"':'')+' decoding="async">';}
+function pic(n,w,h,a,flex){return '<img src="'+n+'.png?v=1124b" width="'+w+'" height="'+h+'" alt="'+a+'"'+(flex?' style="flex:'+(w/h).toFixed(4)+' 1 0"':'')+' decoding="async">';}
 function rows(g){return g.map(function(r){return '<div class="xv-row n'+r.length+'">'+r.map(function(k){var i=P[k];return pic(i[0],i[1],i[2],i[3],1);}).join('')+'</div>';}).join('');}
 function pair(it){var ns=[it[0]].concat(it[2]?[it[2]]:[]),sa=0,h=1e9;ns.forEach(function(n){var d=dim(n);sa+=d[0]/d[1];h=Math.min(h,d[1]/2);});
   var W=Math.round(h*sa+24*(ns.length-1)),port=dim(ns[0])[0]<dim(ns[0])[1];
@@ -346,7 +346,7 @@ var XG=24,xRows=[],xMains=[];
 XL.forEach(function(t,gi){var sec=el('div','xg');sec.id='xg'+gi;var bar=el('div','xv-tabs');
   var b=el('span','xv-tab on',t[0]);bar.appendChild(b);   
   sec.appendChild(bar);var body=el('div','xv-body solo');var main=el('div','xv-main xz');body.appendChild(main);sec.appendChild(body);
-  var row=el('div','xv-row xs n'+t[1].length);t[1].forEach(function(k){var i=P[k];row.insertAdjacentHTML('beforeend','<img src="'+i[0]+'.png?v=1123a" width="'+i[1]+'" height="'+i[2]+'" alt="'+i[3]+'" decoding="async">');});
+  var row=el('div','xv-row xs n'+t[1].length);t[1].forEach(function(k){var i=P[k];row.insertAdjacentHTML('beforeend','<img src="'+i[0]+'.png?v=1124b" width="'+i[1]+'" height="'+i[2]+'" alt="'+i[3]+'" decoding="async">');});
   main.appendChild(row);xv.appendChild(sec);xRows.push(row);xMains.push(main);});
 var XR=32;function fitX(){var m=xMains[0],cs=getComputedStyle(m),avail=m.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight),narrow=avail<540,gp=narrow?12:XG;
   XL.forEach(function(t,gi){var r=t[1],row=xRows[gi],per=narrow?(r.length>2?2:1):r.length,sa=0,mh=1e9;
@@ -385,15 +385,18 @@ lb.onclick=function(){lb.hidden=true;};document.addEventListener('keydown',funct
             <div class="sale-l"><p class="sale-1">현재 판매하지 않습니다. <button type="button" class="sub-open" aria-expanded="false">소식 받기</button></p><p class="sale-2"><strong>소식 받기</strong>를 누르면 출시에 맞춰 소식을 알려드립니다.</p></div>
             <form class="sub-form" hidden novalidate>
               <div class="sub-row"><input type="email" name="email" placeholder="이메일 주소" autocomplete="email" required aria-label="이메일 주소"><button type="submit">받기</button></div>
-              <label class="sub-ok"><input type="checkbox" name="agree"> (필수) 개인정보 수집·이용 동의 — 이메일 주소, 소식 메일 발송, 수신 거부 때까지 보관 · <a href="privacy.html?v=1123a#subscribe">자세히</a></label>
+              <label class="sub-ok"><input type="checkbox" name="agree"> (필수) 개인정보 수집·이용 동의 — 이메일 주소, 소식 메일 발송, 수신 거부 때까지 보관 · <a href="privacy.html?v=1124b#subscribe">자세히</a></label>
               <p class="sub-msg" aria-live="polite"></p>
             </form>
           </div>
           <ul class="sw-list">
           <li><img class="pi" src="OtoCompass_40.svg" alt=""><div><b>OtoCompass</b><span>캐드 전장 설계 자동화</span></div><span class="soon dev">1단계 개발 중</span></li>
           <li><img class="pi" src="OtoAtlas_40.svg" alt=""><div><b>OtoAtlas</b><span>엑셀 데이터 정리 및 캐드 설계 통합 자동화</span></div><span class="soon done">1단계 완료 · 시험·안정성 검토 중</span></li>
+          <li><img class="pi" src="nes.png?v=1124b" alt=""><div><b>NES</b><span>OTONI 도구를 하나로 잇는 통합 플랫폼</span></div><span class="soon">준비 중</span></li>
           <li><img class="pi" src="OtoFerry_40.svg" alt=""><div><b>OtoFerry</b><span>대용량 메일 파일 생성 도구</span></div><span class="soon done">1단계 완료</span></li>
-          <li><img class="pi" src="nes.png?v=1123a" alt=""><div><b>NES</b><span>OTONI 도구를 하나로 잇는 통합 플랫폼</span></div><span class="soon">준비 중</span></li>
+          <li><img class="pi" src="OtoBinder_40.svg" alt=""><div><b>OtoBinder</b><span>업무 파일을 간편하게 묶고 풀 수 있게 만든 압축 도구</span></div><span class="soon">개발 예정</span></li>
+          <li><img class="pi" src="OtoEasel_40.svg" alt=""><div><b>OtoEasel</b><span>업무에 효율적으로 쓸 수 있게 만든 이미지 보기 도구</span></div><span class="soon dev">개발 중</span></li>
+          <li><img class="pi" src="OtoPalette_40.svg" alt=""><div><b>OtoPalette</b><span>OtoEasel과 연동되는 이미지 편집 도구</span></div><span class="soon dev">개발 중</span></li>
         </ul>
         <div class="inv"><div><b>소프트웨어 협업·투자 문의</b><span>오토니 설계 통합 자동화 시스템에 관심 있으신 <strong>협업·투자 파트너</strong>를 찾고 있습니다.</span></div><a href="mailto:otoni@otoni.co.kr">문의하기 →</a></div></div>
   </div>
@@ -409,7 +412,7 @@ var t=0;addEventListener('resize',function(){clearTimeout(t);t=setTimeout(snap,1
 <footer class="ft">
   <div class="wrap ft-in">
     <div class="ft-brand">
-      <a class="brand" href="index.html?v=1123a" aria-label="OTONI 홈"><img class="logo" src="logo.svg?v=1123a" alt="OTONI" width="143" height="40"></a>
+      <a class="brand" href="index.html?v=1124b" aria-label="OTONI 홈"><img class="logo" src="logo.svg?v=1124b" alt="OTONI" width="143" height="40"></a>
       <p>전장 설계 및 제작, 자동화 설계 소프트웨어까지.</p><p class="copy">© 2026 OTONI. All rights reserved.</p>
     </div>
     <ul class="ft-info">
@@ -421,7 +424,7 @@ var t=0;addEventListener('resize',function(){clearTimeout(t);t=setTimeout(snap,1
     <ul class="ft-info">
       <li><b>주소</b> 충청남도 천안시 서북구 2공단4로 40-11, 천안G1비즈캠퍼스 10층 1024호(성성동)</li>
       <li><b>업태·종목</b> 제조업, 도매 및 소매업 · 자동화설비제작, 전기용 기계·장비 및 관련 기자재 도매업</li>
-      <li><b>이메일</b> <a href="mailto:otoni@otoni.co.kr">otoni@otoni.co.kr</a></li><li><b>안내</b> <a class="pp" href="privacy.html?v=1123a"><b>개인정보처리방침</b></a></li>
+      <li><b>이메일</b> <a href="mailto:otoni@otoni.co.kr">otoni@otoni.co.kr</a></li><li><b>안내</b> <a class="pp" href="privacy.html?v=1124b"><b>개인정보처리방침</b></a></li>
     </ul>
   </div>
 </footer>
@@ -439,11 +442,11 @@ Object.keys(map).forEach(function(id){var s=document.getElementById(id);if(s)io.
   <span><strong>출시·업데이트</strong> 소식을 메일로 알려드립니다.</span>
   <form class="sub-form" novalidate>
     <div class="sub-row"><input type="email" name="email" placeholder="이메일 주소" autocomplete="email" required aria-label="이메일 주소"><button type="submit">받기</button></div>
-    <label class="sub-ok"><input type="checkbox" name="agree"> (필수) 개인정보 수집·이용 동의 · <a href="privacy.html?v=1123a#subscribe">자세히</a></label>
+    <label class="sub-ok"><input type="checkbox" name="agree"> (필수) 개인정보 수집·이용 동의 · <a href="privacy.html?v=1124b#subscribe">자세히</a></label>
     <p class="sub-msg" aria-live="polite"></p>
   </form>
 </div>
-<script src="sub_config.js?v=1123a"></script>
+<script src="sub_config.js?v=1124b"></script>
 <script>
 
 (function(){
