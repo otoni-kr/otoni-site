@@ -984,6 +984,8 @@ html.rm-on{overflow:hidden;scrollbar-gutter:stable}
 
 .news-box{position:absolute;z-index:59;width:340px;box-sizing:border-box;background:#fff;border:1px solid var(--line2);border-radius:12px;box-shadow:0 10px 30px rgba(20,30,50,.10);padding:11px 16px 12px}
 .news-box[hidden]{display:none}
+
+@media (max-width:560px){.news-box{width:auto}}
 .nb-h{display:flex;align-items:center;justify-content:space-between;font-size:15px;font-weight:700;line-height:1.4;padding-bottom:8px;border-bottom:1px solid var(--line)}
 .nb-h .o{font-weight:800}
 .news-box ul{margin:0;padding:0;list-style:none}
