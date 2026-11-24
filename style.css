@@ -967,4 +967,10 @@ html.rm-on{overflow:hidden;scrollbar-gutter:stable}
 .sg-dev{display:flex;align-items:center;justify-content:center;min-height:160px;margin:6px 0 34px;border:1px dashed #C9D0DA;border-radius:12px;background:#F7F9FB}.sg-dev .soon{font-size:15px;font-weight:600;line-height:1.2;border-radius:999px;padding:5px 14px;white-space:nowrap}
 @media (max-width:560px){.sg-dev{min-height:110px}.sg-dev .soon{font-size:12px;padding:3px 10px}}
 
+@media (min-width:901px){.software .vds{margin-top:48px}}
+
+
+.sw-list .soon .sb{display:none}
+@media (max-width:1500px){.sw-list .soon .sb{display:block}.sw-list .soon:has(.sb){text-align:center;line-height:1.3;border-radius:12px;padding:4px 8px;font-size:11px}}
+
 
